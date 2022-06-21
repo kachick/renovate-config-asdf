@@ -23,4 +23,4 @@ If you want to partially enable, pick from below.
 }
 ```
 
-[working example for a plugin](https://github.com/kachick/action-typescript-template/pull/7)
+[behavior example](https://github.com/kachick/renovate-config-dprint/pull/1)
