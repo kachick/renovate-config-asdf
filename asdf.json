@@ -2,7 +2,7 @@
   "regexManagers": [
     {
       "fileMatch": [".tool-versions"],
-      "matchStrings": ["^(?<depName>dprint) (?<currentValue>.+)$"],
+      "matchStrings": ["^dprint (?<currentValue>.+)$"],
       "depNameTemplate": "dprint/dprint",
       "datasourceTemplate": "github-releases"
     }
