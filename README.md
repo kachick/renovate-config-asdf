@@ -1,5 +1,7 @@
 # renovate-config-dprint
 
+## Usage
+
 [Renovate sharable config](https://docs.renovatebot.com/config-presets/) for [dprint](https://github.com/dprint/dprint) and the plugins.
 
 ```json
@@ -18,10 +20,21 @@ If you want to partially enable, pick from below.
 ```json
 {
   "extends": [
+    "config:base",
     "github>kachick/renovate-config-dprint:plugins",
     "github>kachick/renovate-config-dprint:asdf"
   ]
 }
 ```
 
-[behavior example](https://github.com/kachick/renovate-config-dprint/pull/1)
+When updating by bot as dependabot and/or renovate, I recommend to check the dprint diff in CI.\
+A way is to integrate [dprint/check](https://github.com/dprint/check) in your GitHub Actions.
+
+## Example
+
+- [Bump plugin](https://github.com/kachick/renovate-config-dprint/pull/1)
+- [Bump .tool-versions](https://github.com/kachick/renovate-config-dprint/pull/6)
+
+## Note
+
+- [Official issues tracker](https://github.com/kachick/renovate-config-dprint/issues/7)
