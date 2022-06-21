@@ -1,4 +1,5 @@
 {
+  "description": "Bump dprint official plugins",
   "regexManagers": [
     {
       "fileMatch": ["dprint.json"],

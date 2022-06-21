@@ -1,4 +1,5 @@
 {
+  "description": "Bump dprint specified in asdf-dprint(.tool-versions)",
   "regexManagers": [
     {
       "fileMatch": [".tool-versions"],
