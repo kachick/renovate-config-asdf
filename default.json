@@ -2,8 +2,5 @@
   "extends": [
     "github>kachick/renovate-config-dprint:plugins",
     "github>kachick/renovate-config-dprint:asdf"
-  ],
-  "labels": [
-    "renovate"
   ]
 }

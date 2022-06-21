@@ -5,6 +5,7 @@ Base [Renovate config](https://docs.renovatebot.com/config-presets/) for [dprint
 ```json
 {
   "extends": [
+    "config:base",
     "github>kachick/renovate-config-dprint"
   ]
 }
