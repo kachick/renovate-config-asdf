@@ -1,0 +1,10 @@
+{
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["^(?<depName>dprint) (?<currentValue>.+)$"],
+      "depNameTemplate": "dprint/dprint",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}

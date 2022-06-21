@@ -1,0 +1,10 @@
+{
+  "regexManagers": [
+    {
+      "fileMatch": ["dprint.json"],
+      "matchStrings": ["\"https://plugins.dprint.dev/(?<depName>.+)-(?<currentValue>.+?).wasm\""],
+      "depNameTemplate": "dprint/dprint-plugin-{{{depName}}}",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
