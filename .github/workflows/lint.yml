@@ -1,7 +1,7 @@
 name: Lint
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths-ignore:
       - 'LICENSE'
   pull_request:
