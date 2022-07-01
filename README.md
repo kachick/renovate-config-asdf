@@ -13,7 +13,7 @@
 }
 ```
 
-It currently targets [asdf-dprint](https://github.com/asdf-community/asdf-dprint) and [dprint official plugins](https://github.com/dprint?q=plugin&type=all&language=&sort=).
+It currently targets [asdf-dprint](https://github.com/asdf-community/asdf-dprint) and [dprint official plugins](https://github.com/dprint?q=plugin&type=all&language=&sort=) except [dprint-plugin-prettier](https://github.com/kachick/renovate-config-dprint/issues/11).
 
 If you want to partially enable, pick from below.
 
