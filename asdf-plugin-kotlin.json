@@ -7,7 +7,7 @@
       "matchStrings": ["kotlin (?<currentValue>.+?)\\n"],
       "depNameTemplate": "JetBrains/kotlin",
       "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^Kotlin (?<version>\\S+)"
+      "extractVersionTemplate": "^(Kotlin |v)(?<version>\\S+)"
     }
   ]
 }

@@ -48,6 +48,8 @@ Want to cover asdf, however currently targeted only for github hosted and/or som
 - [Bump crystal](https://github.com/kachick/renovate-config-asdf/pull/7)
 - [Bump elixir](https://github.com/kachick/renovate-config-asdf/pull/9)
 - [Bump ruby](https://github.com/kachick/renovate-config-asdf/pull/16)
+- [Bump kotlin](https://github.com/kachick/renovate-config-asdf/pull/4242)
+- [Bump scala](https://github.com/kachick/renovate-config-asdf/pull/4242)
 - [Bump nim](https://github.com/kachick/renovate-config-asdf/pull/6)
 - [Bump python](https://github.com/kachick/renovate-config-asdf/pull/22)
 - [Bump php](https://github.com/kachick/renovate-config-asdf/pull/1)

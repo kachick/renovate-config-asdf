@@ -16,6 +16,7 @@
     "local>kachick/renovate-config-asdf:asdf-plugin-ocaml",
     "local>kachick/renovate-config-asdf:asdf-plugin-idris",
     "local>kachick/renovate-config-asdf:asdf-plugin-kotlin",
+    "local>kachick/renovate-config-asdf:asdf-plugin-scala",
     "local>kachick/renovate-config-asdf:asdf-plugin-php",
     "local>kachick/renovate-config-asdf:asdf-plugin-python",
     "github>kachick/renovate-config-dprint:asdf"

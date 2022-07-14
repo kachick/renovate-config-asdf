@@ -7,7 +7,8 @@
     "deno",
     "denoland",
     "dprint",
-    "idris"
+    "idris",
+    "lampepfl"
   ],
   "json.schemas": [
     {
