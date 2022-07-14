@@ -5,6 +5,7 @@
     {
       "fileMatch": [".tool-versions"],
       "matchStrings": ["golang (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "golang",
       "datasourceTemplate": "golang-version"
     }
   ]
