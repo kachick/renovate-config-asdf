@@ -2,17 +2,15 @@ name: CI
 on:
   push:
     branches: [main]
-    paths-ignore:
+    paths:
       - '.github/workflows/ci.yml'
-      - 'renovate.json'
-      - 'default.json'
-      - 'asdf-plugins/**'
+      - '*.json'
+      - 'validate.bash'
   pull_request:
     paths:
       - '.github/workflows/ci.yml'
-      - 'renovate.json'
-      - 'default.json'
-      - 'asdf-plugins/**'
+      - '*.json'
+      - 'validate.bash'
 
 jobs:
   validate:
