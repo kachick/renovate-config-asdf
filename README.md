@@ -2,7 +2,7 @@
 
 ## Usage
 
-🚧 [Renovate sharable config](https://docs.renovatebot.com/config-presets/) for [.tool-versions (asdf)](https://github.com/asdf-vm/asdf-plugins/tree/master/plugins). 🚧
+[Renovate sharable config](https://docs.renovatebot.com/config-presets/) for [.tool-versions (asdf)](https://github.com/asdf-vm/asdf-plugins/tree/master/plugins).
 
 ```json
 {
@@ -48,8 +48,8 @@ Want to cover asdf, however currently targeted only for github hosted and/or som
 - [Bump crystal](https://github.com/kachick/renovate-config-asdf/pull/7)
 - [Bump elixir](https://github.com/kachick/renovate-config-asdf/pull/9)
 - [Bump ruby](https://github.com/kachick/renovate-config-asdf/pull/16)
-- [Bump kotlin](https://github.com/kachick/renovate-config-asdf/pull/4242)
-- [Bump scala](https://github.com/kachick/renovate-config-asdf/pull/4242)
+- [Bump kotlin](https://github.com/kachick/renovate-config-asdf/pull/25)
+- [Bump scala](https://github.com/kachick/renovate-config-asdf/pull/24)
 - [Bump nim](https://github.com/kachick/renovate-config-asdf/pull/6)
 - [Bump python](https://github.com/kachick/renovate-config-asdf/pull/22)
 - [Bump php](https://github.com/kachick/renovate-config-asdf/pull/1)
