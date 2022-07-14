@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump deno in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["deno (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "denoland/deno",
+      "datasourceTemplate": "github-releases"
+    }
+  ],
+  "extractVersion": "^v(?<version>\\S+)"
+}

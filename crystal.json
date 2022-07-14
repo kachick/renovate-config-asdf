@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump crystal in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["crystal (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "crystal-lang/crystal",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}

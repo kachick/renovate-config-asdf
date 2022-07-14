@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump golang in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["golang (?<currentValue>.+?)\\n"],
+      "datasourceTemplate": "golang-version"
+    }
+  ]
+}

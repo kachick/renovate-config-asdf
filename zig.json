@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump zig in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["zig (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "ziglang/zig",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}

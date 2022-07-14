@@ -1,1 +1,12 @@
-dprint 0.30.3
+nodejs 16.15.1
+elm 0.18.1
+deno 1.23.0
+dprint 0.29.1
+crystal 1.4.2
+haskell 8.4.2
+golang 1.4.2
+rust 1.42.0
+zig 0.4.2
+ocaml 4.2.0
+nim 1.4.2
+php 7.4.2

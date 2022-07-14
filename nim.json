@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump nim in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["nim (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "nim-lang/Nim",
+      "datasourceTemplate": "github-tags"
+    }
+  ],
+  "extractVersion": "^v-(?<version>\\S+)"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump java in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["java (?<currentValue>.+?)\\n"],
+      "datasourceTemplate": "adoptium-java",
+      "packageNameTemplate": "java-jre"
+    }
+  ]
+}

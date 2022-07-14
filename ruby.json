@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump ruby in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["ruby (?<currentValue>.+?)\\n"],
+      "datasourceTemplate": "ruby-version"
+    }
+  ]
+}

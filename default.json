@@ -1,7 +1,23 @@
 {
-  "description": "Sharable config for dprint",
+  "description": "Sharable config for .tool-version with asdf",
   "extends": [
-    "github>kachick/renovate-config-dprint:plugins",
+    "github>kachick/renovate-config-asdf:crystal",
+    "github>kachick/renovate-config-asdf:rust",
+    "github>kachick/renovate-config-asdf:zig",
+    "github>kachick/renovate-config-asdf:elm",
+    "github>kachick/renovate-config-asdf:haskell",
+    "github>kachick/renovate-config-asdf:ruby",
+    "github>kachick/renovate-config-asdf:deno",
+    "github>kachick/renovate-config-asdf:nodejs",
+    "github>kachick/renovate-config-asdf:golang",
+    "github>kachick/renovate-config-asdf:elixir",
+    "github>kachick/renovate-config-asdf:erlang",
+    "github>kachick/renovate-config-asdf:nim",
+    "github>kachick/renovate-config-asdf:ocaml",
+    "github>kachick/renovate-config-asdf:idris",
+    "github>kachick/renovate-config-asdf:kotlin",
+    "github>kachick/renovate-config-asdf:java",
+    "github>kachick/renovate-config-asdf:php",
     "github>kachick/renovate-config-dprint:asdf"
   ]
 }

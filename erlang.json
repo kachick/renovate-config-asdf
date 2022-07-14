@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump erlang in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["erlang (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "erlang/otp",
+      "datasourceTemplate": "github-tags"
+    }
+  ],
+  "extractVersion": "^OTP-(?<version>\\S+)"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump idris in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["idris (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "idris-lang/Idris-dev",
+      "datasourceTemplate": "github-tags"
+    }
+  ],
+  "extractVersion": "^v-(?<version>\\S+)"
+}

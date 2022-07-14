@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump rust in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["rust (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "rust-lang/rust",
+      "datasourceTemplate": "github-tags"
+    }
+  ]
+}

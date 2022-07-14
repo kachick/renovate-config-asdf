@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump haskell in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["haskell (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "ghc/ghc",
+      "datasourceTemplate": "github-tags"
+    }
+  ],
+  "extractVersion": "^ghc-(?<version>\\S+)"
+}

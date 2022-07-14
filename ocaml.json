@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump ocaml in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["ocaml (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "ocaml/ocaml",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}

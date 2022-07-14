@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump kotlin in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["kotlin (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "kotlinland/kotlin",
+      "datasourceTemplate": "github-releases"
+    }
+  ],
+  "extractVersion": "^v(?<version>\\S+)"
+}

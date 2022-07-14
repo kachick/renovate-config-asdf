@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump php in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["php (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "php/php-src",
+      "datasourceTemplate": "github-tags"
+    }
+  ],
+  "extractVersion": "^php-(?<version>\\S+)"
+}

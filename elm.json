@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump elm in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["elm (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "elm/compiler",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
