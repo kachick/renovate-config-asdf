@@ -3,10 +3,17 @@ on:
   push:
     branches: [main]
     paths-ignore:
-      - 'LICENSE'
+      - '.github/workflows/ci.yml'
+      - 'renovate.json'
+      - 'default.json'
+      - 'asdf-plugins/**'
   pull_request:
-    paths-ignore:
-      - 'LICENSE'
+    paths:
+      - '.github/workflows/ci.yml'
+      - 'renovate.json'
+      - 'default.json'
+      - 'asdf-plugins/**'
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -17,6 +24,6 @@ jobs:
           node-version: 16
           cache: npm
       - name: Install dependencies
-        run: npm ci --ignore-scripts
+        run: npm install
       - name: Validate
         run: npm run validate
