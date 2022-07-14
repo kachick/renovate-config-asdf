@@ -6,7 +6,7 @@
       "fileMatch": [".tool-versions"],
       "matchStrings": ["crystal (?<currentValue>.+?)\\n"],
       "depNameTemplate": "crystal-lang/crystal",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-tags"
     }
   ]
 }

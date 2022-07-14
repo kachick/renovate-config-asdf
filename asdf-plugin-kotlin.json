@@ -5,9 +5,9 @@
     {
       "fileMatch": [".tool-versions"],
       "matchStrings": ["kotlin (?<currentValue>.+?)\\n"],
-      "depNameTemplate": "kotlinland/kotlin",
+      "depNameTemplate": "JetBrains/kotlin",
       "datasourceTemplate": "github-releases"
     }
   ],
-  "extractVersion": "^v(?<version>\\S+)"
+  "extractVersion": "^Kotlin (?<version>\\S+)"
 }

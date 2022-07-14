@@ -9,5 +9,5 @@
       "datasourceTemplate": "github-tags"
     }
   ],
-  "extractVersion": "^ghc-(?<version>\\S+)"
+  "extractVersion": "^ghc-(?<version>\\S+?)-release"
 }
