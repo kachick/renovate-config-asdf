@@ -36,7 +36,22 @@ Want to cover asdf, however currently targeted only for github hosted and/or som
 
 ## Example
 
-- [Bump .tool-versions](https://github.com/kachick/renovate-config-asdf/pull/NNN)
+- [Bump nodejs](https://github.com/kachick/renovate-config-asdf/pull/21)
+- [Bump haskell](https://github.com/kachick/renovate-config-asdf/pull/19)
+- [Bump idris](https://github.com/kachick/renovate-config-asdf/pull/20)
+- [Bump erlang](https://github.com/kachick/renovate-config-asdf/pull/18)
+- [Bump rust](https://github.com/kachick/renovate-config-asdf/pull/17)
+- [Bump ocaml](https://github.com/kachick/renovate-config-asdf/pull/15)
+- [Bump golang](https://github.com/kachick/renovate-config-asdf/pull/12)
+- [Bump elm](https://github.com/kachick/renovate-config-asdf/pull/10)
+- [Bump deno](https://github.com/kachick/renovate-config-asdf/pull/5)
+- [Bump crystal](https://github.com/kachick/renovate-config-asdf/pull/7)
+- [Bump elixir](https://github.com/kachick/renovate-config-asdf/pull/9)
+- [Bump ruby](https://github.com/kachick/renovate-config-asdf/pull/16)
+- [Bump nim](https://github.com/kachick/renovate-config-asdf/pull/6)
+- [Bump python](https://github.com/kachick/renovate-config-asdf/pull/22)
+- [Bump php](https://github.com/kachick/renovate-config-asdf/pull/1)
+- [Bump dprint](https://github.com/kachick/renovate-config-asdf/pull/8)
 
 ## Note
 
