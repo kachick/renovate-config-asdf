@@ -27,8 +27,11 @@ If you want to narrow Renovate effect for example you are basically using depend
 }
 ```
 
-## Not yet working
+## Limitations
 
+Want to cover asdf, however currently targeted only for github hosted and/or some compilers/interpreters.
+
+- [asdf-python](https://github.com/danhper/asdf-python) - Currently targeted only for [cpython](https://github.com/python/cpython)
 - [asdf-java](https://github.com/halcyon/asdf-java) - Looks needed to read [tsv](https://github.com/halcyon/asdf-java/tree/master/data)
 
 ## Example
