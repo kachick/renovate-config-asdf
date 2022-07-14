@@ -8,5 +8,6 @@
       "depNameTemplate": "nodejs/node",
       "datasourceTemplate": "github-tags"
     }
-  ]
+  ],
+  "extractVersion": "^v(?<version>\\S+)"
 }
