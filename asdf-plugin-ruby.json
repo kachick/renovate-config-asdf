@@ -6,8 +6,7 @@
       "fileMatch": [".tool-versions"],
       "matchStrings": ["ruby (?<currentValue>.+?)\\n"],
       "depNameTemplate": "ruby-version",
-      "datasourceTemplate": "ruby-version",
-      "versioningTemplate": "ruby-version"
+      "datasourceTemplate": "ruby-version"
     }
   ]
 }

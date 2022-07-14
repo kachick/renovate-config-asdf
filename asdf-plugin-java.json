@@ -7,8 +7,7 @@
       "matchStrings": ["java (?<currentValue>.+?)\\n"],
       "datasourceTemplate": "adoptium-java",
       "packageNameTemplate": "java-jre",
-      "depNameTemplate": "adoptium-java",
-      "versioningTemplate": "adoptium-java"
+      "depNameTemplate": "adoptium-java"
     }
   ]
 }
