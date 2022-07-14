@@ -5,7 +5,7 @@ dprint 0.29.1
 crystal 1.4.0
 haskell 9.2.3
 golang 1.4.2
-rust 1.42.0
+rust 1.62.0
 zig 0.4.2
 ocaml 4.14.0
 nim 1.6.2
