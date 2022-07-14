@@ -6,8 +6,8 @@
       "fileMatch": [".tool-versions"],
       "matchStrings": ["nodejs (?<currentValue>.+?)\\n"],
       "depNameTemplate": "nodejs/node",
-      "datasourceTemplate": "github-tags"
+      "datasourceTemplate": "github-tags",
+      "extractVersionTemplate": "^v(?<version>\\S+)"
     }
-  ],
-  "extractVersion": "^v(?<version>\\S+)"
+  ]
 }

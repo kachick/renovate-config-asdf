@@ -6,8 +6,8 @@
       "fileMatch": [".tool-versions"],
       "matchStrings": ["idris (?<currentValue>.+?)\\n"],
       "depNameTemplate": "idris-lang/Idris-dev",
-      "datasourceTemplate": "github-tags"
+      "datasourceTemplate": "github-tags",
+      "extractVersionTemplate": "^v(?<version>\\S+)"
     }
-  ],
-  "extractVersion": "^v(?<version>\\S+)"
+  ]
 }
