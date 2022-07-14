@@ -41,6 +41,7 @@ Want to cover asdf, however currently targeted only for github hosted and/or som
 - [Bump idris](https://github.com/kachick/renovate-config-asdf/pull/20)
 - [Bump erlang](https://github.com/kachick/renovate-config-asdf/pull/18)
 - [Bump rust](https://github.com/kachick/renovate-config-asdf/pull/17)
+- [Bump zig](https://github.com/kachick/renovate-config-asdf/pull/4242)
 - [Bump ocaml](https://github.com/kachick/renovate-config-asdf/pull/15)
 - [Bump golang](https://github.com/kachick/renovate-config-asdf/pull/12)
 - [Bump elm](https://github.com/kachick/renovate-config-asdf/pull/10)
