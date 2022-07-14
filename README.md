@@ -27,6 +27,10 @@ If you want to narrow Renovate effect for example you are basically using depend
 }
 ```
 
+## Not yet working
+
+- [asdf-java](https://github.com/halcyon/asdf-java) - Looks needed to read [tsv](https://github.com/halcyon/asdf-java/tree/master/data)
+
 ## Example
 
 - [Bump .tool-versions](https://github.com/kachick/renovate-config-asdf/pull/NNN)
