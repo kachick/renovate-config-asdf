@@ -6,7 +6,8 @@
       "fileMatch": [".tool-versions"],
       "matchStrings": ["java (?<currentValue>.+?)\\n"],
       "datasourceTemplate": "adoptium-java",
-      "packageNameTemplate": "java-jre"
+      "packageNameTemplate": "java-jre",
+      "depNameTemplate": "java"
     }
   ]
 }

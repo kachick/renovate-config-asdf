@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "validate": "./validate.bash"
+  },
+  "devDependencies": {
+    "renovate": "^32.115.0"
+  }
+}

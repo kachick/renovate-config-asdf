@@ -1,0 +1,29 @@
+name: CI
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '.github/workflows/ci.yml'
+      - 'renovate.json'
+      - 'default.json'
+      - 'asdf-plugins/**'
+  pull_request:
+    paths:
+      - '.github/workflows/ci.yml'
+      - 'renovate.json'
+      - 'default.json'
+      - 'asdf-plugins/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+      - name: Install dependencies
+        run: npm install
+      - name: Validate
+        run: npm run validate
