@@ -46,6 +46,7 @@ Want to cover asdf, however currently targeted only for github hosted and/or som
 - [Bump golang](https://github.com/kachick/renovate-config-asdf/pull/12)
 - [Bump elm](https://github.com/kachick/renovate-config-asdf/pull/10)
 - [Bump deno](https://github.com/kachick/renovate-config-asdf/pull/5)
+- [Bump bun](https://github.com/kachick/renovate-config-asdf/pull/27)
 - [Bump crystal](https://github.com/kachick/renovate-config-asdf/pull/7)
 - [Bump elixir](https://github.com/kachick/renovate-config-asdf/pull/9)
 - [Bump ruby](https://github.com/kachick/renovate-config-asdf/pull/16)

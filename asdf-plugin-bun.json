@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump bun in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["bun (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "oven-sh/bun",
+      "datasourceTemplate": "github-tags",
+      "extractVersionTemplate": "^bun-v(?<version>\\S+)"
+    }
+  ]
+}

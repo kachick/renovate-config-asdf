@@ -8,6 +8,7 @@
     "local>kachick/renovate-config-asdf:asdf-plugin-haskell",
     "local>kachick/renovate-config-asdf:asdf-plugin-ruby",
     "local>kachick/renovate-config-asdf:asdf-plugin-deno",
+    "local>kachick/renovate-config-asdf:asdf-plugin-bun",
     "local>kachick/renovate-config-asdf:asdf-plugin-nodejs",
     "local>kachick/renovate-config-asdf:asdf-plugin-golang",
     "local>kachick/renovate-config-asdf:asdf-plugin-elixir",
