@@ -31,6 +31,7 @@ If you want to narrow Renovate effect, for example you are basically using depen
 
 Want to cover asdf, however currently targeted only for github hosted and/or some compilers/interpreters.
 
+- [asdf-zig](https://github.com/asdf-community/asdf-zig) - I don't know why [it](asdf-plugin-zig.json) does not work...
 - [asdf-python](https://github.com/danhper/asdf-python) - Currently targeted only for [cpython](https://github.com/python/cpython)
 - [asdf-java](https://github.com/halcyon/asdf-java) - Looks needed to read [tsv](https://github.com/halcyon/asdf-java/tree/master/data)
 
@@ -41,7 +42,6 @@ Want to cover asdf, however currently targeted only for github hosted and/or som
 - [Bump idris](https://github.com/kachick/renovate-config-asdf/pull/20)
 - [Bump erlang](https://github.com/kachick/renovate-config-asdf/pull/18)
 - [Bump rust](https://github.com/kachick/renovate-config-asdf/pull/17)
-- [Bump zig](https://github.com/kachick/renovate-config-asdf/pull/26)
 - [Bump ocaml](https://github.com/kachick/renovate-config-asdf/pull/15)
 - [Bump golang](https://github.com/kachick/renovate-config-asdf/pull/12)
 - [Bump elm](https://github.com/kachick/renovate-config-asdf/pull/10)
