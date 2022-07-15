@@ -5,9 +5,8 @@
     {
       "fileMatch": [".tool-versions"],
       "matchStrings": ["clojure (?<currentValue>.+?)\\n"],
-      "depNameTemplate": "clojure/clojure",
-      "datasourceTemplate": "github-tags",
-      "extractVersionTemplate": "^clojure-(?<version>\\S+)"
+      "depNameTemplate": "clojure/brew-install",
+      "datasourceTemplate": "github-tags"
     }
   ]
 }
