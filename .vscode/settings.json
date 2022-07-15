@@ -9,16 +9,5 @@
     "dprint",
     "idris",
     "lampepfl"
-  ],
-  "json.schemas": [
-    {
-      "fileMatch": [
-        "renovate.json",
-        "default.json",
-        "plugins.json",
-        "asdf.json"
-      ],
-      "url": "https://docs.renovatebot.com/renovate-schema.json"
-    }
   ]
 }

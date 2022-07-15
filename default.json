@@ -1,4 +1,5 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Sharable config for .tool-version with asdf",
   "extends": [
     "local>kachick/renovate-config-asdf:asdf-plugin-crystal",
