@@ -14,7 +14,7 @@
 }
 ```
 
-If you want to narrow Renovate effect for example you are basically using dependabot, removing `config:base` and specifying `enabledManagers` might fit.
+If you want to narrow Renovate effect, for example you are basically using dependabot, removing `config:base` and specifying `enabledManagers` might fit.
 
 ```json
 {
