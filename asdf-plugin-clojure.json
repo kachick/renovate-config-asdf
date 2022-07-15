@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump clojure in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["clojure (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "clojure/clojure",
+      "datasourceTemplate": "github-tags",
+      "extractVersionTemplate": "^clojure-(?<version>\\S+)"
+    }
+  ]
+}

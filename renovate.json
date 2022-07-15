@@ -5,6 +5,7 @@
   ],
   "labels": [
     "renovate",
-    "dependencies"
+    "dependencies",
+    "ignore-this-label-just-for-trigger-renovate"
   ]
 }

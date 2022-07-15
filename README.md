@@ -51,6 +51,7 @@ Want to cover asdf, however currently targeted only for github hosted and/or som
 - [Bump ruby](https://github.com/kachick/renovate-config-asdf/pull/16)
 - [Bump kotlin](https://github.com/kachick/renovate-config-asdf/pull/25)
 - [Bump scala](https://github.com/kachick/renovate-config-asdf/pull/24)
+- [Bump clojure](https://github.com/kachick/renovate-config-asdf/pull/26)
 - [Bump nim](https://github.com/kachick/renovate-config-asdf/pull/6)
 - [Bump python](https://github.com/kachick/renovate-config-asdf/pull/22)
 - [Bump php](https://github.com/kachick/renovate-config-asdf/pull/1)
