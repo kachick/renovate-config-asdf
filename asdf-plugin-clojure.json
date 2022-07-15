@@ -5,8 +5,10 @@
     {
       "fileMatch": [".tool-versions"],
       "matchStrings": ["clojure (?<currentValue>.+?)\\n"],
-      "depNameTemplate": "clojure",
-      "datasourceTemplate": "clojure"
+      "depNameTemplate": "clojure/clojure",
+      "datasourceTemplate": "github-tags",
+      "extractVersionTemplate": "^clojure-(?<version>\\S+)",
+      "versioningTemplate": "regex:^((?<major>\\d+?)\\.(?<minor>\\d+?)\\.(?<patch>\\S+)?$"
     }
   ]
 }
