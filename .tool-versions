@@ -21,4 +21,4 @@ java adoptopenjdk-16.0.0+36
 clojure 1.11.1.1105
 bun 0.1.4
 shellcheck 0.8.0
-shfmt 3.3.0
+shfmt 3.5.1
