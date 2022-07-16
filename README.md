@@ -31,7 +31,7 @@ If you want to narrow Renovate effect, for example you are basically using depen
 
 Want to cover asdf, however currently targeted only for github hosted and/or some compilers/interpreters.
 
-- [asdf-zig](https://github.com/asdf-community/asdf-zig) - I don't know why [it](asdf-plugin-zig.json) does not work...
+- [asdf-zig](https://github.com/asdf-community/asdf-zig) - I don't know why [it](plugins/zig.json5) does not work...
 - [asdf-python](https://github.com/danhper/asdf-python) - Currently targeted only for [cpython](https://github.com/python/cpython)
 - [asdf-java](https://github.com/halcyon/asdf-java) - Looks needed to read [tsv](https://github.com/halcyon/asdf-java/tree/master/data)
 

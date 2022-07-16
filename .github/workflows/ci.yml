@@ -4,12 +4,14 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/ci.yml'
-      - '*.json'
+      - '**/*.json'
+      - '**/*.json5'
       - 'validate.bash'
   pull_request:
     paths:
       - '.github/workflows/ci.yml'
-      - '*.json'
+      - '**/*.json'
+      - '**/*.json5'
       - 'validate.bash'
 
 jobs:
