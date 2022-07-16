@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -eux
 
 for file in $(git ls-files 'plugins' 'renovate.json' 'default.json' 'asdf-plugin-*.json'); do
