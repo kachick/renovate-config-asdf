@@ -8,6 +8,7 @@
     "denoland",
     "dprint",
     "idris",
-    "lampepfl"
+    "lampepfl",
+    "shfmt"
   ]
 }

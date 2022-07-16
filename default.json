@@ -23,6 +23,7 @@
     "local>kachick/renovate-config-asdf:asdf-plugin-php",
     "local>kachick/renovate-config-asdf:asdf-plugin-python",
     "local>kachick/renovate-config-asdf//plugins/shellcheck",
+    "local>kachick/renovate-config-asdf//plugins/shfmt",
     "github>kachick/renovate-config-dprint:asdf"
   ]
 }
