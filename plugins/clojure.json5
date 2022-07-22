@@ -5,6 +5,7 @@
     {
       "fileMatch": [".tool-versions"],
       "matchStrings": ["clojure (?<currentValue>.+?)\\n"],
+      // https://github.com/clojure/brew-install/tags
       "depNameTemplate": "clojure/brew-install",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "regex:^(?<major>\\d+?)\\.(?<minor>\\d+?)\\.(?<patch>\\S+)?$"
