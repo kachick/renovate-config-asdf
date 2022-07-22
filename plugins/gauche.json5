@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump gauche in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["gauche (?<currentValue>.+?)\\n"],
+      // https://github.com/shirok/Gauche/releases
+      // https://github.com/sakuro/asdf-gauche/blob/71f574d7c934bc4977eec4fb8005e2ecd0d7ed0c/bin/list-all#L5
+      "depNameTemplate": "shirok/Gauche",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "regex:^release(?<major>\\d+?)\\_(?<minor>\\d+?)\\_(?<patch>\\d+?)$"
+    }
+  ]
+}
