@@ -19,6 +19,40 @@ Bumping to `0.4.2` ...
 Done! you should manually push to GitHub with ``
 ```
 
+## Ensure regex(RE2) in Ruby
+
+https://github.com/google/re2/wiki/Syntax is the reference.
+Actual behavior checking in irb is below.
+
+Install https://github.com/mudge/re2/
+
+```console
+$ brew install re2
+$ gem install re2 -- --with-re2-dir=$(brew --prefix re2)
+Building native extensions with: '--with-re2-dir=/home/linuxbrew/.linuxbrew/opt/re2'
+This could take a while...
+Successfully installed re2-1.4.0
+Parsing documentation for re2-1.4.0
+Installing ri documentation for re2-1.4.0
+Done installing documentation for re2 after 0 seconds
+1 gem installed
+$ irb -rre2
+irb(main):001:0>
+```
+
+It looks replacing `(?<major>` with `(?P<major>`.
+
+```ruby
+irb(main):026:0> RE2::Regexp.new('^(?P<major>\\d+?)[_.](?P<minor>\d+?)[_.](?P<patch>\d+)$').match('0_9-12')
+=> nil
+irb(main):027:0> RE2::Regexp.new('^(?P<major>\\d+?)[_.](?P<minor>\d+?)[_.](?P<patch>\d+)$').match('0.9.12')
+=> #<RE2::MatchData "0.9.12" 1:"0" 2:"9" 3:"12">
+irb(main):028:0> m = _
+=> #<RE2::MatchData "0.9.12" 1:"0" 2:"9" 3:"12">
+irb(main):029:0> m[:major]
+=> "0"
+```
+
 ## Note
 
 - [How to write default.json](https://docs.renovatebot.com/config-presets/)
