@@ -10,7 +10,7 @@
       "depNameTemplate": "shirok/Gauche",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^release(?<version>\\S+)",
-      "versioningTemplate": "regex:^release(?<major>\\d+?)\\_(?<minor>\\d+?)\\_(?<patch>\\d+)$"
+      "versioningTemplate": "regex:^(?<major>\\d+?)\\_(?<minor>\\d+?)\\_(?<patch>\\d+)$"
     }
   ]
 }
