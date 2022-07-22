@@ -37,7 +37,7 @@ Below is an actual example for me. It points default branch of this repository t
 Want to cover asdf, however currently targeted only for github hosted and/or some compilers/interpreters.
 
 - [asdf-zig](https://github.com/asdf-community/asdf-zig) - I don't know why [it](plugins/zig.json5) does not work...
-- [asdf-gauche](https://github.com/sakuro/asdf-gauche) - Struggling in [plugins/gauche.json5]
+- [asdf-gauche](https://github.com/sakuro/asdf-gauche) - Struggling in [here](plugins/gauche.json5)
 - [asdf-java](https://github.com/halcyon/asdf-java) - Looks needed to read [this tsv](https://github.com/halcyon/asdf-java/tree/master/data)
 
 ## Working Examples
