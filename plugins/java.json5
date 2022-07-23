@@ -9,7 +9,8 @@
       // https://github.com/adoptium/temurin16-binaries/releases
       "depNameTemplate": "adoptium/temurin16-binaries",
       "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^jdk-(?<version>16\\S+?)\\+(?<channel>\\S+)",
+      "extractVersionTemplate": "^jdk-(?<version>16\\S+)",
+      // https://github.com/renovatebot/renovate/pull/16256
       "versioningTemplate": "hermit"
     },
     {
@@ -18,7 +19,7 @@
       // https://github.com/adoptium/temurin17-binaries/releases
       "depNameTemplate": "adoptium/temurin17-binaries",
       "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^jdk-(?<version>17\\S+?)\\+(?<channel>\\S+)",
+      "extractVersionTemplate": "^jdk-(?<version>17\\S+)",
       "versioningTemplate": "hermit"
     },
     {
@@ -27,7 +28,7 @@
       // https://github.com/adoptium/temurin18-binaries/releases
       "depNameTemplate": "adoptium/temurin18-binaries",
       "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^jdk-(?<version>18\\S+?)\\+(?<channel>\\S+)",
+      "extractVersionTemplate": "^jdk-(?<version>18\\S+)",
       "versioningTemplate": "hermit"
     }
   ]
