@@ -34,10 +34,8 @@ Below is an actual example for me. It points default branch of this repository t
 
 ## Limitations
 
-Want to cover asdf, however currently targeted only for github hosted and/or some compilers/interpreters.
-
+- Want to cover asdf, however currently targeted only for some implementations.
 - [asdf-zig](https://github.com/asdf-community/asdf-zig) - I don't know why [it](plugins/zig.json5) does not work...
-- [asdf-gauche](https://github.com/sakuro/asdf-gauche) - Struggling in [here](plugins/gauche.json5)
 - [asdf-java](https://github.com/halcyon/asdf-java) - Looks needed to read [this tsv](https://github.com/halcyon/asdf-java/tree/master/data)
 
 ## Working Examples
@@ -60,6 +58,7 @@ Want to cover asdf, however currently targeted only for github hosted and/or som
 - [kotlin](https://github.com/kachick/renovate-config-asdf/pull/25)
 - [scala](https://github.com/kachick/renovate-config-asdf/pull/24)
 - [clojure](https://github.com/kachick/renovate-config-asdf/pull/39)
+- [gauche](https://github.com/kachick/renovate-config-asdf/pull/42)
 - [nim](https://github.com/kachick/renovate-config-asdf/pull/6)
 - [python](https://github.com/kachick/renovate-config-asdf/pull/22) - Currently works only for [cpython](https://github.com/python/cpython)
 - [php](https://github.com/kachick/renovate-config-asdf/pull/1)
