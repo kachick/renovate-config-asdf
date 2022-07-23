@@ -13,9 +13,9 @@
       // Working but _ delimter snapshot is comment outed
       // "extractVersionTemplate": "^release(?<version>\\S+)",
       // "versioningTemplate": "regex:^(?<major>\\d+?)[_.](?<minor>\\d+?)[_.](?<patch>\\d+)$"
-      "extractVersionTemplate": "{{{replace '_' '.' version}}}",
-      "versioningTemplate": "regex:^(?<major>\\d+?)[_.](?<minor>\\d+?)[_.](?<patch>\\d+)$"
+      "extractVersionTemplate": "^release(?<version>\\S+)",
+      "versioningTemplate": "regex:^(?<major>\\d+?)[_.](?<minor>\\d+?)[_.](?<patch>\\d+)$",
+      "autoReplaceStringTemplate": "{{{replace '_' '.' newValue}}}"
     }
-  ],
-  "extractVersion": "^release(?<version>\\S+)"
+  ]
 }
