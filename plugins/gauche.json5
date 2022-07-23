@@ -10,8 +10,12 @@
       // https://regex101.com/r/L2micV
       "depNameTemplate": "shirok/Gauche",
       "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^release(?<version>\\S+)",
+      // Working but _ delimter snapshot is comment outed
+      // "extractVersionTemplate": "^release(?<version>\\S+)",
+      // "versioningTemplate": "regex:^(?<major>\\d+?)[_.](?<minor>\\d+?)[_.](?<patch>\\d+)$"
+      "extractVersionTemplate": "{{{replace '_' '.' version}}}",
       "versioningTemplate": "regex:^(?<major>\\d+?)[_.](?<minor>\\d+?)[_.](?<patch>\\d+)$"
     }
-  ]
+  ],
+  "extractVersion": "^release(?<version>\\S+)"
 }
