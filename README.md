@@ -58,7 +58,7 @@ Below is an actual example for me. It points default branch of this repository t
 - [kotlin](https://github.com/kachick/renovate-config-asdf/pull/25)
 - [scala](https://github.com/kachick/renovate-config-asdf/pull/24)
 - [clojure](https://github.com/kachick/renovate-config-asdf/pull/39)
-- [gauche](https://github.com/kachick/renovate-config-asdf/pull/42)
+- [gauche](https://github.com/kachick/renovate-config-asdf/pull/42) - `gosh -V` instead of `gauche --version` See: [docs](https://practical-scheme.net/gauche/man/gauche-refe/Invoking-Gosh.html#Invoking-Gosh)
 - [nim](https://github.com/kachick/renovate-config-asdf/pull/6)
 - [python](https://github.com/kachick/renovate-config-asdf/pull/22) - Currently works only for [cpython](https://github.com/python/cpython)
 - [php](https://github.com/kachick/renovate-config-asdf/pull/1)
