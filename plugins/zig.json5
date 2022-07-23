@@ -5,6 +5,7 @@
     {
       "fileMatch": [".tool-versions"],
       "matchStrings": ["zig (?<currentValue>.+?)\\n"],
+      // https://github.com/ziglang/zig/tags
       "depNameTemplate": "ziglang/zig",
       "datasourceTemplate": "github-tags"
     }
