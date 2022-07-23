@@ -15,7 +15,7 @@
       // "versioningTemplate": "regex:^(?<major>\\d+?)[_.](?<minor>\\d+?)[_.](?<patch>\\d+)$"
       "extractVersionTemplate": "^release(?<version>\\S+)",
       "versioningTemplate": "regex:^(?<major>\\d+?)[_.](?<minor>\\d+?)[_.](?<patch>\\d+)$",
-      "autoReplaceStringTemplate": "{{{replace '_' '.' newValue}}}"
+      "autoReplaceStringTemplate": "gauche {{{replace '_' '.' newVersion}}}"
     }
   ]
 }
