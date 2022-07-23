@@ -19,6 +19,10 @@ Bumping to `0.4.2` ...
 Done! you should manually push to GitHub with ...
 ```
 
+## Basic Regex ensuring
+
+Looks not in RE2, however https://regex101.com is useful. See https://regex101.com/r/L2micV as an actual example for gauche
+
 ## Ensure regex(RE2) in Ruby
 
 https://github.com/google/re2/wiki/Syntax is the reference.
@@ -55,4 +59,7 @@ irb(main):029:0> m[:major]
 
 ## Note
 
-- [How to write default.json](https://docs.renovatebot.com/config-presets/)
+- [Allowed syntax of default.json](https://docs.renovatebot.com/config-presets/)
+- [regexManagers](https://docs.renovatebot.com/modules/manager/regex/)
+- [datasource definitions](https://github.com/renovatebot/renovate/tree/2e957baed962d65cb8e40136edc142af6014ad95/lib/modules/datasource)
+- [versioning definitions](https://github.com/renovatebot/renovate/tree/2e957baed962d65cb8e40136edc142af6014ad95/lib/modules/versioning)
