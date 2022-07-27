@@ -40,4 +40,4 @@ jobs:
         run: npm install
       - uses: crystal-lang/install-crystal@v1
       - name: Validate
-        run: crystal run scripts/validator.cr
+        run: crystal run scripts/validator.cr -- run
