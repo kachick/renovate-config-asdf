@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "validate": "./validate.bash"
+    "validate": "./scripts/validator.cr"
   },
   "devDependencies": {
     "renovate": "^32.115.0"

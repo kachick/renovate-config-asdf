@@ -6,13 +6,13 @@ on:
       - '.github/workflows/ci.yml'
       - '**/*.json'
       - '**/*.json5'
-      - 'validate.bash'
+      - 'scripts/validator.cr'
   pull_request:
     paths:
       - '.github/workflows/ci.yml'
       - '**/*.json'
       - '**/*.json5'
-      - 'validate.bash'
+      - 'scripts/validator.cr'
 
 jobs:
   validate:
@@ -25,5 +25,6 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm install
+      - uses: crystal-lang/install-crystal@v1
       - name: Validate
-        run: npm run validate
+        run: crystal run scripts/validator.cr
