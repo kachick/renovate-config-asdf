@@ -6,16 +6,30 @@ on:
       - '.github/workflows/ci.yml'
       - '**/*.json'
       - '**/*.json5'
+      - 'spec/**'
       - 'scripts/validator.cr'
   pull_request:
     paths:
       - '.github/workflows/ci.yml'
       - '**/*.json'
       - '**/*.json5'
+      - 'spec/**'
       - 'scripts/validator.cr'
 
 jobs:
+  spec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+      - run: npm install
+      - uses: crystal-lang/install-crystal@v1
+      - run: crystal spec
   validate:
+    needs: [spec]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
