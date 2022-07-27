@@ -29,7 +29,6 @@ jobs:
       - uses: crystal-lang/install-crystal@v1
       - run: crystal spec
   validate:
-    needs: [spec]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
