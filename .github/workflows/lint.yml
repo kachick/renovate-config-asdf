@@ -8,8 +8,14 @@ on:
     paths-ignore:
       - 'LICENSE'
 jobs:
-  build:
+  dprint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: dprint/check@v2.1
+  crystal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: crystal-lang/install-crystal@v1
+      - run: crystal tool format --check
