@@ -22,10 +22,12 @@ release:
 
 lint-all: crystal-lint-check dprint-check
 
-.PHONY: crystal-lint-check
-crystal-lint-check:
-	crystal tool format --check
+crystal-lint-check: crystal-format-check
 	ameba
+
+.PHONY: crystal-format-check
+crystal-format-check:
+	crystal tool format --check
 
 .PHONY: dprint-check
 dprint-check:
