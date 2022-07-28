@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: 16
           cache: npm
-      - run: npm install
+      - run: npm ci
       - uses: crystal-lang/install-crystal@v1
       - run: make test
 
@@ -61,6 +61,5 @@ jobs:
         with:
           node-version: 16
           cache: npm
-      # npm ci --ignore-scripts do not cover RE2
-      - run: npm install
+      - run: npm ci # `--ignore-scripts` do not cover RE2
       - run: RENOVATE_CONFIG_FILE=${{ matrix.config }} npx renovate-config-validator
