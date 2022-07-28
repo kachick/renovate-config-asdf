@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: npm
       - run: npm ci
       - uses: crystal-lang/install-crystal@v1
@@ -59,7 +59,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: npm
       - run: npm ci # `--ignore-scripts` do not cover RE2
       - run: RENOVATE_CONFIG_FILE=${{ matrix.config }} npx renovate-config-validator
