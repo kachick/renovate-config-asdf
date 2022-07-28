@@ -1,5 +1,7 @@
 # renovate-config-asdf
 
+[![Build Status](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci.yml?query=branch%3Amain)
+
 ## Usage
 
 [Renovate sharable config](https://docs.renovatebot.com/config-presets/) for [.tool-versions (asdf)](https://github.com/asdf-vm/asdf-plugins/tree/master/plugins).
@@ -72,3 +74,4 @@ Below is an actual example for me. It points default branch of this repository t
 ## Note
 
 - [Official issue](https://github.com/renovatebot/renovate/issues/4051)
+- [How to add/fix plugins?](CONTRIBUTING.md)
