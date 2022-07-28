@@ -67,7 +67,7 @@ Below is an actual example for me. It points default branch of this repository t
 
 ### Useful tools
 
-- [dprint](https://pgithub.com/kachick/renovate-config-asdf/pull/8)
+- [dprint](https://github.com/kachick/renovate-config-asdf/pull/8)
 - [shellcheck](https://github.com/kachick/renovate-config-asdf/pull/29)
 - [shfmt](https://github.com/kachick/renovate-config-asdf/pull/30)
 
