@@ -16,13 +16,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: dprint/check@v2.1
-  crystal:
+  crystal-format:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: crystal-lang/install-crystal@v1
-      - run: make crystal-format-check
+      - run: crystal tool format
+  ameba:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    container:
+      image: crystallang/crystal
+    steps:
+      - uses: actions/checkout@v3
       - uses: crystal-ameba/github-action@v0.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
