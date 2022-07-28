@@ -6,7 +6,7 @@ module RenovateConfigAsdf
       processes = Dir.glob(globs).to_h do |path|
         {path, Process.new(env: ENV.to_h.merge({"RENOVATE_CONFIG_FILE" => path}), command: "npx", args: ["renovate-config-validator"], output: STDOUT, error: STDERR)}
       end
-      failures = processes.reject do |path, process|
+      failures = processes.reject do |_path, process|
         status = process.wait
         status.success?
       end
