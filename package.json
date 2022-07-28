@@ -1,7 +1,4 @@
 {
-  "scripts": {
-    "validate": "./scripts/validator.cr"
-  },
   "devDependencies": {
     "renovate": "^32.115.0"
   }
