@@ -13,17 +13,18 @@
 ## Release new version with github-tags
 
 ```console
-$ ./scripts/release_new_version.rb 0.4.2
-$ git push origin 0.4.2
+$ crystal run scripts/release_manager.cr -- run 0.4.2
 Bumping to `0.4.2` ...
 Done! you should manually push to GitHub with ...
+$ git push origin 0.4.2
+Completed!
 ```
 
 ## Basic Regex ensuring
 
 Looks not in RE2, however https://regex101.com is useful. See https://regex101.com/r/L2micV as an actual example for gauche
 
-## Ensure regex(RE2) in Ruby
+## How to check regex(RE2) ~ e.g. In Ruby ~
 
 https://github.com/google/re2/wiki/Syntax is the reference.
 Actual behavior checking in irb is below.
