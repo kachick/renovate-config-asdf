@@ -4,9 +4,11 @@ on:
     branches: [main]
     paths-ignore:
       - 'LICENSE'
+      - '.vscode'
   pull_request:
     paths-ignore:
       - 'LICENSE'
+      - '.vscode'
 jobs:
   dprint:
     runs-on: ubuntu-latest

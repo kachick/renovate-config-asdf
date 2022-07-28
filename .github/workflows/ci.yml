@@ -5,16 +5,20 @@ on:
     paths:
       - '.github/workflows/ci.yml'
       - '**/*.json'
+      - '!.vscode'
       - '**/*.json5'
       - 'spec/**'
       - 'scripts/validator.cr'
+      - 'Makefile'
   pull_request:
     paths:
       - '.github/workflows/ci.yml'
       - '**/*.json'
+      - '!.vscode'
       - '**/*.json5'
       - 'spec/**'
       - 'scripts/validator.cr'
+      - 'Makefile'
 
 jobs:
   test:
