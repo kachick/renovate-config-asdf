@@ -10,6 +10,7 @@ test:
 install-deps:
 	asdf install
 	npm install
+	echo 'Install ameba manually (recommend brew)'
 
 .PHONY: validate
 validate:
@@ -19,21 +20,23 @@ validate:
 release:
 	crystal run scripts/release_manager.cr -- run ${VERSION}
 
-lint-all: crystal-format-check dprint-check
+lint-all: crystal-lint-check dprint-check
 
-.PHONY: crystal-format-check
-crystal-format-check:
+.PHONY: crystal-lint-check
+crystal-lint-check:
 	crystal tool format --check
+	ameba
 
 .PHONY: dprint-check
 dprint-check:
 	dprint check
 
-lint-fix-all: crystal-format-fix dprint-fix
+lint-fix-all: crystal-lint-fix dprint-fix
 
-.PHONY: crystal-format-fix
-crystal-format-fix:
+.PHONY: crystal-lint-fix
+crystal-lint-fix:
 	crystal tool format
+	ameba --fix
 
 .PHONY: dprint-fix
 dprint-fix:
