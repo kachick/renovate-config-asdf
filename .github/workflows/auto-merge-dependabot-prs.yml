@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   auto-merge-dependabot-prs:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:

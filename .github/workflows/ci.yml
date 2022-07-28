@@ -22,6 +22,7 @@ on:
 
 jobs:
   test:
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -34,6 +35,7 @@ jobs:
       - run: make test
 
   set-matrix:
+    timeout-minutes: 1
     runs-on: ubuntu-latest
     outputs:
       configs: ${{ steps.set-matrix.outputs.value }}
@@ -46,6 +48,7 @@ jobs:
           echo "::set-output name=value::${configs}"
 
   validate:
+    timeout-minutes: 5
     needs: [set-matrix]
     runs-on: ubuntu-latest
     strategy:
