@@ -1,3 +1,30 @@
+## Setup environments
+
+```console
+$ make install-deps
+asdf install
+crystal 1.5.0 is already installed
+dprint 0.30.3 is already installed
+nodejs 18.7.0 is already installed
+npm install
+
+up to date, audited 691 packages in 1s
+
+145 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+```
+
+## Tests
+
+```console
+$ make check
+crystal tool format --check
+dprint check
+crystal spec
+```
+
 ## File type
 
 - Use [*.json5](https://github.com/renovatebot/renovate/issues/16001#issuecomment-1152568230) for all plugins to keep consistency. (Might be changed in future. VSCode does not run JSON schema for json5.)
@@ -13,7 +40,7 @@
 ## Release new version with github-tags
 
 ```console
-$ crystal run scripts/release_manager.cr -- run 0.4.2
+$ make release VERSION=0.4.2
 Bumping to `0.4.2` ...
 Done! you should manually push to GitHub with ...
 $ git push origin 0.4.2

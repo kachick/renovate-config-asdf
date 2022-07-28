@@ -4,6 +4,7 @@
     "editorconfig.editorconfig",
     "streetsidesoftware.code-spell-checker",
     "katjanakosic.vscode-json5",
-    "crystal-lang-tools.crystal-lang"
+    "crystal-lang-tools.crystal-lang",
+    "ms-vscode.makefile-tools"
   ]
 }
