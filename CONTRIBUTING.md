@@ -14,6 +14,11 @@ up to date, audited 691 packages in 1s
   run `npm fund` for details
 
 found 0 vulnerabilities
+
+# Install ameba for global
+$ brew install openssl@1.1
+$ brew tap veelenga/tap && brew install ameba
+...
 ```
 
 ## Tests
@@ -32,20 +37,10 @@ crystal spec
 
 ## Check actual behaviors with this repo
 
-1. Intentionally specify old version into [examples/.tool-versions].
+1. Intentionally specify old version into [example definition](examples/.tool-versions).
 2. Modify [root config](renovate.json) to trigger Renovate. So toggle `"ignore-this-label-just-for-trigger-renovate-1"` suffix.
 3. Check logs at [dashboard](https://app.renovatebot.com/dashboard#github/kachick/renovate-config-asdf). (Having private visibility?)
 4. Check PR has been sent as correct in [PRs](https://github.com/kachick/renovate-config-asdf/pulls).
-
-## Release new version with github-tags
-
-```console
-$ make release VERSION=0.4.2
-Bumping to `0.4.2` ...
-Done! you should manually push to GitHub with ...
-$ git push origin 0.4.2
-Completed!
-```
 
 ## Basic Regex ensuring
 
@@ -83,6 +78,16 @@ irb(main):028:0> m = _
 => #<RE2::MatchData "0.9.12" 1:"0" 2:"9" 3:"12">
 irb(main):029:0> m[:major]
 => "0"
+```
+
+## Release new version with github-tags
+
+```console
+$ make release VERSION=0.4.2
+Bumping to `0.4.2` ...
+Done! you should manually push to GitHub with ...
+$ git push origin 0.4.2
+Completed!
 ```
 
 ## Note

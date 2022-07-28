@@ -9,6 +9,7 @@
     "dprint",
     "idris",
     "lampepfl",
-    "shfmt"
+    "shfmt",
+    "veelenga"
   ]
 }
