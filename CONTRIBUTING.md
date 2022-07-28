@@ -13,7 +13,7 @@
 ## Release new version with github-tags
 
 ```console
-$ crystal run scripts/release.cr -- 0.4.2
+$ crystal run scripts/release_manager.cr -- run 0.4.2
 Bumping to `0.4.2` ...
 Done! you should manually push to GitHub with ...
 $ git push origin 0.4.2
