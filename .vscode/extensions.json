@@ -3,6 +3,7 @@
     "dprint.dprint",
     "editorconfig.editorconfig",
     "streetsidesoftware.code-spell-checker",
-    "katjanakosic.vscode-json5"
+    "katjanakosic.vscode-json5",
+    "crystal-lang-tools.crystal-lang"
   ]
 }
