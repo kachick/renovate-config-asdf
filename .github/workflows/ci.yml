@@ -38,8 +38,8 @@ jobs:
     outputs:
       configs: ${{ steps.set-matrix.outputs.value }}
     steps:
-      - name: make values
-        id: set-matrix
+      - uses: actions/checkout@v3
+      - id: set-matrix
         run: |
           config_by_line=$(git ls-files 'plugins' 'default.json' 'renovate.json')
           configs=$(jq -cnM --arg var "$config_by_line" '$var|split("\n")')
@@ -58,6 +58,6 @@ jobs:
         with:
           node-version: 16
           cache: npm
+      # npm ci --ignore-scripts do not cover RE2
       - run: npm install
-      - uses: crystal-lang/install-crystal@v1
       - run: RENOVATE_CONFIG_FILE=${${{ matrix.config }}} npx renovate-config-validator
