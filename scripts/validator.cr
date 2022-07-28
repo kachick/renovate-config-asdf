@@ -1,3 +1,5 @@
+#! /usr/bin/env crystal
+
 module RenovateConfigAsdf
   module Validator
     def self.validate(globs : Array(String)) : Tuple(Bool, String)
