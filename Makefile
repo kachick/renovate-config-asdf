@@ -35,6 +35,6 @@ lint-fix-all: crystal-format-fix dprint-fix
 crystal-format-fix:
 	crystal tool format
 
-.PHONY: dprint-check
+.PHONY: dprint-fix
 dprint-fix:
 	dprint fmt
