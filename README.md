@@ -37,7 +37,6 @@ Below is an actual example for me. It points default branch of this repository t
 ## Limitations
 
 - Want to cover asdf, however currently targeted only for some implementations.
-- [asdf-zig](https://github.com/asdf-community/asdf-zig) - I don't know why [it](plugins/zig.json5) does not work...
 - [asdf-java](https://github.com/halcyon/asdf-java) - Looks needed to read [this tsv](https://github.com/halcyon/asdf-java/tree/master/data)
 
 ## Working Examples
@@ -55,6 +54,7 @@ Below is an actual example for me. It points default branch of this repository t
 - [deno](https://github.com/kachick/renovate-config-asdf/pull/5)
 - [bun](https://github.com/kachick/renovate-config-asdf/pull/27)
 - [crystal](https://github.com/kachick/renovate-config-asdf/pull/7)
+- [zig](https://github.com/kachick/renovate-config-asdf/pull/81)
 - [elixir](https://github.com/kachick/renovate-config-asdf/pull/9)
 - [ruby](https://github.com/kachick/renovate-config-asdf/pull/16) - Currently works only for [CRuby](https://github.com/ruby/ruby)
 - [kotlin](https://github.com/kachick/renovate-config-asdf/pull/25)
