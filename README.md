@@ -65,11 +65,12 @@ Below is an actual example for me. It points default branch of this repository t
 - [python](https://github.com/kachick/renovate-config-asdf/pull/22) - Currently works only for [cpython](https://github.com/python/cpython)
 - [php](https://github.com/kachick/renovate-config-asdf/pull/1)
 
-### Useful tools
+### Tools
 
 - [dprint](https://github.com/kachick/renovate-config-asdf/pull/8)
 - [shellcheck](https://github.com/kachick/renovate-config-asdf/pull/29)
 - [shfmt](https://github.com/kachick/renovate-config-asdf/pull/30)
+- [kustomize](https://github.com/kachick/renovate-config-asdf/pull/92)
 
 ## Note
 
