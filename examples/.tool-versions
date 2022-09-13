@@ -23,3 +23,4 @@ bun 0.1.11
 shellcheck 0.8.0
 shfmt 3.5.1
 gauche 0.9.12
+kustomize 4.0.0
