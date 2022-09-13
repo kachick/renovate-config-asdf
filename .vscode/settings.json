@@ -11,6 +11,7 @@
     "kustomize",
     "lampepfl",
     "shfmt",
+    "trivy",
     "veelenga"
   ]
 }
