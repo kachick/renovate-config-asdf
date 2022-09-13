@@ -24,4 +24,4 @@ shellcheck 0.8.0
 shfmt 3.5.1
 gauche 0.9.12
 kustomize 4.5.7
-helm 3.6.0
+helm 3.9.4
