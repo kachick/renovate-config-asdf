@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump kustomize in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": [".tool-versions"],
+      "matchStrings": ["kustomize (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "kubernetes-sigs/kustomize",
+      "datasourceTemplate": "github-tags",
+      "extractVersionTemplate": "^kustomize/v(?<version>\\S+)"
+    }
+  ]
+}

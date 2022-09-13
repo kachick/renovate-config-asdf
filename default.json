@@ -19,6 +19,7 @@
     "local>kachick/renovate-config-asdf//plugins/idris.json5",
     "local>kachick/renovate-config-asdf//plugins/java.json5",
     "local>kachick/renovate-config-asdf//plugins/kotlin.json5",
+    "local>kachick/renovate-config-asdf//plugins/kustomize.json5",
     "local>kachick/renovate-config-asdf//plugins/scala.json5",
     "local>kachick/renovate-config-asdf//plugins/clojure.json5",
     "local>kachick/renovate-config-asdf//plugins/gauche.json5",
