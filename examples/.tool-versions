@@ -25,4 +25,4 @@ shfmt 3.5.1
 gauche 0.9.12
 kustomize 4.5.7
 helm 3.9.4
-trivy 0.30.0
+trivy 0.31.3
