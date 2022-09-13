@@ -16,6 +16,7 @@
     "local>kachick/renovate-config-asdf//plugins/erlang.json5",
     "local>kachick/renovate-config-asdf//plugins/nim.json5",
     "local>kachick/renovate-config-asdf//plugins/ocaml.json5",
+    "local>kachick/renovate-config-asdf//plugins/helm.json5",
     "local>kachick/renovate-config-asdf//plugins/idris.json5",
     "local>kachick/renovate-config-asdf//plugins/java.json5",
     "local>kachick/renovate-config-asdf//plugins/kotlin.json5",
