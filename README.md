@@ -71,6 +71,7 @@ Below is an actual example for me. It points default branch of this repository t
 - [shellcheck](https://github.com/kachick/renovate-config-asdf/pull/29)
 - [shfmt](https://github.com/kachick/renovate-config-asdf/pull/30)
 - [kustomize](https://github.com/kachick/renovate-config-asdf/pull/92)
+- [helm](https://github.com/kachick/renovate-config-asdf/pull/94)
 
 ## Note
 
