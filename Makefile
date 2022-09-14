@@ -20,7 +20,11 @@ validate:
 release:
 	crystal run scripts/release_manager.cr -- run ${VERSION}
 
-lint-all: crystal-lint-check dprint-check
+.PHONY: lint-examples
+lint-examples:
+	crystal run scripts/linter.cr -- run
+
+lint-all: crystal-lint-check dprint-check lint-examples
 
 crystal-lint-check: crystal-format-check
 	ameba

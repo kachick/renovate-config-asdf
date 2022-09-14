@@ -1,12 +1,12 @@
 require "./spec_helper"
 
 describe RenovateConfigAsdf::Validator do
-  it "returns success for empty globs" do
+  it "returns true for empty globs" do
     success, _message = RenovateConfigAsdf::Validator.validate(%w[])
     success.should eq(true)
   end
 
-  it "returns success for actual globs" do
+  it "returns true for actual globs" do
     success, _message = RenovateConfigAsdf::Validator.validate(%w[default.json])
     success.should eq(true)
   end
