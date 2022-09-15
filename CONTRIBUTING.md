@@ -15,9 +15,12 @@ up to date, audited 691 packages in 1s
 
 found 0 vulnerabilities
 
-# Install ameba for global
-$ brew install openssl@1.1
-$ brew tap veelenga/tap && brew install ameba
+shards install
+Resolving dependencies
+Fetching https://github.com/crystal-ameba/ameba.git
+Installing ameba (1.1.0)
+Postinstall of ameba: make bin && make run_file
+Writing shard.lock
 ...
 ```
 

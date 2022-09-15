@@ -1,0 +1,20 @@
+name: renovate-config-asdf
+version: 0.1.0
+
+authors:
+  - Kenichi Kamiya <kachick1@gmail.com>
+
+# description: |
+#   Short description of renovate-config-asdf
+
+# dependencies:
+#   pg:
+#     github: will/crystal-pg
+#     version: "~> 0.5"
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: ~> 1.1.0
+
+license: MIT

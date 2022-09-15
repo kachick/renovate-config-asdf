@@ -10,7 +10,7 @@ test:
 install-deps:
 	asdf install
 	npm install
-	echo 'Install ameba manually (recommend brew)'
+	shards install
 
 .PHONY: validate
 validate:
@@ -27,7 +27,7 @@ lint-examples:
 lint-all: crystal-lint-check dprint-check lint-examples
 
 crystal-lint-check: crystal-format-check
-	ameba
+	bin/ameba
 
 .PHONY: crystal-format-check
 crystal-format-check:
@@ -42,7 +42,7 @@ lint-fix-all: crystal-lint-fix dprint-fix
 .PHONY: crystal-lint-fix
 crystal-lint-fix:
 	crystal tool format
-	ameba --fix
+	bin/ameba --fix
 
 .PHONY: dprint-fix
 dprint-fix:

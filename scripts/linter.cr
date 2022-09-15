@@ -4,7 +4,7 @@ module RenovateConfigAsdf
   module Linter
     def self.lint(path : String) : Tuple(Bool, String)
       entries = File.read_lines(path)
-      plugins = entries.map { |line| line.split(' ').first }
+      plugins = entries.map(&.split(' ').first)
 
       is_plugins_uniq = plugins.uniq == plugins
       return {is_plugins_uniq, "Examples are duplicated"} unless is_plugins_uniq
