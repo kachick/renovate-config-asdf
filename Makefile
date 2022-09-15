@@ -12,23 +12,29 @@ install-deps:
 	asdf install
 	npm install
 	shards install
+	$(MAKE) build-tools
+
+.PHONY: build-tools
+build-tools:
+	mkdir -p bin
+	crystal build src/cli.cr -o bin/cli
 
 .PHONY: validate
 validate:
-	crystal run scripts/validator.cr -- run
+	./bin/cli validate
 
 .PHONY: release
 release:
-	crystal run scripts/release_manager.cr -- run ${VERSION}
+	./bin/cli release --version=${VERSION}
 
 .PHONY: scaffold
 scaffold:
-	crystal run scripts/scaffolder.cr -- run ${PLUGIN}
-	dprint fmt
+	./bin/cli scaffold --plugin=${PLUGIN}
+	$(MAKE) dprint-fix
 
 .PHONY: lint-definitions
 lint-definitions:
-	crystal run scripts/linter.cr -- run
+	./bin/cli lint
 
 lint-all: crystal-lint-check dprint-check lint-definitions
 

@@ -8,7 +8,7 @@ module RenovateConfigAsdf
     def initialize(@plugin : String)
     end
 
-    ECR.def_to_s("scripts/plugin-template.json5.ecr")
+    ECR.def_to_s("#{__DIR__}/plugin-template.json5.ecr")
 
     def self.scaffold(plugin : String) : String
       new(plugin).to_s
@@ -29,8 +29,4 @@ module RenovateConfigAsdf
       File.write("default.json", json.to_json)
     end
   end
-end
-
-if ARGV.size >= 2 && ARGV.first == "run"
-  RenovateConfigAsdf::Scaffolder.write(ARGV[1])
 end

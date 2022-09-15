@@ -1,5 +1,2 @@
 require "spec"
-require "../scripts/validator"
-require "../scripts/release_manager"
-require "../scripts/linter"
-require "../scripts/scaffolder"
+require "../src/renovate_cofig_asdf"

@@ -41,11 +41,3 @@ module RenovateConfigAsdf
     end
   end
 end
-
-if ARGV.size >= 1 && ARGV.first == "run"
-  success, message = RenovateConfigAsdf::Linter.lint_default_json("default.json")
-  raise(message) unless success
-
-  success, message = RenovateConfigAsdf::Linter.lint_example("examples/.tool-versions")
-  raise(message) unless success
-end

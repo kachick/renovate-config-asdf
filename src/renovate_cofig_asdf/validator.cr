@@ -14,8 +14,3 @@ module RenovateConfigAsdf
     end
   end
 end
-
-if ARGV.size >= 1 && ARGV.first == "run"
-  success, message = RenovateConfigAsdf::Validator.validate(globs: %w[plugins/*.json* renovate.json default.json])
-  raise(message) unless success
-end
