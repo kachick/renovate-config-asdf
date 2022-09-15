@@ -20,11 +20,11 @@ validate:
 release:
 	crystal run scripts/release_manager.cr -- run ${VERSION}
 
-.PHONY: lint-examples
-lint-examples:
+.PHONY: lint-definitions
+lint-definitions:
 	crystal run scripts/linter.cr -- run
 
-lint-all: crystal-lint-check dprint-check lint-examples
+lint-all: crystal-lint-check dprint-check lint-definitions
 
 crystal-lint-check: crystal-format-check
 	bin/ameba
