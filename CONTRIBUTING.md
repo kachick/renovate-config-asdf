@@ -28,7 +28,7 @@ crystal build src/cli.cr -o bin/cli
 ## Tools
 
 ```console
-❯ ./bin/cli -h
+$ ./bin/cli -h
 Usage: [arguments]
     -h, --help                       Show this help
     validate                         Validate definitions with renovate provided tool
@@ -72,38 +72,36 @@ crystal spec
 
 Looks not in RE2, however https://regex101.com is useful. See https://regex101.com/r/L2micV as an actual example for gauche
 
-## How to check regex(RE2) ~ e.g. In Ruby ~
+## Check actual RE2 behavior with Node.js
 
 https://github.com/google/re2/wiki/Syntax is the reference.
 Actual behavior checking in irb is below.
 
-Install https://github.com/mudge/re2/
+Need https://github.com/mudge/re2/ and the bindings.
 
 ```console
 $ brew install re2
-$ gem install re2 -- --with-re2-dir=$(brew --prefix re2)
-Building native extensions with: '--with-re2-dir=/home/linuxbrew/.linuxbrew/opt/re2'
-This could take a while...
-Successfully installed re2-1.4.0
-Parsing documentation for re2-1.4.0
-Installing ri documentation for re2-1.4.0
-Done installing documentation for re2 after 0 seconds
-1 gem installed
-$ irb -rre2
-irb(main):001:0>
+$ npm install
+$ node
+Welcome to Node.js v18.9.0.
+Type ".help" for more information.
 ```
 
-It looks replacing `(?<major>` with `(?P<major>`.
-
-```ruby
-irb(main):026:0> RE2::Regexp.new('^(?P<major>\\d+?)[_.](?P<minor>\d+?)[_.](?P<patch>\d+)$').match('0_9-12')
-=> nil
-irb(main):027:0> RE2::Regexp.new('^(?P<major>\\d+?)[_.](?P<minor>\d+?)[_.](?P<patch>\d+)$').match('0.9.12')
-=> #<RE2::MatchData "0.9.12" 1:"0" 2:"9" 3:"12">
-irb(main):028:0> m = _
-=> #<RE2::MatchData "0.9.12" 1:"0" 2:"9" 3:"12">
-irb(main):029:0> m[:major]
-=> "0"
+```js
+> const RE2 = require("re2");
+undefined
+> let pattern = new RE2("^v(?<version>\\S+)");
+undefined
+> pattern.exec("v1.25.2");
+[
+  'v1.25.2',
+  '1.25.2',
+  index: 0,
+  input: 'v1.25.2',
+  groups: [Object: null prototype] { version: '1.25.2' }
+]
+> pattern.exec("v1.25.2").groups["version"];
+'1.25.2'
 ```
 
 ## Release new version with github-tags
