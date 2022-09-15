@@ -35,6 +35,4 @@ end
 
 if ARGV.size >= 2 && ARGV.first == "run"
   RenovateConfigAsdf::ReleaseManager.release(ARGV[1])
-else
-  puts "did not specify new version"
 end
