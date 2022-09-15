@@ -38,6 +38,16 @@ crystal spec
 - Use [*.json5](https://github.com/renovatebot/renovate/issues/16001#issuecomment-1152568230) for all plugins to keep consistency. (Might be changed in future. VSCode does not run JSON schema for json5.)
 - Do **NOT** use [JSON5](https://json5.org/) extended features except comments, just using JSON5 as an alternative JSONC in this repo.
 
+## Define plugins
+
+- `github-tags` will work in most cases. We have the scaffold. Run and update diff.
+  - `make scaffold PLUGIN=awesome-plugin-name`
+- Some cases need struggling because of they have tricky versioning in github tags/releases. Examples are below.
+  - [Using renovate provided definitions](plugins/ruby.json5)
+  - [Using docker image for the datasource](plugins/gauche.json5)
+  - [Using multiple datasources because they have another repository in different versions](plugins/scala.json5)
+- [Some cases does not use semantic versioning or customized one](plugins/clojure.json5)
+
 ## Check actual behaviors with this repo
 
 1. Intentionally specify old version into [example definition](examples/.tool-versions).

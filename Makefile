@@ -1,4 +1,5 @@
 VERSION :=
+PLUGIN :=
 
 check: lint-all test validate
 
@@ -19,6 +20,11 @@ validate:
 .PHONY: release
 release:
 	crystal run scripts/release_manager.cr -- run ${VERSION}
+
+.PHONY: scaffold
+scaffold:
+	crystal run scripts/scaffolder.cr -- run ${PLUGIN}
+	dprint fmt
 
 .PHONY: lint-definitions
 lint-definitions:
