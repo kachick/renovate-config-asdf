@@ -10,7 +10,9 @@
   },
   "includes": ["**/*.{json,json5,md,yml}"],
   "excludes": [
-    ".git"
+    ".git",
+    "lib",
+    "bin"
   ],
   "plugins": [
     "https://plugins.dprint.dev/json-0.15.6.wasm",
