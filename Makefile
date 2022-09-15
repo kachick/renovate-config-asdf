@@ -12,10 +12,11 @@ install-deps:
 	asdf install
 	npm install
 	shards install
-	crystal build src/cli.cr -o bin/cli
+	$(MAKE) build-tools
 
 .PHONY: build-tools
 build-tools:
+	mkdir -p bin
 	crystal build src/cli.cr -o bin/cli
 
 .PHONY: validate
@@ -29,7 +30,7 @@ release:
 .PHONY: scaffold
 scaffold:
 	./bin/cli scaffold --plugin=${PLUGIN}
-	dprint fmt
+	$(MAKE) dprint-fix
 
 .PHONY: lint-definitions
 lint-definitions:
