@@ -21,10 +21,23 @@ Fetching https://github.com/crystal-ameba/ameba.git
 Installing ameba (1.1.0)
 Postinstall of ameba: make bin && make run_file
 Writing shard.lock
-...
+
+crystal build src/cli.cr -o bin/cli
 ```
 
-## Tests
+## Tools
+
+```console
+❯ ./bin/cli -h
+Usage: [arguments]
+    -h, --help                       Show this help
+    validate                         Validate definitions with renovate provided tool
+    lint                             Lint definitions
+    scaffold                         Generate files for first step of adding new plugins
+    release                          Add git tags in default.json
+```
+
+## Test tools
 
 ```console
 $ make check

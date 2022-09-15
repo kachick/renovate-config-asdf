@@ -32,7 +32,3 @@ module RenovateConfigAsdf
     end
   end
 end
-
-if ARGV.size >= 2 && ARGV.first == "run"
-  RenovateConfigAsdf::ReleaseManager.release(ARGV[1])
-end
