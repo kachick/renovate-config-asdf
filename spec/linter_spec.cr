@@ -2,7 +2,7 @@ require "./spec_helper"
 
 describe RenovateConfigAsdf::Linter do
   it "returns true for actual example" do
-    success, _message = RenovateConfigAsdf::Linter.lint("examples/.tool-versions")
+    success, _message = RenovateConfigAsdf::Linter.lint("spec/fixtures/.tool-versions-valid")
     success.should eq(true)
   end
 
