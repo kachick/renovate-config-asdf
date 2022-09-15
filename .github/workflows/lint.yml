@@ -29,4 +29,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: crystal-lang/install-crystal@v1
+      - run: make build-tools
       - run: make lint-definitions

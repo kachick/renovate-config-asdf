@@ -14,6 +14,10 @@ install-deps:
 	shards install
 	crystal build src/cli.cr -o bin/cli
 
+.PHONY: build-tools
+build-tools:
+	crystal build src/cli.cr -o bin/cli
+
 .PHONY: validate
 validate:
 	./bin/cli validate
