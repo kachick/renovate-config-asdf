@@ -46,7 +46,7 @@ crystal spec
   - [Using renovate provided definitions](plugins/ruby.json5)
   - [Using docker image for the datasource](plugins/gauche.json5)
   - [Using multiple datasources because they have another repository in different versions](plugins/scala.json5)
-- [Some cases does not use semantic versioning or customized one](plugins/clojure.json5)
+- [When it is using no semantic versioning or customized one](plugins/clojure.json5)
 
 ## Check actual behaviors with this repo
 
