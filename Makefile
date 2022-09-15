@@ -5,6 +5,7 @@ check: lint-all test validate
 
 .PHONY: test
 test:
+	node --test
 	crystal spec
 
 .PHONY: install-deps
