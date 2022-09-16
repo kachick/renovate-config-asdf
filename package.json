@@ -1,9 +1,9 @@
 {
   "devDependencies": {
-    "@tsconfig/node18-strictest-esm": "^1.0.1",
-    "@types/node": "^18.7.18",
-    "json5": "^2.2.1",
-    "re2": "^1.17.7",
-    "renovate": "^32.195.5"
+    "@tsconfig/node18-strictest-esm": "1.0.1",
+    "@types/node": "18.7.18",
+    "json5": "2.2.1",
+    "re2": "1.17.7",
+    "renovate": "32.195.5"
   }
 }
