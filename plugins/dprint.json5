@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump dprint in .tool-versions",
+  // Imported from https://github.com/kachick/renovate-config-dprint/blob/d057d2fafba244d3533b353924e4b4375abfae43/asdf.json
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["dprint (?<currentValue>.+?)\\n"],
+      // Plugin Fetcher Permalink: https://github.com/asdf-community/asdf-dprint/blob/28517e6ee649bad5c859d9ad09aebcd6bbbff2bf/bin/list-all#L11-L12
+      // DataSource URL: https://github.com/dprint/dprint/tags
+      "depNameTemplate": "dprint/dprint",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}

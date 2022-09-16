@@ -27,13 +27,13 @@ describe RenovateConfigAsdf::Linter do
     end
 
     it "returns false for missing entries" do
-      success, message = RenovateConfigAsdf::Linter.lint_default_json("spec/fixtures/default.json-invalid-missing")
+      success, message = RenovateConfigAsdf::Linter.lint_default_json("spec/fixtures/default-invalid-missing.json")
       success.should eq(false)
       message.should contain("Some plugins are not linked: [\"erlang\", \"nodejs\"]")
     end
 
     it "returns false for unsorted entries" do
-      success, message = RenovateConfigAsdf::Linter.lint_default_json("spec/fixtures/default.json-invalid-unsorted")
+      success, message = RenovateConfigAsdf::Linter.lint_default_json("spec/fixtures/default-invalid-unsorted.json")
       success.should eq(false)
       message.should contain("Examples are not sorted")
     end

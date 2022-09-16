@@ -6,6 +6,7 @@
     "local>kachick/renovate-config-asdf//plugins/clojure.json5",
     "local>kachick/renovate-config-asdf//plugins/crystal.json5",
     "local>kachick/renovate-config-asdf//plugins/deno.json5",
+    "local>kachick/renovate-config-asdf//plugins/dprint.json5",
     "local>kachick/renovate-config-asdf//plugins/elixir.json5",
     "local>kachick/renovate-config-asdf//plugins/elm.json5",
     "local>kachick/renovate-config-asdf//plugins/erlang.json5",
@@ -28,7 +29,6 @@
     "local>kachick/renovate-config-asdf//plugins/shellcheck.json5",
     "local>kachick/renovate-config-asdf//plugins/shfmt.json5",
     "local>kachick/renovate-config-asdf//plugins/trivy.json5",
-    "local>kachick/renovate-config-asdf//plugins/zig.json5",
-    "github>kachick/renovate-config-dprint:asdf"
+    "local>kachick/renovate-config-asdf//plugins/zig.json5"
   ]
 }
