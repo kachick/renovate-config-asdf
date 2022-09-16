@@ -3,7 +3,7 @@
   "description": "Bump bun in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": ["\\.tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["bun (?<currentValue>.+?)\\n"],
       // https://github.com/oven-sh/bun/tags
       "depNameTemplate": "oven-sh/bun",

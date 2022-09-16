@@ -3,7 +3,7 @@
   "description": "Bump deno in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": ["\\.tool-versions\\b"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["deno (?<currentValue>.+?)\\n"],
       "depNameTemplate": "denoland/deno",
       "datasourceTemplate": "github-releases",
