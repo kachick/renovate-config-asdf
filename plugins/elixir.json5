@@ -3,7 +3,7 @@
   "description": "Bump elixir in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": ["\\.tool-versions$"],
+      "fileMatch": [".tool-versions"],
       "matchStrings": ["elixir (?<currentValue>.+?)\\n"],
       "depNameTemplate": "elixir-lang/elixir",
       "datasourceTemplate": "github-tags",
