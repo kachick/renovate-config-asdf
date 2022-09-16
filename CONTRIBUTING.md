@@ -37,13 +37,16 @@ Usage: [arguments]
     release                          Add git tags in default.json
 ```
 
-## Test tools
+## Tests
 
 ```console
 $ make check
-crystal tool format --check
 dprint check
+./bin/cli lint
+npx tsc
+npx ts-node-test test/*.ts
 crystal spec
+./bin/cli validate
 ```
 
 ## File type
@@ -55,19 +58,21 @@ crystal spec
 
 - `github-tags` will work in most cases. We have the scaffold. Run and update diff.
   - `make scaffold PLUGIN=awesome-plugin-name`
-  - Add [RE2 tests with actual data](test/regex_test.mjs) if it has a typical definitions
+  - Add [RE2 tests with actual data](test/regex_test.ts) if it has a typical definitions
 - Some cases need struggling because of they have tricky versioning in github tags/releases. Examples are below.
   - [Using renovate provided definitions](plugins/ruby.json5)
   - [Using docker image for the datasource](plugins/gauche.json5)
   - [Using multiple datasources because they have another repository in different versions](plugins/scala.json5)
 - [When it is using no semantic versioning or customized one](plugins/clojure.json5)
 
-## Check actual behaviors with this repo
+## Check actual Renovate behaviors
 
 1. Intentionally specify old version into [example definition](examples/.tool-versions).
 2. Modify [root config](renovate.json) to trigger Renovate. So toggle `"ignore-this-label-just-for-trigger-renovate-1"` suffix.
-3. Check logs at [dashboard](https://app.renovatebot.com/dashboard#github/kachick/renovate-config-asdf). (Having private visibility?)
-4. Check PR has been sent as correct in [PRs](https://github.com/kachick/renovate-config-asdf/pulls).
+3. Check logs at [dashboard](https://app.renovatebot.com/dashboard#github/kachick/renovate-config-asdf).
+   - Need private permissions.
+   - [Check in forked repo before sending to upstream](#93) helps me a lot.
+4. [Check PR has been sent as correct](https://github.com/kachick/renovate-config-asdf/pulls?q=is%3Apr+label%3Arenovate+).
 
 ## Basic Regex ensuring
 
@@ -76,9 +81,8 @@ Looks not in RE2, however https://regex101.com is useful. See https://regex101.c
 ## Check actual RE2 behavior with Node.js
 
 https://github.com/google/re2/wiki/Syntax is the reference.
-Actual behavior checking in irb is below.
 
-Need https://github.com/mudge/re2/ and the bindings.
+Actual behavior checking requires https://github.com/mudge/re2/ and the bindings.
 
 ```console
 $ brew install re2
@@ -105,7 +109,7 @@ undefined
 '1.25.2'
 ```
 
-## Release new version with github-tags
+## Release new version with github-tags - # For maintainer
 
 ```console
 $ make release VERSION=0.4.2
