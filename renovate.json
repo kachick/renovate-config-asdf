@@ -5,6 +5,14 @@
     "github>kachick/renovate-config-dprint",
     "local>kachick/renovate-config-asdf"
   ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "rangeStrategy": "bump"
+    }
+  ],
   "labels": [
     "renovate",
     "dependencies",
