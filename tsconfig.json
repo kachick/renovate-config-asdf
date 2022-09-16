@@ -3,7 +3,7 @@
   "compilerOptions": {
     // https://www.typescriptlang.org/docs/handbook/esm-node.html
     "module": "node16",
-    "outDir": "./lib"
+    "noEmit": true
   },
-  "include": ["**/*.ts", "**/*.mjs"]
+  "include": ["**/*.ts"]
 }

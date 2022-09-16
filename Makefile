@@ -5,7 +5,8 @@ check: lint-all test validate
 
 .PHONY: test
 test:
-	node --test
+	npx tsc
+	npx ts-node-test test/*.ts
 	crystal spec
 
 .PHONY: install-deps
