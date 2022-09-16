@@ -3,7 +3,7 @@
   "description": "Bump haskell in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["haskell (?<currentValue>.+?)\\n"],
       "depNameTemplate": "ghc/ghc",
       "datasourceTemplate": "github-tags",

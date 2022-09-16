@@ -3,7 +3,7 @@
   "description": "Bump golang in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["golang (?<currentValue>.+?)\\n"],
       "depNameTemplate": "golang/go",
       "datasourceTemplate": "github-tags",

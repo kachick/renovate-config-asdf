@@ -3,7 +3,7 @@
   "description": "Bump ocaml in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["ocaml (?<currentValue>.+?)\\n"],
       "depNameTemplate": "ocaml/ocaml",
       "datasourceTemplate": "github-releases"

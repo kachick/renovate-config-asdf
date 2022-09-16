@@ -3,7 +3,7 @@
   "description": "Bump idris in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["idris (?<currentValue>.+?)\\n"],
       "depNameTemplate": "idris-lang/Idris-dev",
       "datasourceTemplate": "github-tags",

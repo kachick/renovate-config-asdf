@@ -3,7 +3,7 @@
   "description": "Bump nodejs in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["nodejs (?<currentValue>.+?)\\n"],
       "depNameTemplate": "nodejs/node",
       "datasourceTemplate": "github-tags",

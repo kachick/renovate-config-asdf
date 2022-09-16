@@ -3,7 +3,7 @@
   "description": "Bump erlang in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["erlang (?<currentValue>.+?)\\n"],
       "depNameTemplate": "erlang/otp",
       "datasourceTemplate": "github-tags",

@@ -3,7 +3,7 @@
   "description": "Bump kotlin in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["kotlin (?<currentValue>.+?)\\n"],
       "depNameTemplate": "JetBrains/kotlin",
       "datasourceTemplate": "github-releases",

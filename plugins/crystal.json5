@@ -3,7 +3,7 @@
   "description": "Bump crystal in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["crystal (?<currentValue>.+?)\\n"],
       "depNameTemplate": "crystal-lang/crystal",
       "datasourceTemplate": "github-tags"

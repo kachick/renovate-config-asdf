@@ -3,7 +3,7 @@
   "description": "Bump php in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["php (?<currentValue>.+?)\\n"],
       "depNameTemplate": "php/php-src",
       "datasourceTemplate": "github-tags",

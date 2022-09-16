@@ -3,7 +3,7 @@
   "description": "Bump shfmt in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["shfmt (?<currentValue>.+?)\\n"],
       // https://github.com/luizm/asdf-shfmt/blob/f8932529429eefe30af8efb23487d99d5c509278/bin/list-all#L3
       // https://github.com/mvdan/sh/releases

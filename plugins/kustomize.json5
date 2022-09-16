@@ -3,7 +3,7 @@
   "description": "Bump kustomize in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["kustomize (?<currentValue>.+?)\\n"],
       "depNameTemplate": "kubernetes-sigs/kustomize",
       "datasourceTemplate": "github-tags",

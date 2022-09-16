@@ -3,7 +3,7 @@
   "description": "Bump python in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["python (?<currentValue>.+?)\\n"],
       "depNameTemplate": "python/cpython",
       "datasourceTemplate": "github-tags",

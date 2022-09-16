@@ -86,6 +86,11 @@ test('extractVersionTemplate', (_t) => {
       } else {
         throw 'RE2 did not match to given string';
       }
+
+      const filePattern = new RE2(json5['regexManagers'][0]['fileMatch'][0]);
+      assert.equal(true, !!filePattern.exec('.tool-versions'));
+      assert.equal(true, !!filePattern.exec('examples/.tool-versions'));
+      assert.equal(false, !!filePattern.exec('spec/fixtures/.tool-versions-invalid-duplicated'));
     });
   });
 });

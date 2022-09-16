@@ -3,7 +3,7 @@
   "description": "Bump rust in .tool-versions",
   "regexManagers": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["rust (?<currentValue>.+?)\\n"],
       // https://github.com/rust-lang/rust/tags
       "depNameTemplate": "rust-lang/rust",

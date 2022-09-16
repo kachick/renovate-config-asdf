@@ -3,7 +3,7 @@
   "description": "Bump ruby in .tool-versions",
   "regexManagers42": [
     {
-      "fileMatch": [".tool-versions"],
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["ruby (?<currentValue>.+?)\\n"],
       "depNameTemplate": "ruby-version",
       "datasourceTemplate": "ruby-version"
