@@ -82,7 +82,7 @@ Looks not in RE2, however https://regex101.com is useful. See https://regex101.c
 
 https://github.com/google/re2/wiki/Syntax is the reference.
 
-Actual behavior checking requires https://github.com/mudge/re2/ and the bindings.
+Actual behavior checking requires https://github.com/google/re2/ and the bindings.
 
 ```console
 $ brew install re2
