@@ -30,7 +30,7 @@ module RenovateConfigAsdf
       json = Hash(String, String | Array(String)).from_json(File.read(path))
       entries = json["extends"]
       return {false, "Unexpected JSON schema"} unless entries.is_a?(Array(String))
-      plugins = entries.reject(&.includes?("dprint")).map(&.[%r<plugins/([^/]+)\.json5\z>, 1])
+      plugins = entries.map(&.[%r<plugins/([^/]+)\.json5\z>, 1])
       lint_plugins_list(plugins)
     end
 

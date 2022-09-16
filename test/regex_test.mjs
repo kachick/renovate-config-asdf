@@ -86,11 +86,19 @@ test('extractVersionTemplate', (_t) => {
       } else {
         throw 'RE2 did not match to given string';
       }
+    });
+  });
+});
 
-      const filePattern = new RE2(json5['regexManagers'][0]['fileMatch'][0]);
-      assert.equal(true, !!filePattern.exec('.tool-versions'));
-      assert.equal(true, !!filePattern.exec('examples/.tool-versions'));
-      assert.equal(false, !!filePattern.exec('spec/fixtures/.tool-versions-invalid-duplicated'));
+test('fileMatch', (_t) => {
+  fs.readdirSync('plugins').forEach(plugin => {
+    test(plugin, (_t) => {
+      const definition = fs.readFileSync(`plugins/${plugin}`, 'utf8');
+      const json5 = JSON5.parse(definition);
+      const pattern = new RE2(json5['regexManagers'][0]['fileMatch'][0]);
+      assert.equal(true, !!pattern.exec('.tool-versions'));
+      assert.equal(true, !!pattern.exec('examples/.tool-versions'));
+      assert.equal(false, !!pattern.exec('spec/fixtures/.tool-versions-invalid-duplicated'));
     });
   });
 });
