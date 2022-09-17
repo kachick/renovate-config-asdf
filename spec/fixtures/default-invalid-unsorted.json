@@ -17,6 +17,7 @@
     "local>kachick/renovate-config-asdf//plugins/java.json5",
     "local>kachick/renovate-config-asdf//plugins/kotlin.json5",
     "local>kachick/renovate-config-asdf//plugins/kustomize.json5",
+    "local>kachick/renovate-config-asdf//plugins/lua.json5",
     "local>kachick/renovate-config-asdf//plugins/nim.json5",
     "local>kachick/renovate-config-asdf//plugins/nodejs.json5",
     "local>kachick/renovate-config-asdf//plugins/ocaml.json5",
