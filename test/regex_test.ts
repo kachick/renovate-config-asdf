@@ -108,14 +108,15 @@ test('extractVersionTemplate', (_t) => {
       extracted: '0.31.3',
     },
   ].forEach(example => {
-    test(example.plugin, (_t) => {
-      const definition = fs.readFileSync(`plugins/${example.plugin}.json5`, 'utf8');
+    const { plugin, source, extracted } = example;
+    test(plugin, (_t) => {
+      const definition = fs.readFileSync(`plugins/${plugin}.json5`, 'utf8');
       const json5 = JSON5.parse(definition);
       const pattern = new RE2(json5['regexManagers'][0]['extractVersionTemplate']);
-      const matched = pattern.exec(example.source);
+      const matched = pattern.exec(source);
       if (matched) {
         // @ts-ignore
-        assert.equal(example.extracted, matched.groups['version']);
+        assert.equal(extracted, matched.groups['version']);
       } else {
         throw 'RE2 did not match to given string';
       }
