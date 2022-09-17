@@ -14,16 +14,18 @@ module RenovateConfigAsdf
       new(plugin).to_s
     end
 
+    def self.insert_entry(entries : Array(String), inserting : String) : Array(String)
+      position = entries.index { |entry| entry > inserting }
+      position ||= entries.size
+      [*entries[0, position], inserting, *entries[position, entries.size]]
+    end
+
     def self.write(plugin : String)
       json = Hash(String, String | Array(String)).from_json(File.read("default.json"))
       entries = json["extends"]
       raise "Unexpected schema of JSON" unless entries.is_a?(Array(String))
       new_entry = "local>kachick/renovate-config-asdf//plugins/#{plugin}.json5"
-
-      new_position = entries.index { |entry| entry > new_entry }
-      raise "Unexpected entries exist" unless new_position
-      entries.insert(new_position, new_entry)
-      json["extends"] = entries
+      json["extends"] = insert_entry(entries, new_entry)
 
       File.write("plugins/#{plugin}.json5", scaffold(plugin))
       File.write("default.json", json.to_json)
