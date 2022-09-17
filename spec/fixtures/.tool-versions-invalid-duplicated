@@ -15,7 +15,7 @@ java adoptopenjdk-16.0.0+36
 kotlin 1.7.10
 kotlin 1.7.10
 kustomize 4.5.7
-lua 5.1
+lua 5.1.1
 nim 1.6.6
 nodejs 18.9.0
 ocaml 4.14.0
