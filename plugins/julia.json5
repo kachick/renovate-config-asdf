@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump julia in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["^julia (?<currentValue>.+?)\\n"],
+      // Plugin Fetcher Permalink: https://github.com/rkyleg/asdf-julia/blob/1788f0fe83be72a348ee122141fb254e970b934a/bin/list-all#L12
+      // DataSource URL: https://github.com/JuliaLang/julia/releases
+      "depNameTemplate": "JuliaLang/julia",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>\\S+)"
+    }
+  ]
+}

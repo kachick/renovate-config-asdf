@@ -39,6 +39,10 @@ test('extractVersionTemplate', (_t) => {
     source: 'v1.3.4',
     extracted: '1.3.4',
   }, {
+    plugin: 'julia',
+    source: 'v1.8.1',
+    extracted: '1.8.1',
+  }, {
     plugin: 'kotlin',
     source: 'v1.7.10',
     extracted: '1.7.10',
