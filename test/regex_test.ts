@@ -47,6 +47,10 @@ test('extractVersionTemplate', (_t) => {
     source: 'kustomize/v4.5.7',
     extracted: '4.5.7',
   }, {
+    plugin: 'lua',
+    source: 'v5.4.4',
+    extracted: '5.4.4',
+  }, {
     plugin: 'nim',
     source: 'v1.6.6',
     extracted: '1.6.6',
