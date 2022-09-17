@@ -23,6 +23,7 @@
     "local>kachick/renovate-config-asdf//plugins/nim.json5",
     "local>kachick/renovate-config-asdf//plugins/nodejs.json5",
     "local>kachick/renovate-config-asdf//plugins/ocaml.json5",
+    "local>kachick/renovate-config-asdf//plugins/perl.json5",
     "local>kachick/renovate-config-asdf//plugins/php.json5",
     "local>kachick/renovate-config-asdf//plugins/python.json5",
     "local>kachick/renovate-config-asdf//plugins/ruby.json5",

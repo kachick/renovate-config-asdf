@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump perl in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["perl (?<currentValue>.+?)\\n"],
+      // Plugin Fetcher Permalink:
+      //   - https://github.com/ouest/asdf-perl/blob/4f4d4062ba626e7bc9dcdf25f867f9be18c56a3b/bin/list-all#L8
+      //   - https://github.com/skaji/perl-install/blob/876a45ee0b3aad51ac7351bd5e127babe07fb9b8/perl-install#L83
+      //   - That looks not depending to github-tags/github-releases, however looks we can get same info from `Perl/perl5` repo.
+      // DataSource URL: https://github.com/Perl/perl5/tags
+      "depNameTemplate": "Perl/perl5",
+      "datasourceTemplate": "github-tags",
+      "extractVersionTemplate": "^v(?<version>\\S+)"
+    }
+  ]
+}
