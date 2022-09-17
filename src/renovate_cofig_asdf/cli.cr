@@ -5,20 +5,23 @@ require "option_parser"
 require "./*"
 
 module RenovateConfigAsdf
-  module Cli
-    def self.run(args : Array(String))
+  class Cli
+    def initialize(@io : IO = STDOUT)
+    end
+
+    def run(args : Array(String))
       validate = false
       lint = false
       scaffold = false
       release = false
       plugin = ""
       version = ""
+      help = false
 
       parser = OptionParser.new do |psr|
         psr.banner = "Usage: [arguments]"
         psr.on("-h", "--help", "Show this help") do
-          puts psr
-          exit
+          help = true
         end
 
         psr.on("validate", "Validate definitions with renovate provided tool") do
@@ -40,13 +43,16 @@ module RenovateConfigAsdf
       parser.parse(args)
 
       case
+      when help
+        @io.puts(parser)
       when validate
         success, message = RenovateConfigAsdf::Validator.validate(globs: %w[plugins/*.json* renovate.json default.json])
         raise(message) unless success
       when lint
-        success, message = RenovateConfigAsdf::Linter.lint_default_json("default.json")
+        defined_plugins = RenovateConfigAsdf.defined_plugins
+        success, message = RenovateConfigAsdf::Linter.lint_default_json("default.json", defined_plugins)
         raise(message) unless success
-        success, message = RenovateConfigAsdf::Linter.lint_example("examples/.tool-versions")
+        success, message = RenovateConfigAsdf::Linter.lint_example("examples/.tool-versions", defined_plugins)
         raise(message) unless success
       when scaffold
         raise "Require to specify plugin name" if plugin == ""
@@ -55,7 +61,7 @@ module RenovateConfigAsdf
         raise "Require to specify new version" if version == ""
         RenovateConfigAsdf::ReleaseManager.release(version)
       else
-        puts parser
+        @io.puts(parser)
         exit(1)
       end
     end
