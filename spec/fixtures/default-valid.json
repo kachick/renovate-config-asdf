@@ -2,7 +2,9 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Sharable config for .tool-version with asdf",
   "extends": [
+    "local>kachick/renovate-config-asdf//plugins/crystal.json5",
     "local>kachick/renovate-config-asdf//plugins/deno.json5",
+    "local>kachick/renovate-config-asdf//plugins/ruby.json5",
     "local>kachick/renovate-config-asdf//plugins/rust.json5"
   ]
 }
