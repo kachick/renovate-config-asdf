@@ -60,6 +60,7 @@ Below is an actual example for me. It points default branch of this repository t
 - [nim](https://github.com/kachick/renovate-config-asdf/pull/6)
 - [nodejs](https://github.com/kachick/renovate-config-asdf/pull/21)
 - [ocaml](https://github.com/kachick/renovate-config-asdf/pull/15)
+- [perl](https://github.com/kachick/renovate-config-asdf/pull/120)
 - [php](https://github.com/kachick/renovate-config-asdf/pull/1)
 - [python](https://github.com/kachick/renovate-config-asdf/pull/22) - Currently works only for [cpython](https://github.com/python/cpython)
 - [ruby](https://github.com/kachick/renovate-config-asdf/pull/16) - Currently works only for [CRuby](https://github.com/ruby/ruby)
