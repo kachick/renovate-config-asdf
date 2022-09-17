@@ -26,5 +26,17 @@
     "renovate",
     "dependencies",
     "ignore-this-label-just-for-trigger-renovate-2"
+  ],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/tests/**",
+    "**/__fixtures__/**",
+    "**/fixtures/**",
+    "bin/",
+    "lib/"
   ]
 }

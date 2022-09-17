@@ -102,7 +102,7 @@ test('fileMatch', (_t) => {
       const pattern = new RE2(json5['regexManagers'][0]['fileMatch'][0]);
       assert.equal(true, !!pattern.exec('.tool-versions'));
       assert.equal(true, !!pattern.exec('examples/.tool-versions'));
-      // assert.equal(false, !!pattern.exec('spec/fixtures/.tool-versions-invalid-duplicated'));
+      assert.equal(false, !!pattern.exec('spec/fixtures/.tool-versions-invalid-duplicated'));
     });
   });
 });
