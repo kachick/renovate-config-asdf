@@ -23,7 +23,7 @@ perl 5.37.4
 php 8.1.10
 python 3.10.7
 ruby 3.1.2
-rust 1.63.0
+rust 1.64.0
 scala 3.2.0
 shellcheck 0.8.0
 shfmt 3.5.1
