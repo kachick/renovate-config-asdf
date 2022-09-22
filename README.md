@@ -75,6 +75,7 @@ Below is an actual example for me. It points default branch of this repository t
 - [kustomize](https://github.com/kachick/renovate-config-asdf/pull/92)
 - [shellcheck](https://github.com/kachick/renovate-config-asdf/pull/29)
 - [shfmt](https://github.com/kachick/renovate-config-asdf/pull/30)
+- [terraform](https://github.com/kachick/renovate-config-asdf/pull/137)
 - [trivy](https://github.com/kachick/renovate-config-asdf/pull/96)
 
 ## Note
