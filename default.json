@@ -31,6 +31,7 @@
     "local>kachick/renovate-config-asdf//plugins/scala.json5",
     "local>kachick/renovate-config-asdf//plugins/shellcheck.json5",
     "local>kachick/renovate-config-asdf//plugins/shfmt.json5",
+    "local>kachick/renovate-config-asdf//plugins/terraform.json5",
     "local>kachick/renovate-config-asdf//plugins/trivy.json5",
     "local>kachick/renovate-config-asdf//plugins/zig.json5"
   ]
