@@ -103,6 +103,11 @@ test('extractVersionTemplate', (_t) => {
       extracted: '3.5.1',
     },
     {
+      plugin: 'terraform',
+      source: 'v1.2.0',
+      extracted: '1.2.0',
+    },
+    {
       plugin: 'trivy',
       source: 'v0.31.3',
       extracted: '0.31.3',
