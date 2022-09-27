@@ -6,6 +6,6 @@
     "re2": "^1.17.7",
     "renovate": "^32.208.0",
     "ts-node-test": "^0.2.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.4"
   }
 }
