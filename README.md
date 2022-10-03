@@ -70,6 +70,7 @@ Below is an actual example for me. It points default branch of this repository t
 
 ### Tools
 
+- [direnv](https://github.com/kachick/renovate-config-asdf/pull/167)
 - [dprint](https://github.com/kachick/renovate-config-asdf/pull/8)
 - [helm](https://github.com/kachick/renovate-config-asdf/pull/94)
 - [kustomize](https://github.com/kachick/renovate-config-asdf/pull/92)

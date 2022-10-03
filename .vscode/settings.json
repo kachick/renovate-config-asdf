@@ -6,6 +6,7 @@
     "cpython",
     "deno",
     "denoland",
+    "direnv",
     "dprint",
     "idris",
     "kustomize",
