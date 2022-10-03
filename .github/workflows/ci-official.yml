@@ -1,4 +1,4 @@
-name: CI - renovate official validator
+name: CI - Official
 on:
   push:
     branches: [main]
