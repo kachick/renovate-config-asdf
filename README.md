@@ -1,6 +1,6 @@
 # renovate-config-asdf
 
-[![Build Status - Official Validator](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci-official.yml.yml/badge.svg?branch=main)](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci-official.yml?query=branch%3Amain)
+[![Build Status - Official Validator](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci-official.yml/badge.svg?branch=main)](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci-official.yml?query=branch%3Amain)
 [![Build Status - Regex](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci-typescript.yml/badge.svg?branch=main)](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci-typescript.yml?query=branch%3Amain)
 [![Build Status - Build Tools](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci-crystal.yml/badge.svg?branch=main)](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci-crystal.yml?query=branch%3Amain)
 
