@@ -58,7 +58,7 @@ crystal spec
 
 - `github-tags` or `github-releases` will work in most cases. We have the scaffold. Run and update diff.
   - `make scaffold PLUGIN=awesome-plugin-name`
-  - Add [RE2 tests with actual data](test/regex_test.ts) if it has a typical definitions
+  - Add [RE2 tests with actual data](test/examples.ts) if it has `extractVersionTemplate`
 - Some cases need struggling because of they have tricky versioning in github tags/releases. Examples are below.
   - [Using renovate provided definitions](plugins/ruby.json5)
   - [Using docker image for the datasource](plugins/gauche.json5)
