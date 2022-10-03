@@ -2,6 +2,7 @@ bun 0.1.13
 clojure 1.11.1.1165
 crystal 1.5.1
 deno 1.26.0
+direnv 2.30.2
 dprint 0.32.1
 elixir 1.14.0
 elm 0.19.1

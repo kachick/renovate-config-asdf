@@ -18,6 +18,11 @@ test('extractVersionTemplate', (_t) => {
       extracted: '1.25.2',
     },
     {
+      plugin: 'direnv',
+      source: 'v2.32.1',
+      extracted: '2.32.1',
+    },
+    {
       plugin: 'elixir',
       source: 'v1.14.0',
       extracted: '1.14.0',

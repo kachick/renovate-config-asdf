@@ -6,6 +6,7 @@
     "local>kachick/renovate-config-asdf//plugins/clojure.json5",
     "local>kachick/renovate-config-asdf//plugins/crystal.json5",
     "local>kachick/renovate-config-asdf//plugins/deno.json5",
+    "local>kachick/renovate-config-asdf//plugins/direnv.json5",
     "local>kachick/renovate-config-asdf//plugins/dprint.json5",
     "local>kachick/renovate-config-asdf//plugins/elixir.json5",
     "local>kachick/renovate-config-asdf//plugins/elm.json5",
