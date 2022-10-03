@@ -29,20 +29,20 @@ interface RegExManager extends RegexManagerTemplates {
 }
 
 test('extractVersionTemplate', async (t) => {
-  const plugins = new Set<string>(examples.map((example) => example.plugin));
+  const plugins = new Set(examples.map((example) => example.plugin));
 
-  const pluginPaths = fs.readdirSync('plugins');
-  for (const basename of pluginPaths) {
+  for (const basename of fs.readdirSync('plugins')) {
     const pluginPath = path.join('plugins', basename);
     const plugin = path.parse(pluginPath).name;
-    await t.test(`${plugin} - exists`, (_t) => {
-      const definition = fs.readFileSync(pluginPath, 'utf8');
-      const json5 = JSON5.parse(definition);
-      const regexManagers = json5['regexManagers'] as RegExManager[];
-      if (regexManagers.some((regexManager) => 'extractVersionTemplate' in regexManager)) {
+    const definition = fs.readFileSync(pluginPath, 'utf8');
+    const json5 = JSON5.parse(definition);
+    const regexManagers = json5['regexManagers'] as RegExManager[];
+
+    if ((plugin !== 'java') && regexManagers.some((regexManager) => 'extractVersionTemplate' in regexManager)) {
+      await t.test(`${plugin} - exists`, (_t) => {
         assert.equal(true, plugins.has(plugin));
-      }
-    });
+      });
+    }
   }
 
   for (const example of examples) {
@@ -50,14 +50,20 @@ test('extractVersionTemplate', async (t) => {
     await t.test(`${plugin} - pattern`, (_t) => {
       const definition = fs.readFileSync(`plugins/${plugin}.json5`, 'utf8');
       const json5 = JSON5.parse(definition);
-      const pattern = new RE2(json5['regexManagers'][0]['extractVersionTemplate']);
+      const regexManagers = json5['regexManagers'] as RegExManager[];
+
+      const patterns = regexManagers.flatMap((regexManager) => {
+        const patternString = regexManager['extractVersionTemplate'];
+        return patternString ? new RE2(patternString) : [];
+      });
+
+      assert(patterns.length === 1);
+      const pattern = patterns[0];
+      assert(pattern);
       const matched = pattern.exec(source);
-      if (matched) {
-        // @ts-ignore
-        assert.equal(extracted, matched.groups['version']);
-      } else {
-        throw 'RE2 did not match to given string';
-      }
+      assert(matched);
+      // @ts-ignore - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
+      assert.equal(extracted, matched.groups['version']);
     });
   }
 });
@@ -68,14 +74,15 @@ test('fileMatch', async (t) => {
       const definition = fs.readFileSync(`plugins/${plugin}`, 'utf8');
       const json5 = JSON5.parse(definition);
       const regexManagers = json5['regexManagers'] as RegExManager[];
-      regexManagers.forEach((regexManager) => {
+      for (const regexManager of regexManagers) {
+        assert(regexManager['fileMatch'].length === 1);
         const patternString = regexManager['fileMatch'][0];
         assert(patternString);
         const pattern = new RE2(patternString);
         assert.equal(true, !!pattern.exec('.tool-versions'));
         assert.equal(true, !!pattern.exec('examples/.tool-versions'));
         assert.equal(false, !!pattern.exec('spec/fixtures/.tool-versions-invalid-duplicated'));
-      });
+      }
     });
   }
 });
