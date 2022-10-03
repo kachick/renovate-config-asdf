@@ -10,26 +10,26 @@ describe RenovateConfigAsdf::Scaffolder do
     end
   end
 
-  describe ".insert_entry" do
+  describe ".merge_entries" do
     it "returns new array that inserts given entry into correct position" do
       entires = %w(bun crystal ruby)
-      RenovateConfigAsdf::Scaffolder.insert_entry(entires, "deno").should eq(%w(bun crystal deno ruby))
+      RenovateConfigAsdf::Scaffolder.merge_entries(entires, "deno").should eq(%w(bun crystal deno ruby))
     end
 
     it "does not touch base entries" do
       entires = %w(bun crystal ruby)
-      RenovateConfigAsdf::Scaffolder.insert_entry(entires, "deno")
+      RenovateConfigAsdf::Scaffolder.merge_entries(entires, "deno")
       entires.should eq(%w(bun crystal ruby))
     end
 
     it "works even if given entry will be first position" do
       entires = %w(crystal ruby)
-      RenovateConfigAsdf::Scaffolder.insert_entry(entires, "bun").should eq(%w(bun crystal ruby))
+      RenovateConfigAsdf::Scaffolder.merge_entries(entires, "bun").should eq(%w(bun crystal ruby))
     end
 
     it "works even if given entry will be last position" do
       entires = %w(bun crystal)
-      RenovateConfigAsdf::Scaffolder.insert_entry(entires, "ruby").should eq(%w(bun crystal ruby))
+      RenovateConfigAsdf::Scaffolder.merge_entries(entires, "ruby").should eq(%w(bun crystal ruby))
     end
   end
 
@@ -62,7 +62,7 @@ describe RenovateConfigAsdf::Scaffolder do
       }
       JSON
 
-      json_format.from_json(RenovateConfigAsdf::Scaffolder.updated_defaullt_json("ruby", origin)).should eq(json_format.from_json(expected))
+      json_format.from_json(RenovateConfigAsdf::Scaffolder.updated_defaullt_json(origin, "ruby")).should eq(json_format.from_json(expected))
     end
   end
 
@@ -81,7 +81,7 @@ describe RenovateConfigAsdf::Scaffolder do
       rust 1.63.0
       ASDF
 
-      RenovateConfigAsdf::Scaffolder.updated_example("ruby", origin).should eq(expected)
+      RenovateConfigAsdf::Scaffolder.updated_example(origin, "ruby").should eq(expected)
     end
   end
 end
