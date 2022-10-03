@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump direnv in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["direnv (?<currentValue>.+?)\\n"],
+      // Plugin Fetcher Permalink: https://github.com/asdf-community/asdf-direnv/blob/62c2708ae8faedc4df564b7242fa4eff0f20b0b7/bin/list-all#L10-L15
+      // DataSource URL: https://github.com/direnv/direnv/releases
+      "depNameTemplate": "direnv/direnv",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>\\S+)"
+    }
+  ]
+}
