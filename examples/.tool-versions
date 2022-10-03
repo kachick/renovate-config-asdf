@@ -5,7 +5,7 @@ deno 1.26.0
 dprint 0.32.1
 elixir 1.14.0
 elm 0.19.1
-erlang 25.0.4
+erlang 25.1.1
 gauche 0.9.12
 golang 1.19.1
 haskell 9.4.2
