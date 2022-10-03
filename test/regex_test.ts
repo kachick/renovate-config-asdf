@@ -74,6 +74,12 @@ test('extractVersionTemplate', async (t) => {
       extracted: '1.3.4',
     },
     {
+      // Currently skipping Java 17 and 18 tests because this test does not care multiple definitions for one plugin for now
+      plugin: 'java',
+      source: 'jdk-16.0.2+7',
+      extracted: '16.0.2+7',
+    },
+    {
       plugin: 'julia',
       source: 'v1.8.1',
       extracted: '1.8.1',
@@ -117,6 +123,13 @@ test('extractVersionTemplate', async (t) => {
       plugin: 'python',
       source: 'v3.9.14',
       extracted: '3.9.14',
+    },
+    {
+      // Currently skipping scala3 tests because this test does not care multiple definitions for one plugin for now
+      // https://github.com/scala/scala/tags
+      plugin: 'scala',
+      source: 'v2.12.17',
+      extracted: '2.12.17',
     },
     {
       plugin: 'shellcheck',
