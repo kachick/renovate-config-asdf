@@ -1,39 +1,24 @@
-name: CI
+name: CI - renovate official validator
 on:
   push:
     branches: [main]
     paths:
-      - '.github/workflows/ci.yml'
-      - '**/*.json'
-      - '!.vscode'
-      - '**/*.json5'
-      - 'spec/**'
-      - 'src/**'
-      - 'Makefile'
+      - '.github/workflows/ci-official.yml'
+      - 'plugins/*.json5'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'default.json'
+      - 'renovate.json'
   pull_request:
     paths:
-      - '.github/workflows/ci.yml'
-      - '**/*.json'
-      - '!.vscode'
-      - '**/*.json5'
-      - 'spec/**'
-      - 'src/**'
-      - 'Makefile'
+      - '.github/workflows/ci-official.yml'
+      - 'plugins/*.json5'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'default.json'
+      - 'renovate.json'
 
 jobs:
-  test:
-    timeout-minutes: 5
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: npm
-      - run: npm ci
-      - uses: crystal-lang/install-crystal@v1
-      - run: make test
-
   set-matrix:
     timeout-minutes: 1
     runs-on: ubuntu-latest
