@@ -84,4 +84,29 @@ describe RenovateConfigAsdf::Scaffolder do
       RenovateConfigAsdf::Scaffolder.updated_example(origin, "ruby").should eq(expected)
     end
   end
+
+  describe ".touched_renovate_json" do
+    it "returns string that toggled with rand suffix label" do
+      origin = <<-JSON
+      {
+        "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+        "dependencyDashboard": true,
+        "extends": [
+          "config:base",
+          "github>kachick/renovate-config-dprint:plugins",
+          "local>kachick/renovate-config-asdf"
+        ],
+        "labels": [
+          "renovate",
+          "dependencies",
+          "ignore-this-label-just-for-trigger-renovate-97fbb3"
+        ]
+      }
+      JSON
+
+      result = RenovateConfigAsdf::Scaffolder.touched_renovate_json(origin)
+      result.should_not match(/"ignore-this-label-just-for-trigger-renovate-97fbb3"/)
+      result.should match(/"ignore-this-label-just-for-trigger-renovate-[0-9a-z]{6}"/)
+    end
+  end
 end

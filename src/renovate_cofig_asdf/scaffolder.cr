@@ -5,6 +5,7 @@ require "json"
 
 module RenovateConfigAsdf
   class Scaffolder
+    RENOVATE_JSON_PATH         = "renovate.json"
     DEAFULT_JSON_PATH          = "default.json"
     EXAMPLE_TOOL_VERSIONS_PATH = "examples/.tool-versions"
 
@@ -37,14 +38,20 @@ module RenovateConfigAsdf
       merge_entries(entires, "#{plugin} <UPDATEME!>\n").join
     end
 
+    def self.touched_renovate_json(origin : String) : String
+      origin.sub(/"ignore-this-label-just-for-trigger-renovate-(\S+?)"/, %Q("ignore-this-label-just-for-trigger-renovate-#{Random.new.hex[0, 6]}"))
+    end
+
     def self.write(plugin : String)
       config = scaffold(plugin)
       new_json = updated_defaullt_json(File.read(DEAFULT_JSON_PATH), plugin)
       new_example = updated_example(File.read(EXAMPLE_TOOL_VERSIONS_PATH), plugin)
+      new_renovate_json = touched_renovate_json(File.read(RENOVATE_JSON_PATH))
 
       File.write("plugins/#{plugin}.json5", config)
       File.write(DEAFULT_JSON_PATH, new_json)
       File.write(EXAMPLE_TOOL_VERSIONS_PATH, new_example)
+      File.write(RENOVATE_JSON_PATH, new_renovate_json)
     end
   end
 end
