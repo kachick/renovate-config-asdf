@@ -15,8 +15,7 @@ module RenovateConfigAsdf
     end
 
     def self.merge_entries(entries : Array(String), inserting : String) : Array(String)
-      position = entries.index { |entry| entry > inserting }
-      position ||= entries.size
+      position = entries.index { |entry| entry > inserting } || entries.size
       [*entries[0, position], inserting, *entries[position, entries.size]]
     end
 

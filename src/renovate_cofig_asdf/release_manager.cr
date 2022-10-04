@@ -11,12 +11,9 @@ module RenovateConfigAsdf
 
       `git switch -c "#{working_branch}"`
 
-      File.open("default.json", "r+") do |file|
-        current = file.gets_to_end
-        replaced = current.gsub(%r[(?<before>"local>kachick/renovate-config-asdf//plugins/\S+?\.json5?)(?<after>",?)], "\\k<before>##{version}\\k<after>")
-        file.rewind
-        file.write_string(replaced.to_slice)
-      end
+      origin = File.read("default.json")
+      replaced = origin.gsub(%r[(?<before>"local>kachick/renovate-config-asdf//plugins/\S+?\.json5?)(?<after>",?)], "\\k<before>##{version}\\k<after>")
+      File.write("default.json", replaced)
 
       `git add default.json`
       `git commit -m "Release version #{version}"`
