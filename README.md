@@ -13,12 +13,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "github>kachick/renovate-config-asdf#1.4.1"
+    "github>kachick/renovate-config-asdf#1.5.0"
   ]
 }
 ```
 
-This example referenced stable version as `#1.4.1`. Versions can be checked in [github-tags](https://github.com/kachick/renovate-config-asdf/tags).
+This example referenced stable version as `#1.5.0`. Versions can be checked in [github-tags](https://github.com/kachick/renovate-config-asdf/tags).
 Because of default branch is frequently changed for developping.
 
 If you want to narrow Renovate effect, for example you are basically using dependabot, removing `config:base` and specifying `enabledManagers` might fit.
