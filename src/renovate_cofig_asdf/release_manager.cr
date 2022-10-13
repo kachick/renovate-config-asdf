@@ -12,7 +12,7 @@ module RenovateConfigAsdf
       `git switch -c "#{working_branch}"`
 
       origin = File.read("default.json")
-      replaced = origin.gsub(%r[(?<before>"local>kachick/renovate-config-asdf//plugins/\S+?\.json5?)(?<after>",?)], "\\k<before>##{version}\\k<after>")
+      replaced = releasing_json(origin, version)
       File.write("default.json", replaced)
 
       `git add default.json`
@@ -26,6 +26,12 @@ module RenovateConfigAsdf
 
     def self.version?(version : String) : Bool
       /\A\d+?\.\d+?\.\d+\z/.matches?(version)
+    end
+
+    def self.releasing_json(origin : String, version : String) : String
+      raise ArgumentError.new("given #{version} does not satisfy our versioning format") unless version?(version)
+
+      origin.gsub(%r["(?:local|github)(?<before>>kachick/renovate-config-asdf//plugins/\S+?\.json5?)(?<after>",?)], "\"github\\k<before>##{version}\\k<after>")
     end
   end
 end

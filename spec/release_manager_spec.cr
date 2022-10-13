@@ -19,4 +19,44 @@ describe RenovateConfigAsdf::ReleaseManager do
       end
     end
   end
+
+  describe ".releasing_json" do
+    json_format = Hash(String, String | Array(String))
+
+    origin = <<-JSON
+    {
+      "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+      "description": "Sharable config for .tool-version with asdf",
+      "extends": [
+        "local>kachick/renovate-config-asdf//plugins/crystal.json5",
+        "local>kachick/renovate-config-asdf//plugins/deno.json5",
+        "local>kachick/renovate-config-asdf//plugins/rust.json5"
+      ]
+    }
+    JSON
+
+    it "raises ArgumentError when given an incorrect version" do
+      expect_raises(ArgumentError) do
+        RenovateConfigAsdf::ReleaseManager.releasing_json(origin, "0.4.x")
+      end
+    end
+
+    it "returns replaced JSON with given version" do
+      json_format.from_json(RenovateConfigAsdf::ReleaseManager.releasing_json(origin, "1.5.0")).should eq(
+        json_format.from_json(
+          <<-JSON
+          {
+            "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+            "description": "Sharable config for .tool-version with asdf",
+            "extends": [
+              "github>kachick/renovate-config-asdf//plugins/crystal.json5#1.5.0",
+              "github>kachick/renovate-config-asdf//plugins/deno.json5#1.5.0",
+              "github>kachick/renovate-config-asdf//plugins/rust.json5#1.5.0"
+            ]
+          }
+          JSON
+        )
+      )
+    end
+  end
 end
