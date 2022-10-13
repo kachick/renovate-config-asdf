@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump awscli in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["^awscli (?<currentValue>.+?)\\n"],
+      // Plugin Fetcher Permalink:
+      //   - https://github.com/asdf-vm/asdf-plugins/blob/ba096638f9dc867bf9a8f7791f22e31d800d3d93/plugins/awscli#L1
+      //   - https://github.com/MetricMike/asdf-awscli/blob/c645552054ad8a8bf3521cc37e7f44ea9dba1def/lib/utils.bash#L5
+      //   - https://github.com/MetricMike/asdf-awscli/blob/c645552054ad8a8bf3521cc37e7f44ea9dba1def/lib/utils.bash#L23-L31
+      // DataSource URL: https://github.com/aws/aws-cli/tags
+      "depNameTemplate": "aws/aws-cli",
+      "datasourceTemplate": "github-tags"
+    }
+  ]
+}
