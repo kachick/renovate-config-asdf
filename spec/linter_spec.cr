@@ -1,13 +1,15 @@
 require "./spec_helper"
 
-describe RenovateConfigAsdf::Linter do
-  defined_plugins = %w[
+private def defined_plugins
+  %w[
     crystal
     deno
     ruby
     rust
   ]
+end
 
+describe RenovateConfigAsdf::Linter do
   describe ".lint_example" do
     it "returns true for same entries" do
       success, _message = RenovateConfigAsdf::Linter.lint_example("spec/fixtures/.tool-versions-valid", defined_plugins)
