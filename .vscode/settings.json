@@ -12,6 +12,7 @@
     "idris",
     "kustomize",
     "lampepfl",
+    "renovaterc",
     "shfmt",
     "trivy",
     "veelenga"
