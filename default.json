@@ -16,6 +16,7 @@
     "local>kachick/renovate-config-asdf//plugins/golang.json5",
     "local>kachick/renovate-config-asdf//plugins/haskell.json5",
     "local>kachick/renovate-config-asdf//plugins/helm.json5",
+    "local>kachick/renovate-config-asdf//plugins/helmfile.json5",
     "local>kachick/renovate-config-asdf//plugins/hugo.json5",
     "local>kachick/renovate-config-asdf//plugins/idris.json5",
     "local>kachick/renovate-config-asdf//plugins/java.json5",

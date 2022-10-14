@@ -46,6 +46,11 @@ export const examples: Readonly<Readonly<Example>[]> = [
     extracted: '3.9.4',
   },
   {
+    plugin: 'helmfile',
+    source: 'v0.147.0',
+    extracted: '0.147.0',
+  },
+  {
     plugin: 'hugo',
     source: 'v0.104.3',
     extracted: '0.104.3',
