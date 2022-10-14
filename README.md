@@ -76,6 +76,8 @@ Below is an actual example for me. It points default branch of this repository t
 - [direnv](https://github.com/kachick/renovate-config-asdf/pull/167)
 - [dprint](https://github.com/kachick/renovate-config-asdf/pull/8)
 - [helm](https://github.com/kachick/renovate-config-asdf/pull/94)
+- [helmfile](https://github.com/kachick/renovate-config-asdf/pull/205)
+- [hugo](https://github.com/kachick/renovate-config-asdf/pull/201)
 - [kustomize](https://github.com/kachick/renovate-config-asdf/pull/92)
 - [shellcheck](https://github.com/kachick/renovate-config-asdf/pull/29)
 - [shfmt](https://github.com/kachick/renovate-config-asdf/pull/30)
