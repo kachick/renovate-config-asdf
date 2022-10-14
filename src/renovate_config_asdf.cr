@@ -1,4 +1,4 @@
-require "./renovate_cofig_asdf/*"
+require "./renovate_config_asdf/*"
 
 module RenovateConfigAsdf
   alias DefaultJson = Hash(String, String | Array(String))
