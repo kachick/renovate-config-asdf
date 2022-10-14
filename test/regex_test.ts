@@ -86,3 +86,55 @@ test('fileMatch', async (t) => {
     });
   }
 });
+
+test('self versioning updater', async (t) => {
+  const definition = fs.readFileSync('self.json5', 'utf8');
+  const json5 = JSON5.parse(definition);
+  const regexManagers = json5['regexManagers'] as RegExManager[];
+  assert.equal(1, regexManagers.length);
+  const manager = regexManagers[0];
+  assert(manager);
+
+  const { fileMatch, matchStrings } = manager;
+
+  assert.equal(true, fileMatch.length > 0);
+  assert.equal(true, matchStrings.length > 0);
+
+  await t.test('self - fileMatch', (_t) => {
+    assert.equal(
+      true,
+      fileMatch.some((patternString) => {
+        const pattern = new RE2(patternString);
+        return !!pattern.exec('renovate.json');
+      }),
+    );
+
+    assert.equal(
+      true,
+      fileMatch.some((patternString) => {
+        const pattern = new RE2(patternString);
+        return !!pattern.exec('renovate.json5');
+      }),
+    );
+
+    assert.equal(
+      false,
+      fileMatch.some((patternString) => {
+        const pattern = new RE2(patternString);
+        return !!pattern.exec('dprint.json');
+      }),
+    );
+  });
+
+  await t.test('self - matchStrings', (_t) => {
+    assert.equal(
+      true,
+      matchStrings.some((patternString) => {
+        const pattern = new RE2(patternString);
+        const matched = pattern.exec('"github>kachick/renovate-config-asdf#1.4.1"');
+        // @ts-ignore - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
+        return matched?.groups['currentValue'] === '1.4.1';
+      }),
+    );
+  });
+});

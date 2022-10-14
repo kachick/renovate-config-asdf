@@ -21,18 +21,19 @@
 This example referenced stable version as `#1.6.0`. Versions can be checked in [github-tags](https://github.com/kachick/renovate-config-asdf/tags).
 Because of default branch is frequently changed for developping.
 
-If you want to narrow Renovate effect, for example you are basically using dependabot, removing `config:base` and specifying `enabledManagers` might fit.
+## Self updater
 
-Below is an actual example for me. It points default branch of this repository to use development version.
+Experimental feature. And it is not core feature of this project. So seprated from default.json for now.
+You can use it as below.
 
 ```json
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>kachick/renovate-config-asdf"
-  ],
-  "labels": ["dependencies", "renovate"],
-  "enabledManagers": ["regex"]
+    "config:base",
+    "github>kachick/renovate-config-asdf#1.6.0",
+    "github>kachick/renovate-config-asdf:self"
+  ]
 }
 ```
 
