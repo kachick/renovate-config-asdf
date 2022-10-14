@@ -1,5 +1,19 @@
 require "./spec_helper"
 
+private def original_default_json
+  <<-JSON
+  {
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "description": "Sharable config for .tool-version with asdf",
+    "extends": [
+      "local>kachick/renovate-config-asdf//plugins/crystal.json5",
+      "local>kachick/renovate-config-asdf//plugins/deno.json5",
+      "local>kachick/renovate-config-asdf//plugins/rust.json5"
+    ]
+  }
+  JSON
+end
+
 describe RenovateConfigAsdf::ReleaseManager do
   describe ".version?" do
     it "returns true when given a numbers delimited format like a simple semantic versioning" do
@@ -21,26 +35,14 @@ describe RenovateConfigAsdf::ReleaseManager do
   end
 
   describe ".releasing_json" do
-    origin = <<-JSON
-    {
-      "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-      "description": "Sharable config for .tool-version with asdf",
-      "extends": [
-        "local>kachick/renovate-config-asdf//plugins/crystal.json5",
-        "local>kachick/renovate-config-asdf//plugins/deno.json5",
-        "local>kachick/renovate-config-asdf//plugins/rust.json5"
-      ]
-    }
-    JSON
-
     it "raises ArgumentError when given an incorrect version" do
       expect_raises(ArgumentError) do
-        RenovateConfigAsdf::ReleaseManager.releasing_json(origin, "0.4.x")
+        RenovateConfigAsdf::ReleaseManager.releasing_json(original_default_json, "0.4.x")
       end
     end
 
     it "returns replaced JSON with given version" do
-      RenovateConfigAsdf::DefaultJson.from_json(RenovateConfigAsdf::ReleaseManager.releasing_json(origin, "1.5.0")).should eq(
+      RenovateConfigAsdf::DefaultJson.from_json(RenovateConfigAsdf::ReleaseManager.releasing_json(original_default_json, "1.5.0")).should eq(
         RenovateConfigAsdf::DefaultJson.from_json(
           <<-JSON
           {
