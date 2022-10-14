@@ -88,7 +88,7 @@ test('fileMatch', async (t) => {
 });
 
 test('self versioning updater', async (t) => {
-  const definition = fs.readFileSync('self.json5', 'utf8');
+  const definition = fs.readFileSync('self.json', 'utf8');
   const json5 = JSON5.parse(definition);
   const regexManagers = json5['regexManagers'] as RegExManager[];
   assert.equal(1, regexManagers.length);

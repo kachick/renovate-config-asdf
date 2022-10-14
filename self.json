@@ -3,7 +3,6 @@
   "description": "Bump renovate-config-asdf itself",
   "regexManagers": [
     {
-      // Refered https://github.com/kachick/renovate-config-asdf/blob/6e070c15abfc32f8f1cc62cf5792b63ceb590e07/default.json#L72-L78
       "fileMatch": [
         "^renovate\\.json5?$",
         "^\\.github/renovate\\.json5?$",
