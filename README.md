@@ -21,6 +21,22 @@
 This example referenced stable version as `#1.6.0`. Versions can be checked in [github-tags](https://github.com/kachick/renovate-config-asdf/tags).
 Because of default branch is frequently changed for developping.
 
+## Self updater
+
+Experimental feature. And it is not core feature of this project. So seprated from default.json for now.
+You can use it as below.
+
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    "github>kachick/renovate-config-asdf#1.6.0",
+    "github>kachick/renovate-config-asdf:self"
+  ]
+}
+```
+
 ## Limitations
 
 - Want to cover asdf, however currently targeted only for some implementations.
