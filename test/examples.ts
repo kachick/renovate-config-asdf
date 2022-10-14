@@ -46,6 +46,11 @@ export const examples: Readonly<Readonly<Example>[]> = [
     extracted: '3.9.4',
   },
   {
+    plugin: 'hugo',
+    source: 'v0.104.3',
+    extracted: '0.104.3',
+  },
+  {
     plugin: 'idris',
     source: 'v1.3.4',
     extracted: '1.3.4',

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump hugo in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["^hugo (?<currentValue>.+?)\\n"],
+      // Plugin Fetcher Permalink:
+      //   - https://github.com/asdf-vm/asdf-plugins/blob/ba096638f9dc867bf9a8f7791f22e31d800d3d93/plugins/gohugo#L1
+      //   - https://github.com/nklmilojevic/asdf-hugo/blob/ea94032b488ce33cf9408d85885dfa1a24a744d4/lib/utils.bash#L5
+      //   - https://github.com/nklmilojevic/asdf-hugo/blob/ea94032b488ce33cf9408d85885dfa1a24a744d4/lib/utils.bash#L25-L33
+      // DataSource URL: https://github.com/gohugoio/hugo/releases
+      "depNameTemplate": "gohugoio/hugo",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>\\S+)"
+    }
+  ]
+}
