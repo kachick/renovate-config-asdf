@@ -21,8 +21,6 @@ describe RenovateConfigAsdf::ReleaseManager do
   end
 
   describe ".releasing_json" do
-    json_format = Hash(String, String | Array(String))
-
     origin = <<-JSON
     {
       "$schema": "https://docs.renovatebot.com/renovate-schema.json",
@@ -42,8 +40,8 @@ describe RenovateConfigAsdf::ReleaseManager do
     end
 
     it "returns replaced JSON with given version" do
-      json_format.from_json(RenovateConfigAsdf::ReleaseManager.releasing_json(origin, "1.5.0")).should eq(
-        json_format.from_json(
+      RenovateConfigAsdf::DefaultJson.from_json(RenovateConfigAsdf::ReleaseManager.releasing_json(origin, "1.5.0")).should eq(
+        RenovateConfigAsdf::DefaultJson.from_json(
           <<-JSON
           {
             "$schema": "https://docs.renovatebot.com/renovate-schema.json",

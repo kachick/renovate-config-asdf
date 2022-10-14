@@ -34,8 +34,6 @@ describe RenovateConfigAsdf::Scaffolder do
   end
 
   describe ".updated_defaullt_json" do
-    json_format = Hash(String, String | Array(String))
-
     it "returns inserted JSON into correct position it is might be unformatted" do
       origin = <<-JSON
       {
@@ -62,7 +60,7 @@ describe RenovateConfigAsdf::Scaffolder do
       }
       JSON
 
-      json_format.from_json(RenovateConfigAsdf::Scaffolder.updated_defaullt_json(origin, "ruby")).should eq(json_format.from_json(expected))
+      RenovateConfigAsdf::DefaultJson.from_json(RenovateConfigAsdf::Scaffolder.updated_defaullt_json(origin, "ruby")).should eq(RenovateConfigAsdf::DefaultJson.from_json(expected))
     end
   end
 

@@ -1,6 +1,8 @@
 require "./renovate_cofig_asdf/*"
 
 module RenovateConfigAsdf
+  alias DefaultJson = Hash(String, String | Array(String))
+
   RENOVATE_JSON_PATH         = "renovate.json"
   DEAFULT_JSON_PATH          = "default.json"
   EXAMPLE_TOOL_VERSIONS_PATH = "examples/.tool-versions"
