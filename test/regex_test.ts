@@ -97,12 +97,14 @@ test('self versioning updater', async (t) => {
 
   const { fileMatch, matchStrings } = manager;
 
+  assert.equal(true, fileMatch.length > 0);
+  assert.equal(true, matchStrings.length > 0);
+
   await t.test('self - fileMatch', (_t) => {
     assert.equal(
       true,
       fileMatch.some((patternString) => {
         const pattern = new RE2(patternString);
-        console.log(pattern);
         return !!pattern.exec('renovate.json');
       }),
     );
@@ -111,7 +113,7 @@ test('self versioning updater', async (t) => {
       true,
       fileMatch.some((patternString) => {
         const pattern = new RE2(patternString);
-        !!pattern.exec('renovate.json5');
+        return !!pattern.exec('renovate.json5');
       }),
     );
 
@@ -129,7 +131,7 @@ test('self versioning updater', async (t) => {
       true,
       matchStrings.some((patternString) => {
         const pattern = new RE2(patternString);
-        const matched = pattern.exec('github>kachick/renovate-config-asdf#1.4.1');
+        const matched = pattern.exec('"github>kachick/renovate-config-asdf#1.4.1"');
         // @ts-ignore - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
         return matched?.groups['currentValue'] === '1.4.1';
       }),

@@ -13,8 +13,8 @@
       ],
       "matchStrings": [
         "\"github>kachick/renovate-config-asdf#(?<currentValue>[^\" \\n\\(]+)",
-        "\"github>kachick/renovate-config-asdf:.*#(?<currentValue>[^\" \\n\\(]+)",
-        "\"github>kachick/renovate-config-asdf/.*#(?<currentValue>[^\" \\n\\(]+)"
+        "\"github>kachick/renovate-config-asdf:.*?#(?<currentValue>[^\" \\n\\(]+)",
+        "\"github>kachick/renovate-config-asdf/.*?#(?<currentValue>[^\" \\n\\(]+)"
       ],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "kachick/renovate-config-asdf"
