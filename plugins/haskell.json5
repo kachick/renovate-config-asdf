@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["haskell (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)haskell (?<currentValue>.+?)\\n"],
       "depNameTemplate": "ghc/ghc",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^ghc-(?<version>\\S+?)-release"

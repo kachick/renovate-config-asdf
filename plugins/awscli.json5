@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["^awscli (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)awscli (?<currentValue>.+?)\\n"],
       // Plugin Fetcher Permalink:
       //   - https://github.com/asdf-vm/asdf-plugins/blob/ba096638f9dc867bf9a8f7791f22e31d800d3d93/plugins/awscli#L1
       //   - https://github.com/MetricMike/asdf-awscli/blob/c645552054ad8a8bf3521cc37e7f44ea9dba1def/lib/utils.bash#L5

@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["helm (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)helm (?<currentValue>.+?)\\n"],
       "depNameTemplate": "helm/helm",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"

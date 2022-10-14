@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["ocaml (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)ocaml (?<currentValue>.+?)\\n"],
       "depNameTemplate": "ocaml/ocaml",
       "datasourceTemplate": "github-releases"
     }

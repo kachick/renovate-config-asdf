@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["clojure (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)clojure (?<currentValue>.+?)\\n"],
       // https://github.com/clojure/brew-install/tags
       "depNameTemplate": "clojure/brew-install",
       "datasourceTemplate": "github-tags",

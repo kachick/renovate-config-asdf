@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["terraform (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)terraform (?<currentValue>.+?)\\n"],
       // https://github.com/hashicorp/terraform/tags
       "depNameTemplate": "hashicorp/terraform",
       "datasourceTemplate": "github-tags",

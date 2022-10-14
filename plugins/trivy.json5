@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["trivy (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)trivy (?<currentValue>.+?)\\n"],
       "depNameTemplate": "aquasecurity/trivy",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"

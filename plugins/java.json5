@@ -5,7 +5,7 @@
     // https://github.com/halcyon/asdf-java/blame/master/data/jdk-linux-x86_64.tsv
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["java adoptopenjdk-(?<currentValue>16\\S+)\\n"],
+      "matchStrings": ["(^|\\n)java adoptopenjdk-(?<currentValue>16\\S+)\\n"],
       // https://github.com/adoptium/temurin16-binaries/releases
       "depNameTemplate": "adoptium/temurin16-binaries",
       "datasourceTemplate": "github-releases",
@@ -15,7 +15,7 @@
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["java adoptopenjdk-(?<currentValue>17\\S+)\\n"],
+      "matchStrings": ["(^|\\n)java adoptopenjdk-(?<currentValue>17\\S+)\\n"],
       // https://github.com/adoptium/temurin17-binaries/releases
       "depNameTemplate": "adoptium/temurin17-binaries",
       "datasourceTemplate": "github-releases",
@@ -24,7 +24,7 @@
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["java adoptopenjdk-(?<currentValue>18\\S+)\\n"],
+      "matchStrings": ["(^|\\n)java adoptopenjdk-(?<currentValue>18\\S+)\\n"],
       // https://github.com/adoptium/temurin18-binaries/releases
       "depNameTemplate": "adoptium/temurin18-binaries",
       "datasourceTemplate": "github-releases",

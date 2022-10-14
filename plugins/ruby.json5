@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["ruby (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)ruby (?<currentValue>.+?)\\n"],
       "depNameTemplate": "ruby-version",
       "datasourceTemplate": "ruby-version"
     }
