@@ -14,6 +14,7 @@ module RenovateConfigAsdf
       lint = false
       scaffold = false
       release = false
+      touch = false
       plugin = ""
       version = ""
       help = false
@@ -38,6 +39,9 @@ module RenovateConfigAsdf
           release = true
           psr.on("--version=VERSION", "Specify new version") { |_version| version = _version }
         end
+        psr.on("touch", "Update renovate.json labels to toriger renovate") do
+          touch = true
+        end
       end
 
       parser.parse(args)
@@ -60,6 +64,8 @@ module RenovateConfigAsdf
       when release
         raise "Require to specify new version" if version == ""
         RenovateConfigAsdf::ReleaseManager.release(version)
+      when touch
+        File.write(RENOVATE_JSON_PATH, RenovateConfigAsdf::Scaffolder.touched_renovate_json(File.read(RENOVATE_JSON_PATH)))
       else
         @io.puts(parser)
         exit(1)

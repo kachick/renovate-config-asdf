@@ -35,6 +35,7 @@ Usage: [arguments]
     lint                             Lint definitions
     scaffold                         Generate files for first step of adding new plugins
     release                          Add git tags in default.json
+    touch                            Update renovate.json labels to toriger renovate
 ```
 
 ## Tests
