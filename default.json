@@ -38,5 +38,23 @@
     "local>kachick/renovate-config-asdf//plugins/terraform.json5",
     "local>kachick/renovate-config-asdf//plugins/trivy.json5",
     "local>kachick/renovate-config-asdf//plugins/zig.json5"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^renovate\\.json5?$",
+        "^\\.github/renovate\\.json5?$",
+        "^\\.gitlab/renovate\\.json5?$",
+        "^\\.renovaterc\\.json$",
+        "^\\.renovaterc$"
+      ],
+      "matchStrings": [
+        "\"github>kachick/renovate-config-asdf#(?<currentValue>[^\" \\n\\(]+)",
+        "\"github>kachick/renovate-config-asdf:.*#(?<currentValue>[^\" \\n\\(]+)",
+        "\"github>kachick/renovate-config-asdf/.*#(?<currentValue>[^\" \\n\\(]+)"
+      ],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "kachick/renovate-config-asdf"
+    }
   ]
 }
