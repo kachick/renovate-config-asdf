@@ -1,2 +1,2 @@
 require "spec"
-require "../src/renovate_cofig_asdf"
+require "../src/renovate_config_asdf"

@@ -50,22 +50,22 @@ module RenovateConfigAsdf
       when help
         @io.puts(parser)
       when validate
-        success, message = RenovateConfigAsdf::Validator.validate(globs: %w[plugins/*.json* renovate.json default.json])
+        success, message = Validator.validate(globs: %w[plugins/*.json* renovate.json default.json])
         raise(message) unless success
       when lint
         defined_plugins = RenovateConfigAsdf.defined_plugins
-        success, message = RenovateConfigAsdf::Linter.lint_default_json("default.json", defined_plugins)
+        success, message = Linter.lint_default_json("default.json", defined_plugins)
         raise(message) unless success
-        success, message = RenovateConfigAsdf::Linter.lint_example("examples/.tool-versions", defined_plugins)
+        success, message = Linter.lint_example("examples/.tool-versions", defined_plugins)
         raise(message) unless success
       when scaffold
         raise "Require to specify plugin name" if plugin == ""
-        RenovateConfigAsdf::Scaffolder.write(plugin)
+        Scaffolder.write(plugin)
       when release
         raise "Require to specify new version" if version == ""
-        RenovateConfigAsdf::ReleaseManager.release(version)
+        ReleaseManager.release(version)
       when touch
-        File.write(RENOVATE_JSON_PATH, RenovateConfigAsdf::Scaffolder.touched_renovate_json(File.read(RENOVATE_JSON_PATH)))
+        Scaffolder.touch
       else
         @io.puts(parser)
         exit(1)

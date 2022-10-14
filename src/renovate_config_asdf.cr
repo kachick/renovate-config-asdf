@@ -1,4 +1,4 @@
-require "./renovate_cofig_asdf/*"
+require "./renovate_config_asdf/*"
 
 module RenovateConfigAsdf
   alias DefaultJson = Hash(String, String | Array(String))
@@ -12,6 +12,8 @@ module RenovateConfigAsdf
   end
 
   def self.defined_plugins : Array(String)
-    defined_plugin_files.map(&.[%r<([\S]+)\.json5\z>, 1])
+    plugins = defined_plugin_files.compact_map(&.[%r<([\S]+)\.json5\z>, 1]?)
+    raise "no plugins found" if plugins.empty?
+    plugins
   end
 end
