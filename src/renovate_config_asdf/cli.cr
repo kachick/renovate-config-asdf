@@ -65,7 +65,7 @@ module RenovateConfigAsdf
         raise "Require to specify new version" if version == ""
         ReleaseManager.release(version)
       when touch
-        File.write(RENOVATE_JSON_PATH, Scaffolder.touched_renovate_json(File.read(RENOVATE_JSON_PATH)))
+        Scaffolder.touch
       else
         @io.puts(parser)
         exit(1)
