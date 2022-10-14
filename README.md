@@ -37,6 +37,8 @@ You can use it as below.
 }
 ```
 
+[Working example](https://github.com/kachick/wait-other-jobs/pull/238)
+
 ## Limitations
 
 - Want to cover asdf, however currently targeted only for some implementations.
