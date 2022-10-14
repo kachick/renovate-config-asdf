@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["perl (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)perl (?<currentValue>.+?)\\n"],
       // Plugin Fetcher Permalink:
       //   - https://github.com/ouest/asdf-perl/blob/4f4d4062ba626e7bc9dcdf25f867f9be18c56a3b/bin/list-all#L8
       //   - https://github.com/skaji/perl-install/blob/876a45ee0b3aad51ac7351bd5e127babe07fb9b8/perl-install#L83

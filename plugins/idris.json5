@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["idris (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)idris (?<currentValue>.+?)\\n"],
       "depNameTemplate": "idris-lang/Idris-dev",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"

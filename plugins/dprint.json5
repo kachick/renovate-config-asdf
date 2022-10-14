@@ -5,7 +5,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["dprint (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)dprint (?<currentValue>.+?)\\n"],
       // Plugin Fetcher Permalink: https://github.com/asdf-community/asdf-dprint/blob/28517e6ee649bad5c859d9ad09aebcd6bbbff2bf/bin/list-all#L11-L12
       // DataSource URL: https://github.com/dprint/dprint/tags
       "depNameTemplate": "dprint/dprint",

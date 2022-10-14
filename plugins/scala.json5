@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["scala (?<currentValue>2\\..+?)\\n"],
+      "matchStrings": ["(^|\\n)scala (?<currentValue>2\\..+?)\\n"],
       // https://github.com/scala/scala/tags
       "depNameTemplate": "scala/scala",
       "datasourceTemplate": "github-tags",
@@ -12,7 +12,7 @@
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["scala (?<currentValue>3\\..+?)\\n"],
+      "matchStrings": ["(^|\\n)scala (?<currentValue>3\\..+?)\\n"],
       // https://github.com/lampepfl/dotty/tags
       "depNameTemplate": "lampepfl/dotty",
       "datasourceTemplate": "github-tags"

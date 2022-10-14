@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["php (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)php (?<currentValue>.+?)\\n"],
       "depNameTemplate": "php/php-src",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^php-(?<version>\\S+)"

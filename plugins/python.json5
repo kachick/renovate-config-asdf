@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["python (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)python (?<currentValue>.+?)\\n"],
       "depNameTemplate": "python/cpython",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"
