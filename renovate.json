@@ -4,13 +4,11 @@
   "extends": [
     "config:base",
     "github>kachick/renovate-config-dprint:plugins",
-    "local>kachick/renovate-config-asdf"
+    "github>kachick/renovate-config-asdf"
   ],
   "packageRules": [
     {
-      "matchPackagePatterns": [
-        "*"
-      ],
+      "matchPackagePatterns": ["*"],
       "rangeStrategy": "bump"
     },
     {
