@@ -9,6 +9,7 @@ on:
       - 'package-lock.json'
       - 'default.json'
       - 'renovate.json'
+      - 'self.json5'
   pull_request:
     paths:
       - '.github/workflows/ci-official.yml'
@@ -17,6 +18,7 @@ on:
       - 'package-lock.json'
       - 'default.json'
       - 'renovate.json'
+      - 'self.json5'
 
 jobs:
   set-matrix:
