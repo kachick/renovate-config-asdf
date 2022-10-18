@@ -20,6 +20,10 @@
     {
       "matchDepTypes": ["devDependencies"],
       "automerge": true
+    },
+    {
+      "matchPackageNames": ["nodejs/node"],
+      "allowedVersions": "/^v?18\\./"
     }
   ],
   "labels": [
