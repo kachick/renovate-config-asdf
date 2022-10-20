@@ -17,14 +17,24 @@ on:
       - 'test/**'
 
 jobs:
+  asdf-parser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+      - uses: kachick/action-parse-asdf-tool-versions@v1
+        id: parse
+    outputs:
+      tool-versions: '${{ steps.parse.outputs.json }}'
   test:
+    needs: [asdf-parser]
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).nodejs }}'
           cache: npm
       - run: npm ci
       - run: npx tsc
