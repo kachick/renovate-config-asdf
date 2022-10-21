@@ -21,6 +21,10 @@
 This example referenced stable version as `#1.6.0`. Versions can be checked in [github-tags](https://github.com/kachick/renovate-config-asdf/tags).
 Because of default branch is frequently changed for developping.
 
+Currently this config tested only in GitHub repositories. However 1.4.1+ tagged releases might work in GitLab and others.\
+See [#192](https://github.com/kachick/renovate-config-asdf/issues/191) and [#206](https://github.com/kachick/renovate-config-asdf/issues/206) for further detail.\
+Please note, `main` branch will NOT work except GitHub. Because it points `local>`.
+
 ## Self updater
 
 Experimental feature. And it is not core feature of this project. So seprated from default.json for now.
