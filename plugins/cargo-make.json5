@@ -1,0 +1,16 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump cargo-make in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["(^|\\n)cargo-make (?<currentValue>.+?)\\n"],
+      // Plugin Fetcher Permalink:
+      //   - https://github.com/kachick/asdf-cargo-make/blob/23a58badcd1a7f98e824f5457abbcc1b9c7fafaf/lib/utils.bash#L5
+      //   - https://github.com/kachick/asdf-cargo-make/blob/23a58badcd1a7f98e824f5457abbcc1b9c7fafaf/lib/utils.bash#L27-L35
+      // DataSource URL: https://github.com/sagiegurari/cargo-make/releases
+      "depNameTemplate": "sagiegurari/cargo-make",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
