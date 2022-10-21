@@ -8,6 +8,7 @@ on:
       - '!.vscode'
       - '**/*.json5'
       - 'test/**'
+      - '.tool-versions'
   pull_request:
     paths:
       - '.github/workflows/ci-typescript.yml'
@@ -15,6 +16,7 @@ on:
       - '!.vscode'
       - '**/*.json5'
       - 'test/**'
+      - '.tool-versions'
 
 jobs:
   asdf-parser:

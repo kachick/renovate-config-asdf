@@ -10,6 +10,7 @@ on:
       - 'shard.lock'
       - 'package.json'
       - 'package-lock.json'
+      - '.tool-versions'
   pull_request:
     paths:
       - '.github/workflows/ci-crystal.yml'
@@ -19,6 +20,7 @@ on:
       - 'shard.lock'
       - 'package.json'
       - 'package-lock.json'
+      - '.tool-versions'
 
 jobs:
   asdf-parser:
