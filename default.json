@@ -4,6 +4,7 @@
   "extends": [
     "local>kachick/renovate-config-asdf//plugins/awscli.json5",
     "local>kachick/renovate-config-asdf//plugins/bun.json5",
+    "local>kachick/renovate-config-asdf//plugins/cargo-make.json5",
     "local>kachick/renovate-config-asdf//plugins/clojure.json5",
     "local>kachick/renovate-config-asdf//plugins/crystal.json5",
     "local>kachick/renovate-config-asdf//plugins/deno.json5",
