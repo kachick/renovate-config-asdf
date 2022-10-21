@@ -42,5 +42,7 @@
     "**/fixtures/**",
     "bin/",
     "lib/"
-  ]
+  ],
+  "prHourlyLimit": 42,
+  "prConcurrentLimit": 5
 }
