@@ -76,6 +76,7 @@ You can use it as below.
 ### Tools
 
 - [awscli(aws-cli)](https://github.com/kachick/renovate-config-asdf/pull/195)
+- [cargo-make](https://github.com/kachick/renovate-config-asdf/pull/234)
 - [direnv](https://github.com/kachick/renovate-config-asdf/pull/167)
 - [dprint](https://github.com/kachick/renovate-config-asdf/pull/8)
 - [helm](https://github.com/kachick/renovate-config-asdf/pull/94)
