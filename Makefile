@@ -41,7 +41,7 @@ lint-definitions:
 lint-all: crystal-lint-check dprint-check lint-definitions
 
 crystal-lint-check: crystal-format-check
-	bin/ameba
+	./bin/ameba
 
 .PHONY: crystal-format-check
 crystal-format-check:
@@ -56,7 +56,7 @@ lint-fix-all: crystal-lint-fix dprint-fix
 .PHONY: crystal-lint-fix
 crystal-lint-fix:
 	crystal tool format
-	bin/ameba --fix
+	./bin/ameba --fix
 
 .PHONY: dprint-fix
 dprint-fix:

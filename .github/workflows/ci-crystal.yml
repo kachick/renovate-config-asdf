@@ -4,8 +4,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/ci-crystal.yml'
-      - 'spec/**'
-      - 'src/**'
+      - '**/*.cr'
+      - '**/*.ecr'
       - 'shard.yml'
       - 'shard.lock'
       - 'package.json'
@@ -14,8 +14,8 @@ on:
   pull_request:
     paths:
       - '.github/workflows/ci-crystal.yml'
-      - 'spec/**'
-      - 'src/**'
+      - '**/*.cr'
+      - '**/*.ecr'
       - 'shard.yml'
       - 'shard.lock'
       - 'package.json'
@@ -41,6 +41,7 @@ jobs:
       - uses: crystal-lang/install-crystal@v1
         with:
           crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
+      - run: shards install
       # Need node.js to install validator. Spec includes the validator runner
       - uses: actions/setup-node@v3
         with:
@@ -48,3 +49,14 @@ jobs:
           cache: npm
       - run: npm ci
       - run: crystal spec
+  lint:
+    needs: [asdf-parser]
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
+      - run: shards install
+      - run: make crystal-lint-check
