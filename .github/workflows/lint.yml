@@ -37,7 +37,7 @@ jobs:
       - uses: crystal-lang/install-crystal@v1
         with:
           crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
-      - run: make crystal-format-check
+      - run: make crystal-lint-check
   definitions:
     needs: [asdf-parser]
     timeout-minutes: 5
