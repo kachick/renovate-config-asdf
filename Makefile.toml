@@ -1,0 +1,90 @@
+[config]
+skip_core_tasks = true
+
+[tasks.lint]
+category = "Tools"
+description = "Run linters without changes"
+script = [
+  "./scripts/shellcheck.bash",
+  "./scripts/shfmt.bash",
+  "dprint check",
+]
+
+[tasks.format]
+category = "Tools"
+description = "Run formatters with changes"
+script = [
+  "shfmt --write ./bin/* ./lib/*",
+  "dprint fmt",
+]
+
+[tasks.test]
+category = "Tools"
+description = 'Run tests'
+script = [
+	'npx tsc',
+	'npx ts-node-test test/*.ts',
+	'crystal spec'
+]
+
+[tasks.check]
+category = "Tools"
+description = 'Should pass before merging PR'
+dependencies = [
+  "lint",
+  "test",
+]
+
+[tasks.setup]
+category = "Tools"
+description = 'Install dependencies'
+run_task = [
+  { name = "install_asdf_dependencies" },
+  { name = "install_crystal_dependencies" },
+  { name = "install_ecmascript_dependencies" },
+  { name = "build_cli" },
+]
+
+[tasks.help]
+category = "Tools"
+description = 'Might help you - (This one)'
+script = [
+  'makers --list-category-steps Tools',
+]
+
+[tasks.install_asdf_dependencies]
+category = "Sub"
+description = 'Install asdf managed dependencies'
+# Neede some git-url style because they are not yet registered.
+script = [
+  # https://github.com/asdf-vm/asdf-plugins/pull/693
+  '(asdf plugin-list | grep cargo-make) || asdf plugin-add cargo-make https://github.com/kachick/asdf-cargo-make.git',
+  # https://github.com/asdf-vm/asdf-plugins/pull/691
+  '(asdf plugin-list | grep dprint) || asdf plugin-add dprint https://github.com/asdf-community/asdf-dprint',
+  '(asdf plugin-list | grep crystal) || asdf plugin-add crystal',
+  '(asdf plugin-list | grep nodejs) || asdf plugin-add nodejs',
+  'asdf install',
+]
+
+[tasks.install_crystal_dependencies]
+category = "Sub"
+description = 'Install shards managed dependencies'
+
+[tasks.install_ecmascript_dependencies]
+category = "Sub"
+description = 'Install dependencies for TypeScript'
+
+[tasks.build_cli]
+category = "Sub"
+description = 'Compile CLI'
+script = [
+	'mkdir -p ./bin',
+	'crystal build ./src/cli.cr -o ./bin/cli',
+]
+
+[tasks.check_no_git_diff]
+category = "Sub"
+description = 'asdf built-in "plugin test" requires git managed codes. This prevents unexpected run'
+script = [
+  '(git add --intent-to-add . && git diff --exit-code) || (echo "You should commit all diff before running tests"; exit 1)',
+]

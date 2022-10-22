@@ -1,4 +1,40 @@
-## Setup environments
+# Contributing
+
+## Setup
+
+I believe you already have asdf :)\
+First, install cargo-make.
+
+```bash
+asdf plugin-add cargo-make https://github.com/kachick/asdf-cargo-make.git
+asdf install cargo-make
+```
+
+Now cargo-make covers other steps.\
+`setup` task installs other tools via asdf, npm, shards.\
+It compiles helper CLI of this project into `./bin` directory.
+
+```console
+$ makers setup
+```
+
+## Overview
+
+Look at the overview of tasks and helpers.
+
+```console
+$ makers help
+
+
+$ ./bin/cli --help
+Usage: [arguments]
+    -h, --help                       Show this help
+    validate                         Validate definitions with renovate provided tool
+    lint                             Lint definitions
+    scaffold                         Generate files for first step of adding new plugins
+    release                          Add git tags in default.json
+    touch                            Update renovate.json labels to toriger renovate
+```
 
 ```console
 $ make install-deps
