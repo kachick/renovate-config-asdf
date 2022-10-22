@@ -21,10 +21,6 @@
 This example referenced stable version as `#1.6.0`. Versions can be checked in [github-tags](https://github.com/kachick/renovate-config-asdf/tags).
 Because of default branch is frequently changed for developping.
 
-Currently this config tested only in GitHub repositories. However 1.4.1+ tagged releases might work in GitLab and others.\
-See [#192](https://github.com/kachick/renovate-config-asdf/issues/191) and [#206](https://github.com/kachick/renovate-config-asdf/issues/206) for further detail.\
-Please note, `main` branch will NOT work except GitHub. Because it points `local>`.
-
 ## Self updater
 
 Experimental feature. And it is not core feature of this project. So seprated from default.json for now.
@@ -42,6 +38,18 @@ You can use it as below.
 ```
 
 [Working example](https://github.com/kachick/wait-other-jobs/pull/238)
+
+## GitLab / Self-Hosted Runner
+
+1.4.1+ tagged releases works in GitLab hosted repositories.\
+See [#191](https://github.com/kachick/renovate-config-asdf/issues/191) and [#206](https://github.com/kachick/renovate-config-asdf/issues/206) for further detail.
+
+[Working example](https://gitlab.com/kachick/sample-renovate-config-asdf/-/merge_requests/1)
+
+NOTE
+
+- `main` branch will NOT work except GitHub. Because it points `local>`. Please use tagged versions as `github>kachick/renovate-config-asdf#1.6.0`.
+- Should pass `GITHUB_COM_TOKEN` for ENV with your PAT, at 2022-10-22, [beta version of fine-grained PAT](https://github.blog/2022-10-18-introducing-fine-grained-personal-access-tokens-for-github/) with no special permissions can not fetch github-tags (github-releases can be fetched!). So I recommend to use classic PAT.
 
 ## Limitations
 
