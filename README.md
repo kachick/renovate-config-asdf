@@ -18,13 +18,15 @@
 }
 ```
 
-This example referenced stable version as `#1.6.0`. Versions can be checked in [github-tags](https://github.com/kachick/renovate-config-asdf/tags).
+This example referenced stable version as `kachick/renovate-config-asdf#TaggedVersion`.\
 Because of default branch is frequently changed for developping.
+
+Released versions can be checked in [github-tags](https://github.com/kachick/renovate-config-asdf/tags).
 
 ## Self updater
 
-Experimental feature. And it is not core feature of this project. So seprated from default.json for now.
-You can use it as below.
+Seprated from `default.json` for now.\
+You can use it as `github>kachick/renovate-config-asdf:self`.
 
 ```json
 {
@@ -49,7 +51,10 @@ See [#191](https://github.com/kachick/renovate-config-asdf/issues/191) and [#206
 NOTE
 
 - `main` branch will NOT work except GitHub. Because it points `local>`. Please use tagged versions as `github>kachick/renovate-config-asdf#1.7.0`.
-- Should pass `GITHUB_COM_TOKEN` for ENV with your **classic PAT**, at 2022-10-22, [beta version of fine-grained PAT](https://github.blog/2022-10-18-introducing-fine-grained-personal-access-tokens-for-github/) can not fetch github-tags with GraphQL as used as inside of renovate runner.
+- Should pass `GITHUB_COM_TOKEN` for ENV with your **classic PAT**.
+  \
+  At 2022-10-22, [beta version of fine-grained PAT](https://github.blog/2022-10-18-introducing-fine-grained-personal-access-tokens-for-github/) does not support GraphQL API yet.\
+  However [github-tags module of renovatebot is using GraphQL](https://github.com/renovatebot/renovate/blob/cc50beb0934874095fd2164b33dcb5fed7dbf421/lib/modules/datasource/github-tags/index.ts#L2).
 
 ## Limitations
 
