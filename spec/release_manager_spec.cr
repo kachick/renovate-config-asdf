@@ -59,4 +59,18 @@ describe RenovateConfigAsdf::ReleaseManager do
       )
     end
   end
+
+  describe ".replaced_readme" do
+    it "raises ArgumentError when given an incorrect version" do
+      expect_raises(ArgumentError) do
+        RenovateConfigAsdf::ReleaseManager.replaced_readme("any words", "0.4.x")
+      end
+    end
+
+    it "returns replaced texts with given version" do
+      RenovateConfigAsdf::ReleaseManager.replaced_readme("foo bar #150 #1.5.0 github>kachick/renovate-config-asdf#1.5.0 kachick/renovate-config-asdf#1.5.0 ", "1.6.0").should eq(
+        "foo bar #150 #1.5.0 github>kachick/renovate-config-asdf#1.6.0 kachick/renovate-config-asdf#1.6.0 "
+      )
+    end
+  end
 end
