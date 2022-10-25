@@ -99,6 +99,7 @@ NOTE
 - [helm](https://github.com/kachick/renovate-config-asdf/pull/94)
 - [helmfile](https://github.com/kachick/renovate-config-asdf/pull/205)
 - [hugo](https://github.com/kachick/renovate-config-asdf/pull/201)
+- [just](https://github.com/kachick/renovate-config-asdf/pull/261)
 - [kustomize](https://github.com/kachick/renovate-config-asdf/pull/92)
 - [shellcheck](https://github.com/kachick/renovate-config-asdf/pull/29)
 - [shfmt](https://github.com/kachick/renovate-config-asdf/pull/30)
