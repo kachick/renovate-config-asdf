@@ -22,6 +22,7 @@
     "local>kachick/renovate-config-asdf//plugins/idris.json5",
     "local>kachick/renovate-config-asdf//plugins/java.json5",
     "local>kachick/renovate-config-asdf//plugins/julia.json5",
+    "local>kachick/renovate-config-asdf//plugins/just.json5",
     "local>kachick/renovate-config-asdf//plugins/kotlin.json5",
     "local>kachick/renovate-config-asdf//plugins/kustomize.json5",
     "local>kachick/renovate-config-asdf//plugins/lua.json5",
