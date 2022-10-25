@@ -3,19 +3,24 @@ skip_core_tasks = true
 
 [tasks.lint]
 category = "Tools"
-description = "Run linters without changes"
+description = "Run linters and formatters without changes"
+dependencies = [
+  { name = "cli", path = "./bin/cli" },
+]
 script = [
-  "./scripts/shellcheck.bash",
-  "./scripts/shfmt.bash",
   "dprint check",
+  "crystal tool format --check",
+  "./bin/ameba",
+  "./bin/cli lint",
 ]
 
-[tasks.format]
+[tasks.lint-fix]
 category = "Tools"
-description = "Run formatters with changes"
+description = "Run linters and formatters with changes"
 script = [
-  "shfmt --write ./bin/* ./lib/*",
   "dprint fmt",
+  "crystal tool format",
+  "./bin/ameba --fix"
 ]
 
 [tasks.test]
@@ -42,7 +47,7 @@ run_task = [
   { name = "install_asdf_dependencies" },
   { name = "install_crystal_dependencies" },
   { name = "install_ecmascript_dependencies" },
-  { name = "build_cli" },
+  { name = "build" },
 ]
 
 [tasks.help]
@@ -74,17 +79,42 @@ description = 'Install shards managed dependencies'
 category = "Sub"
 description = 'Install dependencies for TypeScript'
 
-[tasks.build_cli]
-category = "Sub"
+[tasks.build]
+category = "Tools"
 description = 'Compile CLI'
 script = [
 	'mkdir -p ./bin',
 	'crystal build ./src/cli.cr -o ./bin/cli',
 ]
 
-[tasks.check_no_git_diff]
-category = "Sub"
-description = 'asdf built-in "plugin test" requires git managed codes. This prevents unexpected run'
-script = [
-  '(git add --intent-to-add . && git diff --exit-code) || (echo "You should commit all diff before running tests"; exit 1)',
+[tasks.validate]
+category = "Tools"
+description = 'Run renovate official validator'
+dependencies = [
+  { name = "cli", path = "./bin/cli" },
 ]
+script = [
+  './bin/cli validate',
+]
+
+[tasks.release]
+category = "Tools"
+description = 'Adjust and tagged for stable versions'
+dependencies = [
+  { name = "cli", path = "./bin/cli" },
+]
+script = [
+  './bin/cli release --version=$1',
+]
+
+[tasks.scaffold]
+category = "Tools"
+description = 'Generate base files for new plugin'
+dependencies = [
+  { name = "cli", path = "./bin/cli" },
+]
+script = [
+  './bin/cli scaffold --plugin=$1',
+  'dprint fmt'
+]
+
