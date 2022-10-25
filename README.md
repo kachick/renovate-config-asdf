@@ -13,7 +13,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "github>kachick/renovate-config-asdf#1.7.0"
+    "github>kachick/renovate-config-asdf#1.8.0"
   ]
 }
 ```
@@ -33,7 +33,7 @@ You can use it as `github>kachick/renovate-config-asdf:self`.
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "github>kachick/renovate-config-asdf#1.7.0",
+    "github>kachick/renovate-config-asdf#1.8.0",
     "github>kachick/renovate-config-asdf:self"
   ]
 }
@@ -50,7 +50,7 @@ See [#191](https://github.com/kachick/renovate-config-asdf/issues/191) and [#206
 
 NOTE
 
-- `main` branch will NOT work except GitHub. Because it points `local>`. Please use tagged versions as `github>kachick/renovate-config-asdf#1.7.0`.
+- `main` branch will NOT work except GitHub. Because it points `local>`. Please use tagged versions as `github>kachick/renovate-config-asdf#1.8.0`.
 - Should pass `GITHUB_COM_TOKEN` for ENV with your **classic PAT**.
   \
   At 2022-10-22, [beta version of fine-grained PAT](https://github.blog/2022-10-18-introducing-fine-grained-personal-access-tokens-for-github/) does not support GraphQL API yet.\
