@@ -5,7 +5,7 @@ skip_core_tasks = true
 category = "Tools"
 description = "Run linters and formatters without changes"
 dependencies = [
-  { name = "cli", path = "./bin/cli" },
+  { name = "build", path = "./bin/cli" },
 ]
 script = [
   "dprint check",
