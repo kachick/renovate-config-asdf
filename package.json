@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "@tsconfig/node18-strictest-esm": "^1.0.1",
-    "@types/node": "^18.11.5",
+    "@types/node": "^18.11.6",
     "json5": "^2.2.1",
     "re2": "^1.17.7",
     "renovate": "^34.1.4",
