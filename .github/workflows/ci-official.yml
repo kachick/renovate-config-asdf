@@ -36,15 +36,13 @@ jobs:
     timeout-minutes: 1
     runs-on: ubuntu-latest
     outputs:
-      configs: ${{ steps.set-matrix.outputs.value }}
+      configs: ${{ steps.set-matrix.outputs.json }}
     steps:
       - uses: actions/checkout@v3
       - id: set-matrix
         run: |
           config_by_line=$(git ls-files 'plugins' 'default.json' 'renovate.json')
-          echo "configs=$(jq -cnM --arg var "$config_by_line" '$var|split("\n")')" | tee --append "$GITHUB_OUTPUT"
-      - name: debug
-        run: cat "$GITHUB_OUTPUT"
+          echo "json=$(jq -cnM --arg var "$config_by_line" '$var|split("\n")')" | tee --append "$GITHUB_OUTPUT"
 
   validate:
     needs: [set-matrix, asdf-parser]
@@ -53,7 +51,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        config: ${{fromJson(needs.set-matrix.outputs.configs)}}
+        config: ${{ fromJson(needs.set-matrix.outputs.configs )}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
