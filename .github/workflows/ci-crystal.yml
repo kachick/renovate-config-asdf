@@ -41,7 +41,8 @@ jobs:
       - uses: crystal-lang/install-crystal@v1
         with:
           crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
-      - run: shards install
+      # Currently shards is unused except ameba
+      # - run: shards install
       # Need node.js to install validator. Spec includes the validator runner
       - uses: actions/setup-node@v3
         with:
