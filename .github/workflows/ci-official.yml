@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/ci-official.yml'
+      - 'src/renovate_config_asdf/github_actions_helper.cr'
       - 'plugins/*.json5'
       - 'package.json'
       - 'package-lock.json'
@@ -14,6 +15,7 @@ on:
   pull_request:
     paths:
       - '.github/workflows/ci-official.yml'
+      - 'src/renovate_config_asdf/github_actions_helper.cr'
       - 'plugins/*.json5'
       - 'package.json'
       - 'package-lock.json'
@@ -32,27 +34,47 @@ jobs:
         id: parse
     outputs:
       tool-versions: '${{ steps.parse.outputs.json }}'
+
+  build-cli:
+    needs: [asdf-parser]
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
+      - run: shards install
+      - run: make build-tools
+      - uses: actions/upload-artifact@v3
+        with:
+          name: cli
+          path: ./bin/cli
+
   set-matrix:
-    timeout-minutes: 1
+    needs: [build-cli]
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     outputs:
       configs: ${{ steps.set-matrix.outputs.value }}
     steps:
       - uses: actions/checkout@v3
+      - run: mkdir -p ./bin
+      - uses: actions/download-artifact@v3
+        with:
+          name: cli
+          path: ./bin/
       - id: set-matrix
-        run: |
-          config_by_line=$(git ls-files 'plugins' 'default.json' 'renovate.json')
-          configs=$(jq -cnM --arg var "$config_by_line" '$var|split("\n")')
-          echo "::set-output name=value::${configs}"
+        run: echo "json_array=$(git ls-files 'plugins' 'default.json' 'renovate.json' | ./bin/cli generate_matrix --matrix_chunk_size=10)" >> "$GITHUB_OUTPUT"
 
   validate:
-    needs: [set-matrix, asdf-parser]
+    needs: [set-matrix, asdf-parser, build-cli]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     strategy:
       fail-fast: false
       matrix:
-        config: ${{fromJson(needs.set-matrix.outputs.configs)}}
+        chunked_plugins: ${{fromJson(needs.set-matrix.outputs.json_array)}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -60,4 +82,4 @@ jobs:
           node-version: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).nodejs }}'
           cache: npm
       - run: npm ci # `--ignore-scripts` do not cover RE2
-      - run: RENOVATE_CONFIG_FILE=${{ matrix.config }} npx renovate-config-validator
+      - run: ./bin/cli validate --globs='${{ matrix.chunked_plugins }}'

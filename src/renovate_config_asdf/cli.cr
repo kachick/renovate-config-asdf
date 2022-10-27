@@ -19,6 +19,11 @@ module RenovateConfigAsdf
       version = ""
       help = false
 
+      globs : Array(String) = %w[plugins/*.json* renovate.json default.json]
+
+      generate_matrix = false
+      matrix_chunk_size : UInt16 = 2
+
       parser = OptionParser.new do |psr|
         psr.banner = "Usage: [arguments]"
         psr.on("-h", "--help", "Show this help") do
@@ -27,20 +32,25 @@ module RenovateConfigAsdf
 
         psr.on("validate", "Validate definitions with renovate provided tool") do
           validate = true
+          psr.on("--globs='globs'", "File globs seprated by a whitespace") { |_globs| globs = _globs.split }
         end
         psr.on("lint", "Lint definitions") do
           lint = true
         end
         psr.on("scaffold", "Generate files for first step of adding new plugins") do
           scaffold = true
-          psr.on("--plugin=NAME", "Specify plugin name") { |_plugin| plugin = _plugin }
+          psr.on("--plugin=NAME", "Plugin name") { |_plugin| plugin = _plugin }
         end
         psr.on("release", "Add git tags in default.json") do
           release = true
-          psr.on("--version=VERSION", "Specify new version") { |_version| version = _version }
+          psr.on("--version=VERSION", "New version") { |_version| version = _version }
         end
         psr.on("touch", "Update renovate.json labels to toriger renovate") do
           touch = true
+        end
+        psr.on("generate_matrix", "Generate matrix JSON from STDIN for GitHub Actions") do
+          generate_matrix = true
+          psr.on("--matrix_chunk_size=NUMBER", "Number of chunk size") { |number| matrix_chunk_size = number.to_u16(10) }
         end
       end
 
@@ -50,7 +60,7 @@ module RenovateConfigAsdf
       when help
         @io.puts(parser)
       when validate
-        success, message = Validator.validate(globs: %w[plugins/*.json* renovate.json default.json])
+        success, message = Validator.validate(globs: globs)
         raise(message) unless success
       when lint
         defined_plugins = RenovateConfigAsdf.defined_plugins
@@ -66,6 +76,8 @@ module RenovateConfigAsdf
         ReleaseManager.release(version)
       when touch
         Scaffolder.touch
+      when generate_matrix
+        print GitHhubActionsHelper.generate_matrix(STDIN.gets_to_end, matrix_chunk_size)
       else
         @io.puts(parser)
         exit(1)
