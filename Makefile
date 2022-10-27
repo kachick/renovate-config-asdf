@@ -18,7 +18,7 @@ install-deps:
 
 .PHONY: build-tools
 build-tools:
-	shards build
+	shards build --production
 
 .PHONY: validate
 validate:
