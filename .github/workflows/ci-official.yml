@@ -43,6 +43,8 @@ jobs:
         run: |
           config_by_line=$(git ls-files 'plugins' 'default.json' 'renovate.json')
           echo "configs=$(jq -cnM --arg var "$config_by_line" '$var|split("\n")')" | tee --append "$GITHUB_OUTPUT"
+      - name: debug
+        run: cat "$GITHUB_OUTPUT"
 
   validate:
     needs: [set-matrix, asdf-parser]
