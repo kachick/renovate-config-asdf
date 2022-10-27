@@ -22,7 +22,7 @@ Installing ameba (1.1.0)
 Postinstall of ameba: make bin && make run_file
 Writing shard.lock
 
-crystal build src/cli.cr -o bin/cli
+shards build
 ```
 
 ## Tools

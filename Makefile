@@ -18,8 +18,7 @@ install-deps:
 
 .PHONY: build-tools
 build-tools:
-	mkdir -p bin
-	crystal build src/cli.cr -o bin/cli
+	shards build --production
 
 .PHONY: validate
 validate:

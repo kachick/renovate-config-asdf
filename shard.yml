@@ -20,5 +20,5 @@ development_dependencies:
 license: MIT
 
 targets:
-  renovate-config-asdf:
+  cli:
     main: src/cli.cr

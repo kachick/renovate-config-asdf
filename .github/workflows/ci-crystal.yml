@@ -37,8 +37,14 @@ jobs:
       - uses: crystal-lang/install-crystal@v1
         with:
           crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
-      # Currently shards is unused except ameba
-      # - run: shards install
+      - name: Cache shards
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: ./lib
+          key: shards-lib-${{ runner.os }}-crystal_${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}-${{ hashFiles('shard.lock') }}
+      - run: shards install
+        if: steps.cache.outputs.cache-hit != 'true'
       # Need node.js to install validator. Spec includes the validator runner
       - run: crystal spec --tag '~needs_npm'
   lint:
@@ -52,7 +58,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ./bin/ameba
-          key: ${{ runner.os }}-${{ hashFiles('shard.lock') }}-ameba
+          key: ameba-${{ runner.os }}-crystal_${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}-${{ hashFiles('shard.lock') }}
       - uses: crystal-lang/install-crystal@v1
         with:
           crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
