@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Sharable config for .tool-version with asdf",
+  "description": "Sharable config for .tool-versions(asdf)",
   "extends": [
     "local>kachick/renovate-config-asdf//plugins/awscli.json5",
     "local>kachick/renovate-config-asdf//plugins/bun.json5",
