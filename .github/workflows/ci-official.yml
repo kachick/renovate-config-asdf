@@ -84,7 +84,7 @@ jobs:
       # https://github.com/actions/upload-artifact/issues/38
       - run: chmod 755 ./bin/cli
       - id: set-matrix
-        run: echo "json=$(git ls-files 'plugins' 'default.json' 'renovate.json' | ./bin/cli generate_matrix --matrix_chunk_size=10)" | tee --append "$GITHUB_OUTPUT"
+        run: echo "json=$(git ls-files 'plugins' 'default.json' 'renovate.json' | ./bin/cli generate_matrix --matrix_chunk_size=5)" | tee --append "$GITHUB_OUTPUT"
 
   validate:
     needs: [set-matrix, asdf-parser, build-cli]
