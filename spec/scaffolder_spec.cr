@@ -60,7 +60,7 @@ describe RenovateConfigAsdf::Scaffolder do
       }
       JSON
 
-      RenovateConfigAsdf::DefaultJson.from_json(RenovateConfigAsdf::Scaffolder.updated_defaullt_json(origin, "ruby")).should eq(RenovateConfigAsdf::DefaultJson.from_json(expected))
+      RenovateConfigAsdf::KnownJson.from_json(RenovateConfigAsdf::Scaffolder.updated_defaullt_json(origin, "ruby")).should eq(RenovateConfigAsdf::KnownJson.from_json(expected))
     end
   end
 

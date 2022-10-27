@@ -42,8 +42,8 @@ describe RenovateConfigAsdf::ReleaseManager do
     end
 
     it "returns replaced JSON with given version" do
-      RenovateConfigAsdf::DefaultJson.from_json(RenovateConfigAsdf::ReleaseManager.releasing_json(original_default_json, "1.5.0")).should eq(
-        RenovateConfigAsdf::DefaultJson.from_json(
+      RenovateConfigAsdf::KnownJson.from_json(RenovateConfigAsdf::ReleaseManager.releasing_json(original_default_json, "1.5.0")).should eq(
+        RenovateConfigAsdf::KnownJson.from_json(
           <<-JSON
           {
             "$schema": "https://docs.renovatebot.com/renovate-schema.json",
