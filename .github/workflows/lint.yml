@@ -39,13 +39,13 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ./bin/cli
-          key: ${{ runner.os }}-${{ hashFiles('src/**') }}-cli
+          key: cli-${{ runner.os }}-crystal_${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}-${{ hashFiles('src/**', 'shards.yml', 'shards/lock') }}
       - uses: crystal-lang/install-crystal@v1
         if: steps.cache.outputs.cache-hit != 'true'
         with:
           crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
-      # Currently shards is unused except ameba
-      # - run: shards install
+      - run: shards install --production
+        if: steps.cache.outputs.cache-hit != 'true'
       - run: make build-tools
         if: steps.cache.outputs.cache-hit != 'true'
       - run: make lint-definitions
