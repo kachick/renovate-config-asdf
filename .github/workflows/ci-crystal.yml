@@ -42,13 +42,11 @@ jobs:
       # Need node.js to install validator. Spec includes the validator runner
       - run: crystal spec --tag '~needs_npm'
   lint:
-    needs: [asdf-parser]
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: crystal-lang/install-crystal@v1
-        with:
-          crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
-      - run: shards install
-      - run: make crystal-lint-check
+      - id: crystal-ameba
+        uses: crystal-ameba/github-action@v0.5.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
