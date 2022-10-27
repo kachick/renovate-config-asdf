@@ -20,11 +20,11 @@ module RenovateConfigAsdf
     end
 
     def self.updated_defaullt_json(origin : String, plugin : String) : String
-      json = KnownJson.from_json(origin)
-      entries = json["extends"]
+      json = RootConfig.from_json(origin)
+      entries = json.extends
       raise "Unexpected schema of JSON" unless entries.is_a?(Array(String))
       new_entry = "local>kachick/renovate-config-asdf//plugins/#{plugin}.json5"
-      json["extends"] = merge_entries(entries, new_entry)
+      json.extends = merge_entries(entries, new_entry)
       json.to_json
     end
 

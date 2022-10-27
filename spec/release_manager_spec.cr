@@ -1,7 +1,7 @@
 require "./spec_helper"
 
 private def original_default_json
-  <<-JSON
+  <<-'JSON'
   {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "description": "Sharable config for .tool-version with asdf",
@@ -42,9 +42,9 @@ describe RenovateConfigAsdf::ReleaseManager do
     end
 
     it "returns replaced JSON with given version" do
-      RenovateConfigAsdf::KnownJson.from_json(RenovateConfigAsdf::ReleaseManager.releasing_json(original_default_json, "1.5.0")).should eq(
-        RenovateConfigAsdf::KnownJson.from_json(
-          <<-JSON
+      RenovateConfigAsdf::RootConfig.from_json(RenovateConfigAsdf::ReleaseManager.releasing_json(original_default_json, "1.5.0")).to_json.should eq(
+        RenovateConfigAsdf::RootConfig.from_json(
+          <<-'JSON'
           {
             "$schema": "https://docs.renovatebot.com/renovate-schema.json",
             "description": "Sharable config for .tool-version with asdf",
@@ -55,7 +55,7 @@ describe RenovateConfigAsdf::ReleaseManager do
             ]
           }
           JSON
-        )
+        ).to_json
       )
     end
   end
