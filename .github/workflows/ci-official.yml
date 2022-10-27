@@ -66,7 +66,7 @@ jobs:
           name: cli
           path: ./bin/
       - id: set-matrix
-        run: echo "json_array=$(git ls-files 'plugins' 'default.json' 'renovate.json' | ./bin/cli generate_matrix --matrix_chunk_size=10)" >> "$GITHUB_OUTPUT"
+        run: echo "json_array=$(git ls-files 'plugins' 'default.json' 'renovate.json' | ./bin/cli generate_matrix --matrix_chunk_size=10)" | tee --append "$GITHUB_OUTPUT"
 
   validate:
     needs: [set-matrix, asdf-parser, build-cli]
