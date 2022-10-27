@@ -54,7 +54,6 @@ jobs:
           path: ./bin/ameba
           key: ${{ runner.os }}-${{ hashFiles('shard.lock') }}-ameba
       - uses: crystal-lang/install-crystal@v1
-        if: steps.cache.outputs.cache-hit != 'true'
         with:
           crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
       - run: shards install
