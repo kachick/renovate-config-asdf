@@ -34,10 +34,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Cache CLI
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: ./bin/cli
+          key: ${{ runner.os }}-${{ hashFiles('src/**') }}-cli
       - uses: crystal-lang/install-crystal@v1
+        if: steps.cache.outputs.cache-hit != 'true'
         with:
           crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
       # Currently shards is unused except ameba
       # - run: shards install
       - run: make build-tools
+        if: steps.cache.outputs.cache-hit != 'true'
       - run: make lint-definitions
