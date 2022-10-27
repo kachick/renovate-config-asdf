@@ -41,13 +41,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Cache CLI
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: ./bin/cli
+          key: ${{ runner.os }}-${{ hashFiles('src/**') }}-cli
       - uses: crystal-lang/install-crystal@v1
+        if: steps.cache.outputs.cache-hit != 'true'
         with:
           crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
       # Currently shards is unused except ameba
       # - run: shards install
       - run: make build-tools
+        if: steps.cache.outputs.cache-hit != 'true'
       - uses: actions/upload-artifact@v3
+        if: steps.cache.outputs.cache-hit != 'true'
         with:
           name: cli
           path: ./bin/cli
@@ -60,11 +69,19 @@ jobs:
       json: ${{ steps.set-matrix.outputs.json }}
     steps:
       - uses: actions/checkout@v3
+      - name: Cache CLI
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: ./bin/cli
+          key: ${{ runner.os }}-${{ hashFiles('src/**') }}-cli
       - run: mkdir -p ./bin
       - uses: actions/download-artifact@v3
+        if: steps.cache.outputs.cache-hit != 'true'
         with:
           name: cli
           path: ./bin/
+      # https://github.com/actions/upload-artifact/issues/38
       - run: chmod 755 ./bin/cli
       - id: set-matrix
         run: echo "json=$(git ls-files 'plugins' 'default.json' 'renovate.json' | ./bin/cli generate_matrix --matrix_chunk_size=10)" | tee --append "$GITHUB_OUTPUT"
@@ -79,8 +96,15 @@ jobs:
         chunked_plugins: ${{ fromJson(needs.set-matrix.outputs.json) }}
     steps:
       - uses: actions/checkout@v3
+      - name: Cache CLI
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: ./bin/cli
+          key: ${{ runner.os }}-${{ hashFiles('src/**') }}-cli
       - run: mkdir -p ./bin
       - uses: actions/download-artifact@v3
+        if: steps.cache.outputs.cache-hit != 'true'
         with:
           name: cli
           path: ./bin/
