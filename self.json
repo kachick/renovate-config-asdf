@@ -4,6 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": [
+        "^default\\.json5?$",
         "^renovate\\.json5?$",
         "^\\.github/renovate\\.json5?$",
         "^\\.gitlab/renovate\\.json5?$",
