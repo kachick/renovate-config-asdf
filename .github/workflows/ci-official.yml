@@ -79,6 +79,12 @@ jobs:
         chunked_plugins: ${{ fromJson(needs.set-matrix.outputs.json) }}
     steps:
       - uses: actions/checkout@v3
+      - run: mkdir -p ./bin
+      - uses: actions/download-artifact@v3
+        with:
+          name: cli
+          path: ./bin/
+      - run: chmod 755 ./bin/cli
       - uses: actions/setup-node@v3
         with:
           node-version: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).nodejs }}'
