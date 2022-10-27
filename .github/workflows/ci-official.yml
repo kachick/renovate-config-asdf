@@ -44,7 +44,8 @@ jobs:
       - uses: crystal-lang/install-crystal@v1
         with:
           crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
-      - run: shards install
+      # Currently shards is unused except ameba
+      # - run: shards install
       - run: make build-tools
       - uses: actions/upload-artifact@v3
         with:
