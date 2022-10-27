@@ -9,9 +9,9 @@ end
 describe RenovateConfigAsdf::GitHhubActionsHelper do
   describe ".generate_matrix" do
     it "generates chunked json array" do
-      helper.generate_matrix("foo\nbar\nbaz", 1).should eq(["foo", "bar", "baz"].to_json)
-      helper.generate_matrix("foo\nbar\nbaz", 2).should eq(["foo bar", "baz"].to_json)
-      helper.generate_matrix("foo\nbar\nbaz", 3).should eq(["foo bar baz"].to_json)
+      helper.generate_matrix("foo\nbar\nbaz", 1).should eq(["foo".to_json, "bar".to_json, "baz".to_json].to_json)
+      helper.generate_matrix("foo\nbar\nbaz", 2).should eq(["foo bar".to_json, "baz".to_json].to_json)
+      helper.generate_matrix("foo\nbar\nbaz", 3).should eq(["foo bar baz".to_json].to_json)
     end
 
     it "raises an error when given string contains whitespace" do
