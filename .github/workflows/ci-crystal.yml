@@ -8,8 +8,6 @@ on:
       - '**/*.ecr'
       - 'shard.yml'
       - 'shard.lock'
-      - 'package.json'
-      - 'package-lock.json'
       - '.tool-versions'
   pull_request:
     paths:
@@ -18,8 +16,6 @@ on:
       - '**/*.ecr'
       - 'shard.yml'
       - 'shard.lock'
-      - 'package.json'
-      - 'package-lock.json'
       - '.tool-versions'
 
 jobs:
@@ -44,12 +40,7 @@ jobs:
       # Currently shards is unused except ameba
       # - run: shards install
       # Need node.js to install validator. Spec includes the validator runner
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).nodejs }}'
-          cache: npm
-      - run: npm ci
-      - run: crystal spec
+      - run: crystal spec --tag '~needs_npm'
   lint:
     needs: [asdf-parser]
     timeout-minutes: 5
