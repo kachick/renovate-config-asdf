@@ -45,7 +45,7 @@ scaffold:
 lint-definitions:
 	./bin/cli lint
 
-lint-all: crystal-lint-check dprint-check lint-definitions
+lint-all: crystal-lint-check dprint-check lint-definitions eslint-check
 
 crystal-lint-check: crystal-format-check
 	./bin/ameba --except Metrics
@@ -58,12 +58,20 @@ crystal-format-check:
 dprint-check:
 	dprint check
 
-lint-fix-all: crystal-lint-fix dprint-fix
+lint-fix-all: crystal-lint-fix dprint-fix eslint-fix
 
 .PHONY: crystal-lint-fix
 crystal-lint-fix:
 	crystal tool format
 	./bin/ameba --except Metrics --fix
+
+.PHONY: eslint-check
+eslint-check:
+	npx eslint 'test/**/*.*{js,ts}'
+
+.PHONY: eslint-fix
+eslint-fix:
+	npx eslint --fix 'test/**/*.*{js,ts}'
 
 .PHONY: dprint-fix
 dprint-fix:
