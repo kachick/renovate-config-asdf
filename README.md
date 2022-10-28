@@ -134,7 +134,7 @@ NOTE
 - [dprint](https://github.com/kachick/renovate-config-asdf/pull/8)
 - [helm](https://github.com/kachick/renovate-config-asdf/pull/94)
 - [helmfile](https://github.com/kachick/renovate-config-asdf/pull/205)
-- [hugo](https://github.com/kachick/renovate-config-asdf/pull/201)
+- [hugo](https://github.com/kachick/sandbox-renovate-config-asdf/pull/7)
 - [just](https://github.com/kachick/renovate-config-asdf/pull/261)
 - [kustomize](https://github.com/kachick/renovate-config-asdf/pull/92)
 - [shellcheck](https://github.com/kachick/renovate-config-asdf/pull/29)
