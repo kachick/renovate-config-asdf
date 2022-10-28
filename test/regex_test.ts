@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import test from 'node:test';
 import assert from 'node:assert';
 import fs from 'fs';
@@ -28,7 +30,7 @@ interface RegExManager extends RegexManagerTemplates {
   autoReplaceStringTemplate?: string;
 }
 
-test('extractVersionTemplate', async (t) => {
+void test('extractVersionTemplate', async (t) => {
   const plugins = new Set(examples.map((example) => example.plugin));
 
   for (const basename of fs.readdirSync('plugins')) {
@@ -68,7 +70,7 @@ test('extractVersionTemplate', async (t) => {
   }
 });
 
-test('fileMatch', async (t) => {
+void test('fileMatch', async (t) => {
   for (const plugin of fs.readdirSync('plugins')) {
     await t.test(plugin, (_t) => {
       const definition = fs.readFileSync(`plugins/${plugin}`, 'utf8');
@@ -87,7 +89,7 @@ test('fileMatch', async (t) => {
   }
 });
 
-test('self versioning updater', async (t) => {
+void test('self versioning updater', async (t) => {
   const definition = fs.readFileSync('self.json', 'utf8');
   const json5 = JSON5.parse(definition);
   const regexManagers = json5.regexManagers as RegExManager[];
@@ -147,7 +149,7 @@ unknown_plugin2 2.0.1 0.2.0
 unknown_plugin3 3.0.1`;
 }
 
-test('plugin extracting current version', async (t) => {
+void test('plugin extracting current version', async (t) => {
   for (const example of examples) {
     const { plugin } = example;
     if (plugin === 'scala' || plugin === 'hugo') {
