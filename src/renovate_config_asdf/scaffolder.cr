@@ -19,15 +19,6 @@ module RenovateConfigAsdf
       [*entries[0, position], inserting, *entries[position, entries.size]]
     end
 
-    def self.updated_defaullt_json(origin : String, plugin : String) : String
-      json = RootConfig.from_json(origin)
-      entries = json.extends
-      raise "Unexpected schema of JSON" unless entries.is_a?(Array(String))
-      new_entry = "local>kachick/renovate-config-asdf//plugins/#{plugin}.json5"
-      json.extends = merge_entries(entries, new_entry)
-      json.to_json
-    end
-
     def self.updated_example(origin : String, plugin : String) : String
       entires = origin.lines(chomp: false)
       merge_entries(entires, "#{plugin} <UPDATEME!>\n").join
@@ -46,11 +37,9 @@ module RenovateConfigAsdf
 
     def self.write(plugin : String) : Void
       config = scaffold(plugin)
-      new_json = updated_defaullt_json(File.read(DEAFULT_JSON_PATH), plugin)
       new_example = updated_example(File.read(EXAMPLE_TOOL_VERSIONS_PATH), plugin)
 
       File.write("plugins/#{plugin}.json5", config)
-      File.write(DEAFULT_JSON_PATH, new_json)
       File.write(EXAMPLE_TOOL_VERSIONS_PATH, new_example)
       touch
     end

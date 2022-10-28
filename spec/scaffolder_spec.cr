@@ -33,37 +33,6 @@ describe RenovateConfigAsdf::Scaffolder do
     end
   end
 
-  describe ".updated_defaullt_json" do
-    it "returns inserted JSON into correct position it is might be unformatted" do
-      origin = <<-'JSON'
-      {
-        "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-        "description": "Sharable config for .tool-version with asdf",
-        "extends": [
-          "local>kachick/renovate-config-asdf//plugins/crystal.json5",
-          "local>kachick/renovate-config-asdf//plugins/deno.json5",
-          "local>kachick/renovate-config-asdf//plugins/rust.json5"
-        ]
-      }
-      JSON
-
-      expected = <<-'JSON'
-      {
-        "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-        "description": "Sharable config for .tool-version with asdf",
-        "extends": [
-          "local>kachick/renovate-config-asdf//plugins/crystal.json5",
-          "local>kachick/renovate-config-asdf//plugins/deno.json5",
-          "local>kachick/renovate-config-asdf//plugins/ruby.json5",
-          "local>kachick/renovate-config-asdf//plugins/rust.json5"
-        ]
-      }
-      JSON
-
-      RenovateConfigAsdf::RootConfig.from_json(RenovateConfigAsdf::Scaffolder.updated_defaullt_json(origin, "ruby")).to_json.should eq(RenovateConfigAsdf::RootConfig.from_json(expected).to_json)
-    end
-  end
-
   describe ".updated_example" do
     it "returns inserted string into correct position" do
       origin = <<-ASDF
