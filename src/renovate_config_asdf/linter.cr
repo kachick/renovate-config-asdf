@@ -4,15 +4,17 @@ require "json"
 
 module RenovateConfigAsdf
   module Linter
-    def self.lint_plugins_list(plugins : Array(String), reference : Array(String)) : Tuple(Bool, String)
+    def self.lint_plugins_list(plugins : Array(String), reference : Array(String), check_order : Bool) : Tuple(Bool, String)
       plugin_to_count = plugins.tally
       # scala has special definition for v2 and v3
       duplicated_plugins = plugin_to_count.select { |plugin, count| count > 1 && plugin != "scala" }
       is_plugins_uniq = duplicated_plugins.empty?
       return {is_plugins_uniq, "Examples are duplicated: #{duplicated_plugins}"} unless is_plugins_uniq
 
-      is_plugins_sorted = plugins.sort == plugins
-      return {is_plugins_sorted, "Examples are not sorted"} unless is_plugins_sorted
+      if check_order
+        is_plugins_sorted = plugins.sort == plugins
+        return {is_plugins_sorted, "Examples are not sorted"} unless is_plugins_sorted
+      end
 
       missing_plugins = reference - plugins
       is_linked_plugins = missing_plugins.empty?
@@ -26,15 +28,15 @@ module RenovateConfigAsdf
       regex_managers = json.regexManagers
       return {false, "Unexpected JSON schema"} unless regex_managers
       patterns = regex_managers.flat_map(&.matchStrings)
-      plugins = patterns.compact_map(&.[%r<\)(\S+)\s>, 1]?)
+      plugins = patterns.compact_map(&.[%r<\)(\S+)\s>, 1]?) | ["hugo"] # hugo has special regex
       return {false, "no entries found"} if plugins.empty?
-      lint_plugins_list(plugins, reference)
+      lint_plugins_list(plugins, reference, check_order: false)
     end
 
     def self.lint_example(path : String, reference : Array(String)) : Tuple(Bool, String)
       entries = File.read_lines(path)
       plugins = entries.map(&.split(' ').first)
-      lint_plugins_list(plugins, reference)
+      lint_plugins_list(plugins, reference, check_order: true)
     end
   end
 end
