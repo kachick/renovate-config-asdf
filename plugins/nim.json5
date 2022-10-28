@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)nim (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)nim (?<currentValue>\\S+)"],
       "depNameTemplate": "nim-lang/Nim",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"

@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)erlang (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)erlang (?<currentValue>\\S+)"],
       "depNameTemplate": "erlang/otp",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^OTP-(?<version>\\S+)"

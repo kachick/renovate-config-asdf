@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)gauche (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)gauche (?<currentValue>\\S+)"],
       // https://github.com/shirok/Gauche/releases
       // https://github.com/sakuro/asdf-gauche/blob/71f574d7c934bc4977eec4fb8005e2ecd0d7ed0c/bin/list-all#L5
       // https://regex101.com/r/L2micV

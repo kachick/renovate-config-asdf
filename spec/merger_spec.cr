@@ -26,7 +26,7 @@ private def gauche_json5
     "regexManagers": [
       {
         "fileMatch": ["\\.tool-versions$"],
-        "matchStrings": ["(^|\\n)gauche (?<currentValue>.+?)\\n"],
+        "matchStrings": ["(^|\\n)gauche (?<currentValue>\\S+)"],
         // https://github.com/shirok/Gauche/releases
         // https://github.com/sakuro/asdf-gauche/blob/71f574d7c934bc4977eec4fb8005e2ecd0d7ed0c/bin/list-all#L5
         // https://regex101.com/r/L2micV
@@ -51,7 +51,7 @@ private def plugin_jsons : Array(RenovateConfigAsdf::PluginConfig)
     "regexManagers": [
       {
         "fileMatch": ["\\.tool-versions$"],
-        "matchStrings": ["(^|\\n)clojure (?<currentValue>.+?)\\n"],
+        "matchStrings": ["(^|\\n)clojure (?<currentValue>\\S+)"],
         // https://github.com/clojure/brew-install/tags
         "depNameTemplate": "clojure/brew-install",
         "datasourceTemplate": "github-tags",
@@ -108,14 +108,14 @@ describe RenovateConfigAsdf::Merger do
             "regexManagers": [
               {
                 "fileMatch": ["\\.tool-versions$"],
-                "matchStrings": ["(^|\\n)clojure (?<currentValue>.+?)\\n"],
+                "matchStrings": ["(^|\\n)clojure (?<currentValue>\\S+)"],
                 "depNameTemplate": "clojure/brew-install",
                 "datasourceTemplate": "github-tags",
                 "versioningTemplate": "regex:^(?<major>\\d+?)\\.(?<minor>\\d+?)\\.(?<patch>\\d+)\\.(?<build>\\d+)$"
               },
               {
                 "fileMatch": ["\\.tool-versions$"],
-                "matchStrings": ["(^|\\n)gauche (?<currentValue>.+?)\\n"],
+                "matchStrings": ["(^|\\n)gauche (?<currentValue>\\S+)"],
                 "depNameTemplate": "practicalscheme/gauche",
                 "datasourceTemplate": "docker"
               },
@@ -150,7 +150,7 @@ describe RenovateConfigAsdf::Merger do
         "regexManagers": [
           {
             "fileMatch": ["\\.tool-versions$"],
-            "matchStrings": ["(^|\\n)gauche (?<currentValue>.+?)\\n"],
+            "matchStrings": ["(^|\\n)gauche (?<currentValue>\\S+)"],
             "depNameTemplate": "practicalscheme/gauche",
             "datasourceTemplate": "docker"
           }
@@ -170,7 +170,7 @@ describe RenovateConfigAsdf::Merger do
             "regexManagers": [
               {
                 "fileMatch": ["\\.tool-versions$"], # This pattern can not be parsed
-                "matchStrings": ["(^|\\n)gauche (?<currentValue>.+?)\\n"],
+                "matchStrings": ["(^|\\n)gauche (?<currentValue>\\S+)"],
                 "depNameTemplate": "practicalscheme/gauche",
                 "datasourceTemplate": "docker"
               }
@@ -186,7 +186,7 @@ describe RenovateConfigAsdf::Merger do
           "regexManagers": [
             {
               "fileMatch": ["\\.tool-versions$"],
-              "matchStrings": ["(^|\\n)gauche (?<currentValue>.+?)\\n"],
+              "matchStrings": ["(^|\\n)gauche (?<currentValue>\\S+)"],
               "depNameTemplate": "practicalscheme/gauche",
               "datasourceTemplate": "docker"
             }

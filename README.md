@@ -23,6 +23,11 @@ Because of default branch is frequently changed for developping.
 
 Released versions can be checked in [github-tags](https://github.com/kachick/renovate-config-asdf/tags).
 
+## Multiple versions and comments
+
+Will work since 1.10.0+.\
+Only for prior versions. It is same restriction as [official manager](https://github.com/renovatebot/renovate/blob/4006ef4667cc416d40f88b0be6ba24690def8500/lib/modules/manager/asdf/readme.md?plain=1#L10).
+
 ## Self updater
 
 Seprated from `default.json` for now.\

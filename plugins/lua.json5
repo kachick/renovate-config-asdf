@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)lua (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)lua (?<currentValue>\\S+)"],
       // Plugin Fetcher Permalink: https://github.com/Stratus3D/asdf-lua/blob/d99f76c280241950c288503eb89d2532085d9fd4/bin/list-all#L13-L45
       // DataSource URL: https://github.com/lua/lua/releases
       "depNameTemplate": "lua/lua",

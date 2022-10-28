@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)crystal (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)crystal (?<currentValue>\\S+)"],
       "depNameTemplate": "crystal-lang/crystal",
       "datasourceTemplate": "github-tags"
     }

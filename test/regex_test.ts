@@ -138,3 +138,66 @@ test('self versioning updater', async (t) => {
     );
   });
 });
+
+function generateComplexToolVersions(plugin: string, priorVersion: string): string {
+  return `unknown_plugin1 1.0.1 0.1.0 # ${plugin} - it describes another plugin
+# comment
+${plugin} ${priorVersion} 0.4.2 system # comment
+unknown_plugin2 2.0.1 0.2.0
+unknown_plugin3 3.0.1`;
+}
+
+test('plugin extracting current version', async (t) => {
+  for (const example of examples) {
+    const { plugin } = example;
+    if (plugin === 'scala') {
+      continue;
+    }
+    await t.test(`${plugin} - matchStrings`, (_t) => {
+      const definition = fs.readFileSync(`plugins/${plugin}.json5`, 'utf8');
+      const json5 = JSON5.parse(definition);
+      const regexManagers = json5['regexManagers'] as RegExManager[];
+
+      const patterns = regexManagers.flatMap((regexManager) => {
+        return regexManager['matchStrings'];
+      }).flat(Infinity).map((patternString) => new RE2(patternString));
+
+      assert(patterns.length === 1);
+      const pattern = patterns[0];
+      assert(pattern);
+      const currentVersion = '1.4.2';
+      const matched = pattern.exec(generateComplexToolVersions(plugin, currentVersion));
+      assert(matched);
+      // @ts-ignore - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
+      assert.equal(currentVersion, matched.groups['currentValue']);
+    });
+  }
+
+  await t.test(`scala - matchStrings`, (_t) => {
+    const definition = fs.readFileSync(`plugins/scala.json5`, 'utf8');
+    const json5 = JSON5.parse(definition);
+    const regexManagers = json5['regexManagers'] as RegExManager[];
+
+    const patterns = regexManagers.flatMap((regexManager) => {
+      return regexManager['matchStrings'];
+    }).flat(Infinity).map((patternString) => new RE2(patternString));
+
+    assert(patterns.length === 2);
+    const [scala2Pattern, scala3Pattern] = patterns;
+    assert(scala2Pattern);
+    assert(scala3Pattern);
+
+    const scala2Matched = scala2Pattern.exec(generateComplexToolVersions('scala', '2.9.9'));
+    assert(scala2Matched);
+    // @ts-ignore - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
+    assert.equal('2.9.9', scala2Matched.groups['currentValue']);
+
+    const scala3Matched = scala3Pattern.exec(generateComplexToolVersions('scala', '3.9.9'));
+    assert(scala3Matched);
+    // @ts-ignore - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
+    assert.equal('3.9.9', scala3Matched.groups['currentValue']);
+
+    assert.equal(null, scala2Pattern.exec(generateComplexToolVersions('scala', '3.9.9')));
+    assert.equal(null, scala3Pattern.exec(generateComplexToolVersions('scala', '2.9.9')));
+  });
+});

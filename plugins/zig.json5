@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)zig (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)zig (?<currentValue>\\S+)"],
       // https://github.com/ziglang/zig/tags
       "depNameTemplate": "ziglang/zig",
       "datasourceTemplate": "github-tags"
