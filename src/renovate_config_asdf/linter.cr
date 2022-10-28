@@ -5,8 +5,10 @@ require "json"
 module RenovateConfigAsdf
   module Linter
     def self.lint_plugins_list(plugins : Array(String), reference : Array(String)) : Tuple(Bool, String)
-      is_plugins_uniq = plugins.uniq == plugins
-      return {is_plugins_uniq, "Examples are duplicated"} unless is_plugins_uniq
+      plugin_to_count = plugins.tally
+      duplicated_plugins = plugin_to_count.select { |_plugin, count| count > 1 }
+      is_plugins_uniq = duplicated_plugins.empty?
+      return {is_plugins_uniq, "Examples are duplicated: #{duplicated_plugins}"} unless is_plugins_uniq
 
       is_plugins_sorted = plugins.sort == plugins
       return {is_plugins_sorted, "Examples are not sorted"} unless is_plugins_sorted
