@@ -38,7 +38,7 @@ test('extractVersionTemplate', async (t) => {
     const json5 = JSON5.parse(definition);
     const regexManagers = json5['regexManagers'] as RegExManager[];
 
-    if ((plugin !== 'java') && regexManagers.some((regexManager) => 'extractVersionTemplate' in regexManager)) {
+    if (regexManagers.some((regexManager) => 'extractVersionTemplate' in regexManager)) {
       await t.test(`${plugin} - exists`, (_t) => {
         assert.equal(true, plugins.has(plugin));
       });

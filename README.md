@@ -59,7 +59,7 @@ NOTE
 ## Limitations
 
 - Want to cover asdf, however currently targeted only for some implementations.
-- [asdf-java](https://github.com/halcyon/asdf-java) - Looks needed to read [this tsv](https://github.com/halcyon/asdf-java/tree/master/data)
+- [asdf-java](https://github.com/halcyon/asdf-java) - Looks needed to read [this tsv](https://github.com/halcyon/asdf-java/tree/master/data) or [special datasource](https://github.com/renovatebot/renovate/tree/49465d460245552d6a409dcd7a95121a40358a28/lib/modules/datasource/adoptium-java)
 
 ## Working Examples
 
