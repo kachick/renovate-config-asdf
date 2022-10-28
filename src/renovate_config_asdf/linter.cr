@@ -6,7 +6,8 @@ module RenovateConfigAsdf
   module Linter
     def self.lint_plugins_list(plugins : Array(String), reference : Array(String)) : Tuple(Bool, String)
       plugin_to_count = plugins.tally
-      duplicated_plugins = plugin_to_count.select { |_plugin, count| count > 1 }
+      # scala has special definition for v2 and v3
+      duplicated_plugins = plugin_to_count.select { |plugin, count| count > 1 && plugin != "scala" }
       is_plugins_uniq = duplicated_plugins.empty?
       return {is_plugins_uniq, "Examples are duplicated: #{duplicated_plugins}"} unless is_plugins_uniq
 
