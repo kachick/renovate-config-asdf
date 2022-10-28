@@ -23,10 +23,42 @@ Because of default branch is frequently changed for developping.
 
 Released versions can be checked in [github-tags](https://github.com/kachick/renovate-config-asdf/tags).
 
+## Official asdf manager
+
+This project started before [providing official asdf manager](https://github.com/renovatebot/renovate/pull/17166).
+Currently nodejs definition is conflicting, so multiple PRs might be created when you enabled asdf manager as `config:base`.
+
+Having some ways to avoid that.
+
+1. Disable official asdf manager
+
+```json
+{
+  "asdf": {
+    "enabled": false
+  }
+}
+```
+
+2. Enable only regex managers for this project
+
+```json
+{
+  "enabledManagers": ["regex"]
+}
+```
+
+3. Send PRs to official as [this](https://github.com/renovatebot/renovate/pull/18612).
+   \
+   When importing most definitions to official is finished, this repository might be maintainance mode for current dependents.\
+   Or adding new plugins and partially used as `"github>kachick/renovate-config-asdf//plugins/experimental_plugin_A`.
+
 ## Multiple versions and comments
 
-Will work since 1.10.0+.\
+Works since 1.10.0+.\
 Only for prior versions. It is same restriction as [official manager](https://github.com/renovatebot/renovate/blob/4006ef4667cc416d40f88b0be6ba24690def8500/lib/modules/manager/asdf/readme.md?plain=1#L10).
+
+Working examples: [1](https://github.com/kachick/sandbox-renovate-config-asdf/pull/1), [2](https://github.com/kachick/sandbox-renovate-config-asdf/pull/2), [3](https://github.com/kachick/sandbox-renovate-config-asdf/pull/4)
 
 ## Self updater
 
