@@ -36,10 +36,10 @@ release:
 scaffold:
 	./bin/cli scaffold --plugin=${PLUGIN}
 	$(MAKE) dprint-fix
-	echo '--------------------------------------------------'
-	echo '1. Update generated files'
-	echo '2. Add tests into test/examples.ts if extractVersionTemplate exists'
-	echo '3. Merge configs with `make merge`'
+	@echo '--------------------------------------------------'
+	@echo '1. Update generated files'
+	@echo '2. Add tests into test/examples.ts if extractVersionTemplate exists'
+	@echo '3. Merge configs with `make merge`'
 
 .PHONY: lint-definitions
 lint-definitions:
