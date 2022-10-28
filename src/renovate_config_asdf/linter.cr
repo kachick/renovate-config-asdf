@@ -20,9 +20,10 @@ module RenovateConfigAsdf
 
     def self.lint_default_json(path : String, reference : Array(String)) : Tuple(Bool, String)
       json = RootConfig.from_json(File.read(path))
-      entries = json.extends
-      return {false, "Unexpected JSON schema"} unless entries.is_a?(Array(String))
-      plugins = entries.compact_map(&.[%r<plugins/([^/]+)\.json5\z>, 1]?)
+      regex_managers = json.regexManagers
+      return {false, "Unexpected JSON schema"} unless regex_managers
+      patterns = regex_managers.flat_map(&.matchStrings)
+      plugins = patterns.compact_map(&.[%r<\)(\S+)\s>, 1]?)
       return {false, "no entries found"} if plugins.empty?
       lint_plugins_list(plugins, reference)
     end

@@ -40,11 +40,5 @@ describe RenovateConfigAsdf::Linter do
       success.should eq(false)
       message.should contain("Some plugins are not linked: [\"crystal\", \"ruby\"]")
     end
-
-    it "returns false for unsorted entries" do
-      success, message = RenovateConfigAsdf::Linter.lint_default_json("spec/fixtures/default-invalid-unsorted.json", defined_plugins)
-      success.should eq(false)
-      message.should contain("Examples are not sorted")
-    end
   end
 end
