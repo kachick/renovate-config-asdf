@@ -1,7 +1,6 @@
 require "json"
 
 module RenovateConfigAsdf
-  @[JSON::Serializable::Options(emit_nulls: true)]
   class RegexManagerConfig
     include JSON::Serializable
 
@@ -13,11 +12,10 @@ module RenovateConfigAsdf
     property extractVersionTemplate : String?
   end
 
-  @[JSON::Serializable::Options(emit_nulls: true)]
   class RootConfig
     include JSON::Serializable
 
-    @[JSON::Field(key: "$schema", emit_null: true)]
+    @[JSON::Field(key: "$schema")]
     getter schema : String?
 
     property description : String
@@ -25,11 +23,10 @@ module RenovateConfigAsdf
     property regexManagers : Array(RegexManagerConfig)?
   end
 
-  @[JSON::Serializable::Options(emit_nulls: true)]
   class PluginConfig
     include JSON::Serializable
 
-    @[JSON::Field(key: "$schema", emit_null: true)]
+    @[JSON::Field(key: "$schema")]
     getter schema : String?
 
     property description : String
