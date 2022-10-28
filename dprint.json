@@ -20,7 +20,8 @@
   "excludes": [
     ".git",
     "lib",
-    "bin"
+    "bin",
+    ".ameba.yml"
   ],
   "plugins": [
     "https://plugins.dprint.dev/json-0.15.6.wasm",

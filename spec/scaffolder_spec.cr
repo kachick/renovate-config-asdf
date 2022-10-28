@@ -35,7 +35,7 @@ describe RenovateConfigAsdf::Scaffolder do
 
   describe ".updated_defaullt_json" do
     it "returns inserted JSON into correct position it is might be unformatted" do
-      origin = <<-JSON
+      origin = <<-'JSON'
       {
         "$schema": "https://docs.renovatebot.com/renovate-schema.json",
         "description": "Sharable config for .tool-version with asdf",
@@ -47,7 +47,7 @@ describe RenovateConfigAsdf::Scaffolder do
       }
       JSON
 
-      expected = <<-JSON
+      expected = <<-'JSON'
       {
         "$schema": "https://docs.renovatebot.com/renovate-schema.json",
         "description": "Sharable config for .tool-version with asdf",
@@ -60,7 +60,7 @@ describe RenovateConfigAsdf::Scaffolder do
       }
       JSON
 
-      RenovateConfigAsdf::DefaultJson.from_json(RenovateConfigAsdf::Scaffolder.updated_defaullt_json(origin, "ruby")).should eq(RenovateConfigAsdf::DefaultJson.from_json(expected))
+      RenovateConfigAsdf::RootConfig.from_json(RenovateConfigAsdf::Scaffolder.updated_defaullt_json(origin, "ruby")).to_json.should eq(RenovateConfigAsdf::RootConfig.from_json(expected).to_json)
     end
   end
 
@@ -85,7 +85,7 @@ describe RenovateConfigAsdf::Scaffolder do
 
   describe ".touched_renovate_json" do
     it "returns string that toggled with rand suffix label" do
-      origin = <<-JSON
+      origin = <<-'JSON'
       {
         "$schema": "https://docs.renovatebot.com/renovate-schema.json",
         "dependencyDashboard": true,

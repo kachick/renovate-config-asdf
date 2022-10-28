@@ -1,10 +1,31 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Sharable config for .tool-version with asdf",
-  "extends": [
-    "local>kachick/renovate-config-asdf//plugins/crystal.json5",
-    "local>kachick/renovate-config-asdf//plugins/deno.json5",
-    "local>kachick/renovate-config-asdf//plugins/ruby.json5",
-    "local>kachick/renovate-config-asdf//plugins/rust.json5"
+  "description": "Sharable config for .tool-versions(asdf)",
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["(^|\\n)crystal (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "crystal-lang/crystal",
+      "datasourceTemplate": "github-tags"
+    },
+    {
+      "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["(^|\\n)deno (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "denoland/deno",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>\\S+)"
+    },
+    {
+      "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["(^|\\n)ruby (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "ruby-version",
+      "datasourceTemplate": "ruby-version"
+    },
+    {
+      "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["(^|\\n)rust (?<currentValue>.+?)\\n"],
+      "depNameTemplate": "rust-lang/rust",
+      "datasourceTemplate": "github-tags"
+    }
   ]
 }

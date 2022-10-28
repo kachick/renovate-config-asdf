@@ -24,6 +24,10 @@ build-tools:
 validate:
 	./bin/cli validate
 
+.PHONY: merge
+merge:
+	./bin/cli merge
+
 .PHONY: release
 release:
 	./bin/cli release --version=${VERSION}
@@ -32,6 +36,10 @@ release:
 scaffold:
 	./bin/cli scaffold --plugin=${PLUGIN}
 	$(MAKE) dprint-fix
+	echo '--------------------------------------------------'
+	echo '1. Update generated files'
+	echo '2. Add tests into test/examples.ts if extractVersionTemplate exists'
+	echo '3. Merge configs with `make merge`'
 
 .PHONY: lint-definitions
 lint-definitions:
@@ -40,7 +48,7 @@ lint-definitions:
 lint-all: crystal-lint-check dprint-check lint-definitions
 
 crystal-lint-check: crystal-format-check
-	./bin/ameba
+	./bin/ameba --except Metrics
 
 .PHONY: crystal-format-check
 crystal-format-check:
@@ -55,7 +63,7 @@ lint-fix-all: crystal-lint-fix dprint-fix
 .PHONY: crystal-lint-fix
 crystal-lint-fix:
 	crystal tool format
-	./bin/ameba --fix
+	./bin/ameba --except Metrics --fix
 
 .PHONY: dprint-fix
 dprint-fix:
