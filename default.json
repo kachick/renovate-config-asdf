@@ -110,7 +110,7 @@
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)hugo (?<currentValue>\\S+)"],
+      "matchStrings": ["(^|\\n)(go)?hugo (extended_)?(?<currentValue>\\S+)"],
       "depNameTemplate": "gohugoio/hugo",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
