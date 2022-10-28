@@ -4,255 +4,255 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)awscli (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)awscli (?<currentValue>\\S+)"],
       "depNameTemplate": "aws/aws-cli",
       "datasourceTemplate": "github-tags"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)bun (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)bun (?<currentValue>\\S+)"],
       "depNameTemplate": "oven-sh/bun",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^bun-v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)cargo-make (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)cargo-make (?<currentValue>\\S+)"],
       "depNameTemplate": "sagiegurari/cargo-make",
       "datasourceTemplate": "github-releases"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)clojure (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)clojure (?<currentValue>\\S+)"],
       "depNameTemplate": "clojure/brew-install",
       "datasourceTemplate": "github-tags",
       "versioningTemplate": "regex:^(?<major>\\d+?)\\.(?<minor>\\d+?)\\.(?<patch>\\d+)\\.(?<build>\\d+)$"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)crystal (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)crystal (?<currentValue>\\S+)"],
       "depNameTemplate": "crystal-lang/crystal",
       "datasourceTemplate": "github-tags"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)deno (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)deno (?<currentValue>\\S+)"],
       "depNameTemplate": "denoland/deno",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)direnv (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)direnv (?<currentValue>\\S+)"],
       "depNameTemplate": "direnv/direnv",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)dprint (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)dprint (?<currentValue>\\S+)"],
       "depNameTemplate": "dprint/dprint",
       "datasourceTemplate": "github-releases"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)elixir (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)elixir (?<currentValue>\\S+)"],
       "depNameTemplate": "elixir-lang/elixir",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)elm (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)elm (?<currentValue>\\S+)"],
       "depNameTemplate": "elm/compiler",
       "datasourceTemplate": "github-releases"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)erlang (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)erlang (?<currentValue>\\S+)"],
       "depNameTemplate": "erlang/otp",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^OTP-(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)gauche (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)gauche (?<currentValue>\\S+)"],
       "depNameTemplate": "practicalscheme/gauche",
       "datasourceTemplate": "docker"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)golang (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)golang (?<currentValue>\\S+)"],
       "depNameTemplate": "golang/go",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^go(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)haskell (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)haskell (?<currentValue>\\S+)"],
       "depNameTemplate": "ghc/ghc",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^ghc-(?<version>\\S+?)-release"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)helm (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)helm (?<currentValue>\\S+)"],
       "depNameTemplate": "helm/helm",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)helmfile (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)helmfile (?<currentValue>\\S+)"],
       "depNameTemplate": "helmfile/helmfile",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)hugo (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)hugo (?<currentValue>\\S+)"],
       "depNameTemplate": "gohugoio/hugo",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)idris (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)idris (?<currentValue>\\S+)"],
       "depNameTemplate": "idris-lang/Idris-dev",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)julia (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)julia (?<currentValue>\\S+)"],
       "depNameTemplate": "JuliaLang/julia",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)just (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)just (?<currentValue>\\S+)"],
       "depNameTemplate": "casey/just",
       "datasourceTemplate": "github-releases"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)kotlin (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)kotlin (?<currentValue>\\S+)"],
       "depNameTemplate": "JetBrains/kotlin",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^(Kotlin |v)(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)kustomize (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)kustomize (?<currentValue>\\S+)"],
       "depNameTemplate": "kubernetes-sigs/kustomize",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^kustomize/v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)lua (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)lua (?<currentValue>\\S+)"],
       "depNameTemplate": "lua/lua",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)nim (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)nim (?<currentValue>\\S+)"],
       "depNameTemplate": "nim-lang/Nim",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)nodejs (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)nodejs (?<currentValue>\\S+)"],
       "depNameTemplate": "nodejs/node",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)ocaml (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)ocaml (?<currentValue>\\S+)"],
       "depNameTemplate": "ocaml/ocaml",
       "datasourceTemplate": "github-releases"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)perl (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)perl (?<currentValue>\\S+)"],
       "depNameTemplate": "Perl/perl5",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)php (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)php (?<currentValue>\\S+)"],
       "depNameTemplate": "php/php-src",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^php-(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)python (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)python (?<currentValue>\\S+)"],
       "depNameTemplate": "python/cpython",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)ruby (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)ruby (?<currentValue>\\S+)"],
       "depNameTemplate": "ruby-version",
       "datasourceTemplate": "ruby-version"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)rust (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)rust (?<currentValue>\\S+)"],
       "depNameTemplate": "rust-lang/rust",
       "datasourceTemplate": "github-tags"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)scala (?<currentValue>2\\..+?)\\n"],
+      "matchStrings": ["(^|\\n)scala (?<currentValue>2\\.\\S+)"],
       "depNameTemplate": "scala/scala",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)scala (?<currentValue>3\\..+?)\\n"],
+      "matchStrings": ["(^|\\n)scala (?<currentValue>3\\.\\S+)"],
       "depNameTemplate": "lampepfl/dotty",
       "datasourceTemplate": "github-tags"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)shellcheck (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)shellcheck (?<currentValue>\\S+)"],
       "depNameTemplate": "koalaman/shellcheck",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)shfmt (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)shfmt (?<currentValue>\\S+)"],
       "depNameTemplate": "mvdan/sh",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)terraform (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)terraform (?<currentValue>\\S+)"],
       "depNameTemplate": "hashicorp/terraform",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)trivy (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)trivy (?<currentValue>\\S+)"],
       "depNameTemplate": "aquasecurity/trivy",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)zig (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)zig (?<currentValue>\\S+)"],
       "depNameTemplate": "ziglang/zig",
       "datasourceTemplate": "github-tags"
     }
