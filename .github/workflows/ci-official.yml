@@ -4,8 +4,6 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/ci-official.yml'
-      - 'src/renovate_config_asdf/github_actions_helper.cr'
-      - 'plugins/*.json5'
       - 'package.json'
       - 'package-lock.json'
       - 'default.json'
@@ -15,8 +13,6 @@ on:
   pull_request:
     paths:
       - '.github/workflows/ci-official.yml'
-      - 'src/renovate_config_asdf/github_actions_helper.cr'
-      - 'plugins/*.json5'
       - 'package.json'
       - 'package-lock.json'
       - 'default.json'
@@ -35,81 +31,17 @@ jobs:
     outputs:
       tool-versions: '${{ steps.parse.outputs.json }}'
 
-  build-cli:
-    needs: [asdf-parser]
-    timeout-minutes: 5
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Cache CLI
-        id: cache
-        uses: actions/cache@v3
-        with:
-          path: ./bin/cli
-          key: cli-${{ runner.os }}-crystal_${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}-${{ hashFiles('src/**', 'shards.yml', 'shards/lock') }}
-      - uses: crystal-lang/install-crystal@v1
-        if: steps.cache.outputs.cache-hit != 'true'
-        with:
-          crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
-      - run: shards install --production
-        if: steps.cache.outputs.cache-hit != 'true'
-      - run: make build-tools
-        if: steps.cache.outputs.cache-hit != 'true'
-      - uses: actions/upload-artifact@v3
-        if: steps.cache.outputs.cache-hit != 'true'
-        with:
-          name: cli
-          path: ./bin/cli
-
-  set-matrix:
-    needs: [asdf-parser, build-cli]
-    timeout-minutes: 5
-    runs-on: ubuntu-latest
-    outputs:
-      json: ${{ steps.set-matrix.outputs.json }}
-    steps:
-      - uses: actions/checkout@v3
-      - name: Cache CLI
-        id: cache
-        uses: actions/cache@v3
-        with:
-          path: ./bin/cli
-          key: cli-${{ runner.os }}-crystal_${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}-${{ hashFiles('src/**', 'shards.yml', 'shards/lock') }}
-      - uses: actions/download-artifact@v3
-        if: steps.cache.outputs.cache-hit != 'true'
-        with:
-          name: cli
-          path: ./bin/
-      # https://github.com/actions/upload-artifact/issues/38
-      - run: chmod 755 ./bin/cli
-      - id: set-matrix
-        run: echo "json=$(git ls-files 'plugins' 'default.json' 'renovate.json' | ./bin/cli generate_matrix --matrix_chunk_size=7)" | tee --append "$GITHUB_OUTPUT"
-
   validate:
-    needs: [set-matrix, asdf-parser, build-cli]
+    needs: [asdf-parser]
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    strategy:
-      fail-fast: false
-      matrix:
-        chunked_plugins: ${{ fromJson(needs.set-matrix.outputs.json) }}
     steps:
       - uses: actions/checkout@v3
-      - name: Cache CLI
-        id: cache
-        uses: actions/cache@v3
-        with:
-          path: ./bin/cli
-          key: cli-${{ runner.os }}-crystal_${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}-${{ hashFiles('src/**', 'shards.yml', 'shards/lock') }}
-      - uses: actions/download-artifact@v3
-        if: steps.cache.outputs.cache-hit != 'true'
-        with:
-          name: cli
-          path: ./bin/
-      - run: chmod 755 ./bin/cli
       - uses: actions/setup-node@v3
         with:
           node-version: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).nodejs }}'
           cache: npm
       - run: npm ci # `--ignore-scripts` do not cover RE2
-      - run: ./bin/cli validate --globs='${{ matrix.chunked_plugins }}'
+      # renovate.json will always tested by the CLI
+      - run: RENOVATE_CONFIG_FILE=default.json npx renovate-config-validator
+      - run: RENOVATE_CONFIG_FILE=self.json npx renovate-config-validator
