@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)elixir (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)elixir (?<currentValue>\\S+)"],
       "depNameTemplate": "elixir-lang/elixir",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"

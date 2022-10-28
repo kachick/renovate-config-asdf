@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)shellcheck (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)shellcheck (?<currentValue>\\S+)"],
       // https://github.com/luizm/asdf-shellcheck/blob/9d462743a7e64670ec60cc13893f97e9a70f72a3/bin/list-all#L3
       // https://github.com/koalaman/shellcheck/releases
       "depNameTemplate": "koalaman/shellcheck",

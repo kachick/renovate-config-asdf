@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)golang (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)golang (?<currentValue>\\S+)"],
       "depNameTemplate": "golang/go",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^go(?<version>\\S+)"

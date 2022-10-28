@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)kustomize (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)kustomize (?<currentValue>\\S+)"],
       "depNameTemplate": "kubernetes-sigs/kustomize",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^kustomize/v(?<version>\\S+)"

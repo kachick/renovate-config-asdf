@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)elm (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)elm (?<currentValue>\\S+)"],
       "depNameTemplate": "elm/compiler",
       "datasourceTemplate": "github-releases"
     }

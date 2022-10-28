@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)helmfile (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)helmfile (?<currentValue>\\S+)"],
       // Plugin Fetcher Permalink:
       //   - https://github.com/asdf-vm/asdf-plugins/blob/ba096638f9dc867bf9a8f7791f22e31d800d3d93/plugins/helmfile#L1
       //   - https://github.com/feniix/asdf-helmfile/blob/3f1681ecc3e56fbca51ff5091fe05e2984753f1d/bin/list-all#L3-L17

@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)rust (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)rust (?<currentValue>\\S+)"],
       // https://github.com/rust-lang/rust/tags
       "depNameTemplate": "rust-lang/rust",
       "datasourceTemplate": "github-tags"

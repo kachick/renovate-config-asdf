@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)bun (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)bun (?<currentValue>\\S+)"],
       // https://github.com/oven-sh/bun/tags
       "depNameTemplate": "oven-sh/bun",
       "datasourceTemplate": "github-tags",

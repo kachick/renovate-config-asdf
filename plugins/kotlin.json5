@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)kotlin (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)kotlin (?<currentValue>\\S+)"],
       "depNameTemplate": "JetBrains/kotlin",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^(Kotlin |v)(?<version>\\S+)"

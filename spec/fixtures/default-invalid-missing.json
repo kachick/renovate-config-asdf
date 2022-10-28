@@ -4,14 +4,14 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)deno (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)deno (?<currentValue>\\S+)"],
       "depNameTemplate": "denoland/deno",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)rust (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)rust (?<currentValue>\\S+)"],
       "depNameTemplate": "rust-lang/rust",
       "datasourceTemplate": "github-tags"
     }

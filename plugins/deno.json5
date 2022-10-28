@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)deno (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)deno (?<currentValue>\\S+)"],
       "depNameTemplate": "denoland/deno",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"

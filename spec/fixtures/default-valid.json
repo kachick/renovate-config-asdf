@@ -4,26 +4,26 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)crystal (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)crystal (?<currentValue>\\S+)"],
       "depNameTemplate": "crystal-lang/crystal",
       "datasourceTemplate": "github-tags"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)deno (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)deno (?<currentValue>\\S+)"],
       "depNameTemplate": "denoland/deno",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)ruby (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)ruby (?<currentValue>\\S+)"],
       "depNameTemplate": "ruby-version",
       "datasourceTemplate": "ruby-version"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)rust (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)rust (?<currentValue>\\S+)"],
       "depNameTemplate": "rust-lang/rust",
       "datasourceTemplate": "github-tags"
     }

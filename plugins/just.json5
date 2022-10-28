@@ -4,7 +4,7 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)just (?<currentValue>.+?)\\n"],
+      "matchStrings": ["(^|\\n)just (?<currentValue>\\S+)"],
       // Plugin Fetcher Permalink:
       //   - https://github.com/asdf-vm/asdf-plugins/blob/6498384c22a29602d065d3db681b8f32f7e4295b/plugins/just#L1
       //   - https://github.com/olofvndrhr/asdf-just/blob/e67f744572bf2e1fa0c36e4df9ddb5b1dc6af972/lib/utils.bash#L5-L35
