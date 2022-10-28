@@ -150,7 +150,7 @@ unknown_plugin3 3.0.1`;
 test('plugin extracting current version', async (t) => {
   for (const example of examples) {
     const { plugin } = example;
-    if (plugin === 'scala') {
+    if (plugin === 'scala' || plugin === 'hugo') {
       continue;
     }
     await t.test(`${plugin} - matchStrings`, (_t) => {
@@ -173,8 +173,8 @@ test('plugin extracting current version', async (t) => {
     });
   }
 
-  await t.test(`scala - matchStrings`, (_t) => {
-    const definition = fs.readFileSync(`plugins/scala.json5`, 'utf8');
+  await t.test('scala - matchStrings', (_t) => {
+    const definition = fs.readFileSync('plugins/scala.json5', 'utf8');
     const json5 = JSON5.parse(definition);
     const regexManagers = json5['regexManagers'] as RegExManager[];
 
@@ -199,5 +199,30 @@ test('plugin extracting current version', async (t) => {
 
     assert.equal(null, scala2Pattern.exec(generateComplexToolVersions('scala', '3.9.9')));
     assert.equal(null, scala3Pattern.exec(generateComplexToolVersions('scala', '2.9.9')));
+  });
+
+  await t.test('hugo - matchStrings', (_t) => {
+    const definition = fs.readFileSync('plugins/hugo.json5', 'utf8');
+    const json5 = JSON5.parse(definition);
+    const regexManagers = json5['regexManagers'] as RegExManager[];
+
+    const patterns = regexManagers.flatMap((regexManager) => {
+      return regexManager['matchStrings'];
+    }).flat(Infinity).map((patternString) => new RE2(patternString));
+
+    assert(patterns.length === 1);
+    const pattern = patterns[0];
+    assert(pattern);
+    const currentNormalizedVersion = '0.104.3';
+    const currentExtendedVersion = `extended_${currentNormalizedVersion}`;
+
+    for (const versionVariant of [currentNormalizedVersion, currentExtendedVersion]) {
+      for (const pluginVariant of ['hugo', 'gohugo']) {
+        const matched = pattern.exec(generateComplexToolVersions(pluginVariant, versionVariant));
+        assert(matched);
+        // @ts-ignore - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
+        assert.equal(currentNormalizedVersion, matched.groups['currentValue']);
+      }
+    }
   });
 });

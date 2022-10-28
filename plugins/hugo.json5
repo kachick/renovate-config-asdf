@@ -4,11 +4,13 @@
   "regexManagers": [
     {
       "fileMatch": ["\\.tool-versions$"],
-      "matchStrings": ["(^|\\n)hugo (?<currentValue>\\S+)"],
+      // hugo has extended versions and 2 asdf plugins. See https://github.com/kachick/renovate-config-asdf/issues/294
+      "matchStrings": ["(^|\\n)(go)?hugo (extended_)?(?<currentValue>\\S+)"],
       // Plugin Fetcher Permalink:
       //   - https://github.com/asdf-vm/asdf-plugins/blob/ba096638f9dc867bf9a8f7791f22e31d800d3d93/plugins/gohugo#L1
       //   - https://github.com/nklmilojevic/asdf-hugo/blob/ea94032b488ce33cf9408d85885dfa1a24a744d4/lib/utils.bash#L5
       //   - https://github.com/nklmilojevic/asdf-hugo/blob/ea94032b488ce33cf9408d85885dfa1a24a744d4/lib/utils.bash#L25-L33
+      //   - https://github.com/NeoHsu/asdf-hugo/blob/e273614bab99c0d0ac83788da4960fde00793fd3/lib/utils.bash#L6-L37
       // DataSource URL: https://github.com/gohugoio/hugo/releases
       "depNameTemplate": "gohugoio/hugo",
       "datasourceTemplate": "github-releases",
