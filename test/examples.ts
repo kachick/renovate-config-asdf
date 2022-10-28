@@ -60,10 +60,6 @@ export const examples: Readonly<Readonly<Example>[]> = [
     source: 'v1.3.4',
     extracted: '1.3.4',
   },
-  // {
-  //   // Currently skipping Java tests because Java definition is still in experimental state and this test does not care multiple definitions for one plugin for now
-  //   plugin: 'java',
-  // },
   {
     plugin: 'julia',
     source: 'v1.8.1',
