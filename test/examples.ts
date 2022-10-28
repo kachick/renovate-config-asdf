@@ -1,8 +1,8 @@
-type Example = {
+interface Example {
   plugin: string;
   source: string;
   extracted: string;
-};
+}
 
 export const examples: Readonly<Readonly<Example>[]> = [
   {

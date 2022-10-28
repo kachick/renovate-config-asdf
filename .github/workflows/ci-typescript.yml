@@ -40,4 +40,5 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx tsc
+      - run: make eslint-check
       - run: npx ts-node-test test/*.ts
