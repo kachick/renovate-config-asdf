@@ -36,6 +36,7 @@ Usage: [arguments]
     scaffold                         Generate files for first step of adding new plugins
     release                          Add git tags in default.json
     touch                            Update renovate.json labels to toriger renovate
+    merge                            Update default.json from plugins/* definitions
     generate_matrix                  Generate matrix JSON from STDIN for GitHub Actions
 ```
 

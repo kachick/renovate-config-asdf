@@ -24,6 +24,10 @@ build-tools:
 validate:
 	./bin/cli validate
 
+.PHONY: merge
+merge:
+	./bin/cli merge
+
 .PHONY: release
 release:
 	./bin/cli release --version=${VERSION}
@@ -32,6 +36,10 @@ release:
 scaffold:
 	./bin/cli scaffold --plugin=${PLUGIN}
 	$(MAKE) dprint-fix
+	echo '--------------------------------------------------'
+	echo '1. Update generated files'
+	echo '2. Add tests into test/examples.ts if extractVersionTemplate exists'
+	echo '3. Merge configs with `make merge`'
 
 .PHONY: lint-definitions
 lint-definitions:
