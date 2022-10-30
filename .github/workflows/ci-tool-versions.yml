@@ -14,7 +14,7 @@ jobs:
         # Do not use `echo json=$(script)` syntax here. The script generates multilines.
         run: |
           echo 'json=' | tee --append $GITHUB_OUTPUT
-          git diff origin/main HEAD --word-diff --relative ./examples/.tool-versions | grep -F ']{+' | ruby -r json -e 'puts STDIN.each_line.map { |l| /\A(\S+\s+).*?\{\+([^\+]+)/.match(l).captures.join }.join("\n").to_json' | tee --append $GITHUB_OUTPUT
+          git diff origin/${{ github.base_ref }} HEAD --word-diff --relative ./examples/.tool-versions | grep -F ']{+' | ruby -r json -e 'puts STDIN.each_line.map { |l| /\A(\S+\s+).*?\{\+([^\+]+)/.match(l).captures.join }.join("\n").to_json' | tee --append $GITHUB_OUTPUT
       - uses: asdf-vm/actions/install@v1
         with:
           tool_versions: '${{ fromJson(steps.format-only-new-versions.outputs.json) }}'
