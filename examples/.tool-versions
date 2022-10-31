@@ -33,5 +33,5 @@ scala 3.2.1
 shellcheck 0.8.0
 shfmt 3.5.1
 terraform 1.3.3
-trivy 0.33.0
+trivy 0.34.0
 zig 0.9.1
