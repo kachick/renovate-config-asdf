@@ -38,5 +38,4 @@ jobs:
         with:
           crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
       - run: shards install --production
-      - run: make build-tools
-      - run: make lint-definitions
+      - run: crystal run src/cli.cr -- lint
