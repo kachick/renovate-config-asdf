@@ -34,18 +34,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Cache CLI
-        id: cache
-        uses: actions/cache@v3
-        with:
-          path: ./bin/cli
-          key: cli-${{ runner.os }}-crystal_${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}-${{ hashFiles('src/**', 'shards.yml', 'shards/lock') }}
       - uses: crystal-lang/install-crystal@v1
-        if: steps.cache.outputs.cache-hit != 'true'
         with:
           crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
       - run: shards install --production
-        if: steps.cache.outputs.cache-hit != 'true'
       - run: make build-tools
-        if: steps.cache.outputs.cache-hit != 'true'
       - run: make lint-definitions
