@@ -21,7 +21,7 @@
   "labels": [
     "renovate",
     "dependencies",
-    "ignore-this-label-just-for-trigger-renovate-af3f6b"
+    "ignore-this-label-just-for-trigger-renovate-34d839"
   ],
   "ignorePaths": [
     "**/node_modules/**",
