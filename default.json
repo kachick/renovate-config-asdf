@@ -98,7 +98,7 @@
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)helm (?<currentValue>\\S+)"],
       "depNameTemplate": "helm/helm",
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
