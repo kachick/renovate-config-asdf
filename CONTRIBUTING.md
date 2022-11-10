@@ -71,7 +71,7 @@ crystal spec
 ## Check actual Renovate behaviors
 
 1. Intentionally specify old version into [example definition](examples/.tool-versions).
-2. Modify [root config](renovate.json) to trigger Renovate. So toggle `"ignore-this-label-just-for-trigger-renovate-1"` suffix.
+2. Modify [root config](renovate.json) with executing `make touch` to trigger Renovate.
 3. Check logs at [dashboard](https://app.renovatebot.com/dashboard#github/kachick/renovate-config-asdf).
    - Need private permissions.
    - [Check in forked repo before sending to upstream](#93) helps me a lot.

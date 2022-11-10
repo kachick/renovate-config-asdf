@@ -76,3 +76,7 @@ eslint-fix:
 .PHONY: dprint-fix
 dprint-fix:
 	dprint fmt
+
+.PHONY: touch
+touch:
+	./bin/cli touch
