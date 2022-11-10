@@ -5,8 +5,13 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)helm (?<currentValue>\\S+)"],
+      // Plugin Fetcher Permalink:
+      //   - https://github.com/asdf-vm/asdf-plugins/blob/82969331df11ba93e8bcfde89fc22da5f5874ac4/plugins/helm#L1
+      //   - https://github.com/Antiarchitect/asdf-helm/blob/a39e17b098523b3840c359055192751ae835f835/bin/list-all#L3
+      //   - https://github.com/Antiarchitect/asdf-helm/blob/a39e17b098523b3840c359055192751ae835f835/bin/install#L73
+      // DataSource URL: https://github.com/helm/helm/releases
       "depNameTemplate": "helm/helm",
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     }
   ]
