@@ -13,7 +13,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "github>kachick/renovate-config-asdf#1.11.0"
+    "github>kachick/renovate-config-asdf#1.11.1"
   ]
 }
 ```
@@ -70,7 +70,7 @@ You can use it as `github>kachick/renovate-config-asdf:self`.
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "github>kachick/renovate-config-asdf#1.11.0",
+    "github>kachick/renovate-config-asdf#1.11.1",
     "github>kachick/renovate-config-asdf:self"
   ]
 }
