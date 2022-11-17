@@ -128,7 +128,7 @@ void test('self versioning updater', async (t) => {
     );
   });
 
-  await t.test('self - matchStrings', (_t) => {
+  await t.test('self - matchStrings - default preset', (_t) => {
     assert.equal(
       true,
       matchStrings.some((patternString) => {
@@ -136,6 +136,18 @@ void test('self versioning updater', async (t) => {
         const matched = pattern.exec('"github>kachick/renovate-config-asdf#1.4.1"');
         // @ts-expect-error - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
         return matched?.groups.currentValue === '1.4.1';
+      }),
+    );
+  });
+
+  await t.test('self - matchStrings - path preset', (_t) => {
+    assert.equal(
+      true,
+      matchStrings.some((patternString) => {
+        const pattern = new RE2(patternString);
+        const matched = pattern.exec('"github>kachick/renovate-config-asdf//plugins/hugo.json5#1.11.1"');
+        // @ts-expect-error - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
+        return matched?.groups.currentValue === '1.11.1';
       }),
     );
   });
