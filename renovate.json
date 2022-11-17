@@ -6,6 +6,7 @@
     "github>kachick/renovate-config-dprint:plugins",
     "local>kachick/renovate-config-asdf"
   ],
+  "enabledManagers": ["npm", "github-actions", "regex"],
   "packageRules": [
     {
       "matchPackagePatterns": [
