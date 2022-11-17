@@ -56,7 +56,7 @@ Having some ways to avoid that.
 ## Multiple versions and comments
 
 Works since 1.10.0+.\
-Only for prior versions. It is same restriction as [official manager](https://github.com/renovatebot/renovate/blob/4006ef4667cc416d40f88b0be6ba24690def8500/lib/modules/manager/asdf/readme.md?plain=1#L10).
+Only first versions for each tool. It is same restriction as [official manager](https://github.com/renovatebot/renovate/blob/4006ef4667cc416d40f88b0be6ba24690def8500/lib/modules/manager/asdf/readme.md?plain=1#L10).
 
 Working examples: [1](https://github.com/kachick/sandbox-renovate-config-asdf/pull/1), [2](https://github.com/kachick/sandbox-renovate-config-asdf/pull/2), [3](https://github.com/kachick/sandbox-renovate-config-asdf/pull/4)
 
