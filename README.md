@@ -8,50 +8,23 @@
 
 [Renovate sharable config](https://docs.renovatebot.com/config-presets/) for [.tool-versions (asdf)](https://github.com/asdf-vm/asdf-plugins/tree/master/plugins).
 
+Since renovate version [34.25.0](https://github.com/renovatebot/renovate/pull/18612#issuecomment-1315123140), official asdf manager imported most plugins of this repository.\
+So you don't need to depend this config excepts hugo/gohugo.\
+This repository's hugo definition supports [extended hugo releases](https://github.com/gohugoio/hugo/blob/af23cdca9c9c230ffbffbab96f9600a78c76b75f/docs/content/en/troubleshooting/faq.md?plain=1#L50-L60). See the [issue](https://github.com/kachick/renovate-config-asdf/issues/294) for further detail.\
+You can pick some [plugins](./plugins) as below.
+
 ```json
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    "github>kachick/renovate-config-asdf#1.11.1"
-  ]
+    "github>kachick/renovate-config-asdf//plugins/hugo.json5#1.11.1",
+    "github>kachick/renovate-config-asdf:self"
+  ],
+  "enabledManagers": ["asdf", "regex"]
 }
 ```
 
-This example referenced stable version as `kachick/renovate-config-asdf#TaggedVersion`.\
-Because of default branch is frequently changed for developping.
-
-Released versions can be checked in [github-tags](https://github.com/kachick/renovate-config-asdf/tags).
-
-## Official asdf manager
-
-This project started before [providing official asdf manager](https://github.com/renovatebot/renovate/pull/17166).
-Currently nodejs definition is conflicting, so multiple PRs might be created when you enabled asdf manager as `config:base`.
-
-Having some ways to avoid that.
-
-1. Disable official asdf manager
-
-```json
-{
-  "asdf": {
-    "enabled": false
-  }
-}
-```
-
-2. Enable only regex managers for this project
-
-```json
-{
-  "enabledManagers": ["regex"]
-}
-```
-
-3. Send PRs to official as [this](https://github.com/renovatebot/renovate/pull/18612).
-   \
-   When importing most definitions to official is finished, this repository might be maintainance mode for current dependents.\
-   Or adding new plugins and partially used as `"github>kachick/renovate-config-asdf//plugins/experimental_plugin_A`.
+This example referenced tagged version and enabled self updater.
 
 ## Multiple versions and comments
 
@@ -59,24 +32,6 @@ Works since 1.10.0+.\
 Only first versions for each tool. It is same restriction as [official manager](https://github.com/renovatebot/renovate/blob/4006ef4667cc416d40f88b0be6ba24690def8500/lib/modules/manager/asdf/readme.md?plain=1#L10).
 
 Working examples: [1](https://github.com/kachick/sandbox-renovate-config-asdf/pull/1), [2](https://github.com/kachick/sandbox-renovate-config-asdf/pull/2), [3](https://github.com/kachick/sandbox-renovate-config-asdf/pull/4)
-
-## Self updater
-
-Seprated from `default.json` for now.\
-You can use it as `github>kachick/renovate-config-asdf:self`.
-
-```json
-{
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base",
-    "github>kachick/renovate-config-asdf#1.11.1",
-    "github>kachick/renovate-config-asdf:self"
-  ]
-}
-```
-
-[Working example](https://github.com/kachick/wait-other-jobs/pull/238)
 
 ## GitLab / Self-Hosted Runner
 
@@ -91,11 +46,6 @@ NOTE
   \
   At 2022-10-22, [beta version of fine-grained PAT](https://github.blog/2022-10-18-introducing-fine-grained-personal-access-tokens-for-github/) does not support GraphQL API yet.\
   However [github-tags module of renovatebot is using GraphQL](https://github.com/renovatebot/renovate/blob/cc50beb0934874095fd2164b33dcb5fed7dbf421/lib/modules/datasource/github-tags/index.ts#L2).
-
-## Limitations
-
-- Want to cover asdf, however currently targeted only for some implementations.
-- [asdf-java](https://github.com/halcyon/asdf-java) - Looks needed to read [this tsv](https://github.com/halcyon/asdf-java/tree/master/data) or [special datasource](https://github.com/renovatebot/renovate/tree/49465d460245552d6a409dcd7a95121a40358a28/lib/modules/datasource/adoptium-java)
 
 ## Working Examples
 
@@ -144,5 +94,6 @@ NOTE
 
 ## Note
 
-- [Official issue](https://github.com/renovatebot/renovate/issues/4051)
+- [First official issue](https://github.com/renovatebot/renovate/issues/4051)
+- [Imported PR](https://github.com/renovatebot/renovate/pull/18612)
 - [How to add/fix plugins?](CONTRIBUTING.md)
