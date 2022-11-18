@@ -1,3 +1,9 @@
+# Contributing
+
+We recommend to send PRs into [official asdf manager](https://github.com/renovatebot/renovate/tree/84bb830e00134bd32ff2cb5b94411fd6a080b4c4/lib/modules/manager/asdf).
+
+However when you would add new plugins into this repository from some reasons, this guide might help.
+
 ## Setup environments
 
 ```console

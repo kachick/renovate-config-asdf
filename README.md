@@ -4,14 +4,19 @@
 [![Build Status - Regex](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci-typescript.yml/badge.svg?branch=main)](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci-typescript.yml?query=branch%3Amain)
 [![Build Status - Build Tools](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci-crystal.yml/badge.svg?branch=main)](https://github.com/kachick/renovate-config-asdf/actions/workflows/ci-crystal.yml?query=branch%3Amain)
 
-## Usage
+## Overview
 
 [Renovate sharable config](https://docs.renovatebot.com/config-presets/) for [.tool-versions (asdf)](https://github.com/asdf-vm/asdf-plugins/tree/master/plugins).
 
 Since renovate version [34.25.0](https://github.com/renovatebot/renovate/pull/18612#issuecomment-1315123140), official asdf manager imported most plugins of this repository.\
-So you don't need to depend this config excepts hugo/gohugo.\
-This repository's hugo definition supports [extended hugo releases](https://github.com/gohugoio/hugo/blob/af23cdca9c9c230ffbffbab96f9600a78c76b75f/docs/content/en/troubleshooting/faq.md?plain=1#L50-L60). See the [issue](https://github.com/kachick/renovate-config-asdf/issues/294) for further detail.\
-You can pick some [plugins](./plugins) as below.
+And it merged [extended hugo releases](https://github.com/gohugoio/hugo/blob/af23cdca9c9c230ffbffbab96f9600a78c76b75f/docs/content/en/troubleshooting/faq.md?plain=1#L50-L60) in following [34.28.0](https://github.com/renovatebot/renovate/pull/18987#issuecomment-1320388809).
+So you don't need to depend this config now!
+
+(Below sections are historical. You can leave here.)
+
+## Usage
+
+In someday, I might add some definitions for my personal use again. Then they should be used as below.
 
 ```json
 {
