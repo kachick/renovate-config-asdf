@@ -21,7 +21,7 @@ just 1.8.0
 kotlin 1.7.21
 kustomize 4.5.7
 lua 5.4.4
-nim 1.6.8
+nim 1.6.10
 nodejs 18.12.1
 ocaml 4.14.0
 perl 5.37.6
