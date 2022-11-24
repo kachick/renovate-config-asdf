@@ -41,6 +41,7 @@ jobs:
         with:
           node-version: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).nodejs }}'
           cache: npm
+      # TODO: Revert `--legacy-peer-deps` after typescript-eslint released 5.44.1 or later. See https://github.com/kachick/renovate-config-asdf/pull/415
       - run: npm ci --legacy-peer-deps # `--ignore-scripts` do not cover RE2
       # renovate.json will always tested by the CLI
       - run: RENOVATE_CONFIG_FILE=default.json npx renovate-config-validator
