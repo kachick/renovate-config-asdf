@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).nodejs }}'
           cache: npm
-      - run: npm ci
+      - run: npm ci --legacy-peer-deps
       - run: npx tsc
       - run: make eslint-check
       - run: npx ts-node-test test/*.ts
