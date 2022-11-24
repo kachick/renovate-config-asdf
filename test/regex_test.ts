@@ -43,7 +43,7 @@ void test('extractVersionTemplate', async (t) => {
 
     if (regexManagers.some((regexManager) => 'extractVersionTemplate' in regexManager)) {
       await t.test(`${plugin} - exists`, (_t) => {
-        assert.strictEqual(true, plugins.has(plugin));
+        assert.strictEqual(plugins.has(plugin), true);
       });
     }
   }
@@ -65,7 +65,7 @@ void test('extractVersionTemplate', async (t) => {
       assert(pattern);
       const matched = pattern.exec(source);
       assert(matched);
-      assert.strictEqual(extracted, matched.groups?.['version']);
+      assert.strictEqual(matched.groups?.['version'], extracted);
     });
   }
 });
@@ -81,9 +81,9 @@ void test('fileMatch', async (t) => {
         const patternString = regexManager.fileMatch[0];
         assert(patternString);
         const pattern = new RE2(patternString);
-        assert.strictEqual(true, !!pattern.exec('.tool-versions'));
-        assert.strictEqual(true, !!pattern.exec('examples/.tool-versions'));
-        assert.strictEqual(false, !!pattern.exec('spec/fixtures/.tool-versions-invalid-duplicated'));
+        assert.strictEqual(!!pattern.exec('.tool-versions'), true);
+        assert.strictEqual(!!pattern.exec('examples/.tool-versions'), true);
+        assert.strictEqual(!!pattern.exec('spec/fixtures/.tool-versions-invalid-duplicated'), false);
       }
     });
   }
@@ -93,14 +93,14 @@ void test('self versioning updater', async (t) => {
   const definition = fs.readFileSync('self.json', 'utf8');
   const json5 = JSON5.parse(definition);
   const regexManagers = json5.regexManagers as RegExManager[];
-  assert.strictEqual(1, regexManagers.length);
+  assert.strictEqual(regexManagers.length, 1);
   const manager = regexManagers[0];
   assert(manager);
 
   const { fileMatch, matchStrings } = manager;
 
-  assert.strictEqual(true, fileMatch.length > 0);
-  assert.strictEqual(true, matchStrings.length > 0);
+  assert.strictEqual(fileMatch.length > 0, true);
+  assert.strictEqual(matchStrings.length > 0, true);
 
   await t.test('self - fileMatch', (_t) => {
     assert.strictEqual(
@@ -180,7 +180,7 @@ void test('plugin extracting current version', async (t) => {
       const currentVersion = '1.4.2';
       const matched = pattern.exec(generateComplexToolVersions(plugin, currentVersion));
       assert(matched);
-      assert.strictEqual(currentVersion, matched.groups?.['currentValue']);
+      assert.strictEqual(matched.groups?.['currentValue'], currentVersion);
     });
   }
 
@@ -200,14 +200,14 @@ void test('plugin extracting current version', async (t) => {
 
     const scala2Matched = scala2Pattern.exec(generateComplexToolVersions('scala', '2.9.9'));
     assert(scala2Matched);
-    assert.strictEqual('2.9.9', scala2Matched.groups?.['currentValue']);
+    assert.strictEqual(scala2Matched.groups?.['currentValue'], '2.9.9');
 
     const scala3Matched = scala3Pattern.exec(generateComplexToolVersions('scala', '3.9.9'));
     assert(scala3Matched);
-    assert.strictEqual('3.9.9', scala3Matched.groups?.['currentValue']);
+    assert.strictEqual(scala3Matched.groups?.['currentValue'], '3.9.9');
 
-    assert.strictEqual(null, scala2Pattern.exec(generateComplexToolVersions('scala', '3.9.9')));
-    assert.strictEqual(null, scala3Pattern.exec(generateComplexToolVersions('scala', '2.9.9')));
+    assert.strictEqual(scala2Pattern.exec(generateComplexToolVersions('scala', '3.9.9')), null);
+    assert.strictEqual(scala3Pattern.exec(generateComplexToolVersions('scala', '2.9.9')), null);
   });
 
   await t.test('hugo - matchStrings', (_t) => {
