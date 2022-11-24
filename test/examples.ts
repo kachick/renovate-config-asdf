@@ -4,7 +4,7 @@ interface Example {
   extracted: string;
 }
 
-export const examples: Readonly<Readonly<Example>[]> = [
+export const examples = [
   {
     plugin: 'bun',
     source: 'bun-v0.1.11',
@@ -131,4 +131,4 @@ export const examples: Readonly<Readonly<Example>[]> = [
     source: 'v0.31.3',
     extracted: '0.31.3',
   },
-];
+] as const satisfies Readonly<Readonly<Example>[]>;

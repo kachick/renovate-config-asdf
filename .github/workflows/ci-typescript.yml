@@ -38,7 +38,8 @@ jobs:
         with:
           node-version: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).nodejs }}'
           cache: npm
-      - run: npm ci
+      # TODO: Revert `--legacy-peer-deps` after typescript-eslint released 5.44.1 or later. See https://github.com/kachick/renovate-config-asdf/pull/415
+      - run: npm ci --legacy-peer-deps
       - run: npx tsc
       - run: make eslint-check
       - run: npx ts-node-test test/*.ts

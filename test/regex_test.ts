@@ -31,7 +31,8 @@ interface RegExManager extends RegexManagerTemplates {
 }
 
 void test('extractVersionTemplate', async (t) => {
-  const plugins = new Set(examples.map((example) => example.plugin));
+  // https://github.com/microsoft/TypeScript/issues/14520#issuecomment-853946018 :<
+  const plugins = new Set(examples.map((example) => example.plugin as string));
 
   for (const basename of fs.readdirSync('plugins')) {
     const pluginPath = path.join('plugins', basename);
