@@ -1,17 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "dependencyDashboard": true,
-  "extends": [
-    "config:base",
-    "github>kachick/renovate-config-dprint:plugins",
-    "local>kachick/renovate-config-asdf"
-  ],
+  "extends": ["config:base", "github>kachick/renovate-config-dprint:plugins", "local>kachick/renovate-config-asdf"],
   "enabledManagers": ["npm", "github-actions", "regex"],
   "packageRules": [
     {
-      "matchPackagePatterns": [
-        "*"
-      ],
+      "matchPackagePatterns": ["*"],
       "rangeStrategy": "bump"
     },
     {
@@ -19,11 +13,7 @@
       "allowedVersions": "/^v?18\\./"
     }
   ],
-  "labels": [
-    "renovate",
-    "dependencies",
-    "ignore-this-label-just-for-trigger-renovate-34d839"
-  ],
+  "labels": ["renovate", "dependencies", "ignore-this-label-just-for-trigger-renovate-34d839"],
   "ignorePaths": [
     "**/node_modules/**",
     "**/bower_components/**",
