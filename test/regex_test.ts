@@ -64,8 +64,7 @@ void test('extractVersionTemplate', async (t) => {
       assert(pattern);
       const matched = pattern.exec(source);
       assert(matched);
-      // @ts-expect-error - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
-      assert.equal(extracted, matched.groups.version);
+      assert.equal(extracted, matched.groups?.['version']);
     });
   }
 });
@@ -134,8 +133,7 @@ void test('self versioning updater', async (t) => {
       matchStrings.some((patternString) => {
         const pattern = new RE2(patternString);
         const matched = pattern.exec('"github>kachick/renovate-config-asdf#1.4.1"');
-        // @ts-expect-error - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
-        return matched?.groups.currentValue === '1.4.1';
+        return matched?.groups?.['currentValue'] === '1.4.1';
       }),
     );
   });
@@ -146,8 +144,7 @@ void test('self versioning updater', async (t) => {
       matchStrings.some((patternString) => {
         const pattern = new RE2(patternString);
         const matched = pattern.exec('"github>kachick/renovate-config-asdf//plugins/hugo.json5#1.11.1"');
-        // @ts-expect-error - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
-        return matched?.groups.currentValue === '1.11.1';
+        return matched?.groups?.['currentValue'] === '1.11.1';
       }),
     );
   });
@@ -182,8 +179,7 @@ void test('plugin extracting current version', async (t) => {
       const currentVersion = '1.4.2';
       const matched = pattern.exec(generateComplexToolVersions(plugin, currentVersion));
       assert(matched);
-      // @ts-expect-error - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
-      assert.equal(currentVersion, matched.groups.currentValue);
+      assert.equal(currentVersion, matched.groups?.['currentValue']);
     });
   }
 
@@ -203,13 +199,11 @@ void test('plugin extracting current version', async (t) => {
 
     const scala2Matched = scala2Pattern.exec(generateComplexToolVersions('scala', '2.9.9'));
     assert(scala2Matched);
-    // @ts-expect-error - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
-    assert.equal('2.9.9', scala2Matched.groups.currentValue);
+    assert.equal('2.9.9', scala2Matched.groups?.['currentValue']);
 
     const scala3Matched = scala3Pattern.exec(generateComplexToolVersions('scala', '3.9.9'));
     assert(scala3Matched);
-    // @ts-expect-error - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
-    assert.equal('3.9.9', scala3Matched.groups.currentValue);
+    assert.equal('3.9.9', scala3Matched.groups?.['currentValue']);
 
     assert.equal(null, scala2Pattern.exec(generateComplexToolVersions('scala', '3.9.9')));
     assert.equal(null, scala3Pattern.exec(generateComplexToolVersions('scala', '2.9.9')));
@@ -234,8 +228,7 @@ void test('plugin extracting current version', async (t) => {
       for (const pluginVariant of ['hugo', 'gohugo']) {
         const matched = pattern.exec(generateComplexToolVersions(pluginVariant, versionVariant));
         assert(matched);
-        // @ts-expect-error - Remove this workaround after https://github.com/uhop/node-re2/pull/133 released
-        assert.equal(currentNormalizedVersion, matched.groups.currentValue);
+        assert.equal(currentNormalizedVersion, matched.groups?.['currentValue']);
       }
     }
   });
