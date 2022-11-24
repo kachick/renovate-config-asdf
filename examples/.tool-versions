@@ -14,7 +14,7 @@ golang 1.19.3
 haskell 9.4.3
 helm 3.10.2
 helmfile 0.148.1
-hugo extended_0.106.0 0.105.0
+hugo extended_0.107.0 0.105.0
 idris 1.3.4
 julia 1.8.3
 just 1.8.0
