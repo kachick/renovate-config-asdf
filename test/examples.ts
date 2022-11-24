@@ -1,3 +1,5 @@
+// TODO: Remove this eslint ignoring after typescript-eslint released 5.44.1 or later. See https://github.com/kachick/renovate-config-asdf/pull/415
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface Example {
   plugin: string;
   source: string;
