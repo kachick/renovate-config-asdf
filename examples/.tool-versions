@@ -32,6 +32,6 @@ rust 1.65.0
 scala 3.2.1
 shellcheck 0.8.0
 shfmt 3.5.1
-terraform 1.3.5
+terraform 1.3.6
 trivy 0.35.0
 zig 0.10.0
