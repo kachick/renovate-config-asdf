@@ -1,5 +1,5 @@
 awscli 2.9.4
-bun 0.2.2
+bun 0.3.0
 cargo-make 0.36.3
 clojure 1.11.1.1200
 crystal 1.6.2
