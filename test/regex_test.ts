@@ -229,7 +229,7 @@ void test('plugin extracting current version', async (t) => {
       for (const pluginVariant of ['hugo', 'gohugo']) {
         assert.strictEqual(
           currentNormalizedVersion,
-          pattern.exec<string>(generateComplexToolVersions(pluginVariant, versionVariant))?.groups?.['currentValue'],
+          pattern.exec(generateComplexToolVersions(pluginVariant, versionVariant))?.groups?.['currentValue'],
         );
       }
     }
