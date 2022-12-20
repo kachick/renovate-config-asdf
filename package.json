@@ -9,7 +9,7 @@
     "eslint-plugin-import": "^2.26.0",
     "json5": "^2.2.2",
     "re2": "^1.18.0",
-    "renovate": "^34.66.1",
+    "renovate": "^34.67.0",
     "ts-node-test": "^0.2.0",
     "typescript": "^4.9.4"
   }
