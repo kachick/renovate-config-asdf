@@ -4,7 +4,6 @@ env:
 plugins:
   - deprecation
   - '@typescript-eslint'
-  - import
 extends:
   - plugin:@typescript-eslint/recommended
   - plugin:@typescript-eslint/recommended-requiring-type-checking
