@@ -5,17 +5,17 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)scala (?<currentValue>2\\.\\S+)"],
-      // https://github.com/scala/scala/tags
+      // https://github.com/scala/scala/releases
       "depNameTemplate": "scala/scala",
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)scala (?<currentValue>3\\.\\S+)"],
-      // https://github.com/lampepfl/dotty/tags
+      // https://github.com/lampepfl/dotty/releases
       "depNameTemplate": "lampepfl/dotty",
-      "datasourceTemplate": "github-tags"
+      "datasourceTemplate": "github-releases"
     }
   ]
 }
