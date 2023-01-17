@@ -11,6 +11,17 @@
     {
       "matchPackageNames": ["nodejs/node"],
       "allowedVersions": "/^v?18\\./"
+    },
+    {
+      "extends": ["schedule:weekly"],
+      "matchPackageNames": ["renovate"]
+    },
+    {
+      "extends": ["packages:linters", "schedule:weekly"]
+    },
+    {
+      "extends": ["schedule:weekly"],
+      "matchPackagePrefixes": ["dprint"]
     }
   ],
   "labels": ["renovate", "dependencies", "ignore-this-label-just-for-trigger-renovate-34d839"],
