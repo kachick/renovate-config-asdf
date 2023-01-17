@@ -8,7 +8,7 @@ direnv 2.32.2
 dprint 0.34.1
 elixir 1.14.3
 elm 0.19.1
-erlang 25.1.2
+erlang 25.2.1
 gauche 0.9.12
 golang 1.19.5
 haskell 9.4.4
