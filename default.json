@@ -254,7 +254,7 @@
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)zig (?<currentValue>\\S+)"],
       "depNameTemplate": "ziglang/zig",
-      "datasourceTemplate": "github-tags"
+      "datasourceTemplate": "github-releases"
     }
   ]
 }

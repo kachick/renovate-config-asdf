@@ -5,9 +5,9 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)zig (?<currentValue>\\S+)"],
-      // https://github.com/ziglang/zig/tags
+      // https://github.com/ziglang/zig/releases
       "depNameTemplate": "ziglang/zig",
-      "datasourceTemplate": "github-tags"
+      "datasourceTemplate": "github-releases"
     }
   ]
 }
