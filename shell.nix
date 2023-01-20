@@ -4,6 +4,8 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.nodejs-18_x
     pkgs.crystal_1_7
+    # pkgs.shards
+    # pkgs.glibc # Nidded in shards https://github.com/crystal-lang/crystal/issues/2114
     pkgs.dprint
     pkgs.nil
     pkgs.nixpkgs-fmt

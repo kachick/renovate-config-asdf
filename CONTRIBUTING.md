@@ -12,7 +12,7 @@ Because of installing crystal vis asdf might made missing lib* packages.
 ```console
 $ nix-shell
 (First execution might take long time. Then execute prepared bash with nodejs, crystal and other tools.)
-$ make install-deps
+$ make setup
 npm install
 shards install
 shards build
