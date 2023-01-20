@@ -6,29 +6,17 @@ However when you would add new plugins into this repository from some reasons, t
 
 ## Setup environments
 
+Author is using [Nix](https://nixos.org/) to maintain this repository.
+Because of installing crystal vis asdf might made missing lib* packages.
+
 ```console
+$ nix-shell
+(First execution might take long time. Then execute prepared bash with nodejs, crystal and other tools.)
 $ make install-deps
-asdf install
-crystal 1.5.0 is already installed
-dprint 0.30.3 is already installed
-nodejs 18.7.0 is already installed
 npm install
-
-up to date, audited 691 packages in 1s
-
-145 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
 shards install
-Resolving dependencies
-Fetching https://github.com/crystal-ameba/ameba.git
-Installing ameba (1.1.0)
-Postinstall of ameba: make bin && make run_file
-Writing shard.lock
-
 shards build
+...
 ```
 
 ## Tools

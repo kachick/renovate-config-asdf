@@ -2,6 +2,16 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.defaultFormatter": "dprint.dprint",
   "editor.formatOnSave": true,
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
+  "nix.serverPath": "nil",
+  "nix.enableLanguageServer": true,
+  "nix.serverSettings": {
+    "nil": {
+      "formatting": { "command": ["nixpkgs-fmt"] }
+    }
+  },
   "cSpell.words": [
     "adoptium",
     "awscli",

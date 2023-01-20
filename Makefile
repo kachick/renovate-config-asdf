@@ -11,7 +11,6 @@ test:
 
 .PHONY: install-deps
 install-deps:
-	asdf install
 	npm install
 	shards install
 	$(MAKE) build-tools

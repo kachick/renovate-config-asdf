@@ -7,6 +7,7 @@
     "crystal-lang-tools.crystal-lang",
     "veelenga.crystal-ameba",
     "ms-vscode.makefile-tools",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "jnoortheen.nix-ide"
   ]
 }
