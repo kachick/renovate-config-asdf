@@ -9,9 +9,8 @@ test:
 	npx ts-node-test test/*.ts
 	crystal spec
 
-.PHONY: install-deps
-install-deps:
-	asdf install
+.PHONY: setup
+setup:
 	npm install
 	shards install
 	$(MAKE) build-tools

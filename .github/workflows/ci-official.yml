@@ -21,25 +21,14 @@ on:
       - '.tool-versions'
 
 jobs:
-  asdf-parser:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v3
-      - uses: kachick/action-parse-asdf-tool-versions@v3
-        id: parse
-    outputs:
-      tool-versions: '${{ steps.parse.outputs.json }}'
-
   validate:
-    needs: [asdf-parser]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).nodejs }}'
+          node-version: '18.13.0'
           cache: npm
       - run: npm ci
       # renovate.json will always tested by the CLI

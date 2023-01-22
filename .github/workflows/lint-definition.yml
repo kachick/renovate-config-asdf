@@ -12,23 +12,13 @@ on:
       - '.vscode'
       - '**/*.md'
 jobs:
-  asdf-parser:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v3
-      - uses: kachick/action-parse-asdf-tool-versions@v3
-        id: parse
-    outputs:
-      tool-versions: '${{ steps.parse.outputs.json }}'
   definitions:
-    needs: [asdf-parser]
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: crystal-lang/install-crystal@v1
         with:
-          crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
+          crystal: '1.7.1'
       - run: shards install --production
       - run: crystal run src/cli.cr -- lint

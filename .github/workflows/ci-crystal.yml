@@ -19,28 +19,17 @@ on:
       - '.tool-versions'
 
 jobs:
-  asdf-parser:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v3
-      - uses: kachick/action-parse-asdf-tool-versions@v3
-        id: parse
-    outputs:
-      tool-versions: '${{ steps.parse.outputs.json }}'
   spec:
-    needs: [asdf-parser]
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: crystal-lang/install-crystal@v1
         with:
-          crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
+          crystal: '1.7.1'
       # Need node.js to install validator. Spec includes the validator runner
       - run: crystal spec --tag '~needs_npm'
   lint:
-    needs: [asdf-parser]
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
@@ -50,10 +39,10 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ./bin/ameba
-          key: ameba-${{ runner.os }}-crystal_${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}-${{ hashFiles('shard.lock') }}
+          key: ameba-${{ runner.os }}-crystal_1.7.1-${{ hashFiles('shard.lock') }}
       - uses: crystal-lang/install-crystal@v1
         with:
-          crystal: '${{ fromJson(needs.asdf-parser.outputs.tool-versions).crystal }}'
+          crystal: '1.7.1'
       - run: shards install
         if: steps.cache.outputs.cache-hit != 'true'
       - run: make crystal-lint-check
