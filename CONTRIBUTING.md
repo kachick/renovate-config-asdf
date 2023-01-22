@@ -7,7 +7,7 @@ However when you would add new plugins into this repository from some reasons, t
 ## Setup environments
 
 Author is using [Nix](https://nixos.org/) to maintain this repository.
-Because of installing crystal vis asdf might made missing lib* packages.
+Because of installing crystal via asdf-crystal often make missing lib* packages with depending the PKG_CONFIG.
 
 ```console
 $ nix-shell
