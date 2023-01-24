@@ -32,7 +32,7 @@
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)crystal (?<currentValue>\\S+)"],
       "depNameTemplate": "crystal-lang/crystal",
-      "datasourceTemplate": "github-tags"
+      "datasourceTemplate": "github-releases"
     },
     {
       "fileMatch": ["\\.tool-versions$"],
