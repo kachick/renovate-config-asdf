@@ -53,7 +53,7 @@ crystal spec
 
 ## Define plugins
 
-- `github-tags` or `github-releases` will work in most cases. We have the scaffold. Run and update diff.
+- `github-releases` will work in most cases. We have the scaffold. Run and update diff.
   - `make scaffold PLUGIN=awesome-plugin-name`
   - Add [RE2 tests with actual data](test/examples.ts) if it has `extractVersionTemplate`
 - Some cases need struggling because of they have tricky versioning in github tags/releases. Examples are below.
