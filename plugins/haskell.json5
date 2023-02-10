@@ -5,6 +5,7 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)haskell (?<currentValue>\\S+)"],
+      // https://github.com/ghc/ghc/tags
       "depNameTemplate": "ghc/ghc",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^ghc-(?<version>\\S+?)-release"

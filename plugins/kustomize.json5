@@ -5,8 +5,9 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)kustomize (?<currentValue>\\S+)"],
+      // https://github.com/kubernetes-sigs/kustomize/releases
       "depNameTemplate": "kubernetes-sigs/kustomize",
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^kustomize/v(?<version>\\S+)"
     }
   ]

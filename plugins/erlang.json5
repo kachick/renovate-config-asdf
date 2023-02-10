@@ -5,8 +5,9 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)erlang (?<currentValue>\\S+)"],
+      // https://github.com/erlang/otp/releases
       "depNameTemplate": "erlang/otp",
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^OTP-(?<version>\\S+)"
     }
   ]

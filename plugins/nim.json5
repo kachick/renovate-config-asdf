@@ -5,6 +5,7 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)nim (?<currentValue>\\S+)"],
+      // https://github.com/nim-lang/Nim/tags
       "depNameTemplate": "nim-lang/Nim",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"

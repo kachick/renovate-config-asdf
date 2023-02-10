@@ -5,6 +5,7 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)python (?<currentValue>\\S+)"],
+      // https://github.com/python/cpython/tags
       "depNameTemplate": "python/cpython",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>\\S+)"

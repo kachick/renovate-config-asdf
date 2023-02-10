@@ -5,9 +5,9 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)rust (?<currentValue>\\S+)"],
-      // https://github.com/rust-lang/rust/tags
+      // https://github.com/rust-lang/rust/releases
       "depNameTemplate": "rust-lang/rust",
-      "datasourceTemplate": "github-tags"
+      "datasourceTemplate": "github-releases"
     }
   ]
 }

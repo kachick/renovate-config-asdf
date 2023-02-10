@@ -5,9 +5,9 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)bun (?<currentValue>\\S+)"],
-      // https://github.com/oven-sh/bun/tags
+      // https://github.com/oven-sh/bun/releases
       "depNameTemplate": "oven-sh/bun",
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^bun-v(?<version>\\S+)"
     }
   ]

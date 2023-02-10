@@ -5,6 +5,7 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)php (?<currentValue>\\S+)"],
+      // https://github.com/php/php-src/tags
       "depNameTemplate": "php/php-src",
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^php-(?<version>\\S+)"

@@ -5,9 +5,9 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)terraform (?<currentValue>\\S+)"],
-      // https://github.com/hashicorp/terraform/tags
+      // https://github.com/hashicorp/terraform/releases
       "depNameTemplate": "hashicorp/terraform",
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     }
   ]

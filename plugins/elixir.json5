@@ -5,8 +5,9 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)elixir (?<currentValue>\\S+)"],
+      // https://github.com/elixir-lang/elixir/releases
       "depNameTemplate": "elixir-lang/elixir",
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     }
   ]
