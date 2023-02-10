@@ -6,7 +6,7 @@
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)trivy (?<currentValue>\\S+)"],
       "depNameTemplate": "aquasecurity/trivy",
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v(?<version>\\S+)"
     }
   ]
