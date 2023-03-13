@@ -11,7 +11,7 @@ elm 0.19.1
 erlang 25.2.3
 gauche 0.9.12
 golang 1.20.2
-haskell 9.4.4
+haskell 9.6.1
 helm 3.11.2
 helmfile 0.151.0
 hugo extended_0.111.3 0.105.0
