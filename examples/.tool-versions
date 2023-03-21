@@ -24,7 +24,7 @@ lua 5.4.4
 nim 1.6.12
 nodejs 18.15.0
 ocaml 5.0.0
-perl 5.37.9
+perl 5.37.10
 php 8.2.4
 python 3.11.2
 ruby 3.2.1
