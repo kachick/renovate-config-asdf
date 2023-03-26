@@ -2,7 +2,6 @@ env:
   browser: true
   es2021: true
 plugins:
-  - deprecation
   - '@typescript-eslint'
 extends:
   - plugin:@typescript-eslint/recommended
@@ -10,7 +9,6 @@ extends:
   - plugin:@typescript-eslint/strict
 rules:
   i18n-text/no-en: 'off'
-  deprecation/deprecation: error
   no-restricted-syntax:
     - error
     - selector: TSEnumDeclaration
