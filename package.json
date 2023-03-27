@@ -2,8 +2,8 @@
   "devDependencies": {
     "@tsconfig/node18-strictest-esm": "^1.0.1",
     "@types/node": "^18.15.10",
-    "@typescript-eslint/eslint-plugin": "^5.55.0",
-    "@typescript-eslint/parser": "^5.55.0",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
     "eslint": "^8.36.0",
     "json5": "^2.2.3",
     "re2": "^1.18.0",
