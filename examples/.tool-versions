@@ -12,7 +12,7 @@ erlang 25.2.3
 gauche 0.9.12
 golang 1.20.3
 haskell 9.6.1
-helm 3.11.2
+helm 3.11.3
 helmfile 0.152.0
 hugo extended_0.111.3 0.105.0
 idris 1.3.4
