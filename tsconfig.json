@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/node18-strictest-esm/tsconfig.json",
+  "extends": ["@tsconfig/strictest/tsconfig", "@tsconfig/node18/tsconfig"],
   "compilerOptions": {
     // https://www.typescriptlang.org/docs/handbook/esm-node.html
     "module": "node16",
