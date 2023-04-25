@@ -39,7 +39,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ./bin/ameba
-          key: ameba-${{ runner.os }}-crystal_1.7.1-${{ hashFiles('shard.lock') }}
+          key: ameba-${{ runner.os }}-crystal_1.8.1-${{ hashFiles('shard.lock') }}
       - uses: crystal-lang/install-crystal@v1
         with:
           crystal: '1.8.1'
