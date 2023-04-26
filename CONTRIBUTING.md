@@ -77,15 +77,14 @@ Looks not in RE2, however https://regex101.com is useful. See https://regex101.c
 
 ## Check actual RE2 behavior with Node.js
 
-https://github.com/google/re2/wiki/Syntax is the reference.
+<https://github.com/google/re2/wiki/Syntax> is the reference.
 
-Actual behavior checking requires https://github.com/google/re2/ and the bindings.
+Actual behavior checking requires <https://github.com/uhop/node-re2> that include <https://github.com/google/re2/>.
 
 ```console
-$ brew install re2
 $ npm install
 $ node
-Welcome to Node.js v18.9.0.
+Welcome to Node.js v18.15.0.
 Type ".help" for more information.
 ```
 
