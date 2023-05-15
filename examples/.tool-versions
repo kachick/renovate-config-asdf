@@ -20,7 +20,7 @@ julia 1.9.0
 just 1.13.0
 kotlin 1.8.21
 kustomize 5.0.3
-lua 5.4.4
+lua 5.4.6
 nim 1.6.12
 nodejs 18.16.0
 ocaml 5.0.0
