@@ -34,5 +34,5 @@ shellcheck 0.9.0
 shfmt 3.6.0
 terraform 1.4.6
 trivy 0.41.0
-yamlfmt 0.4.0
+yamlfmt 0.9.0
 zig 0.10.0
