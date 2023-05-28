@@ -5,11 +5,11 @@
     {
       "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)yamlfmt (?<currentValue>\\S+)"],
-      // Plugin Fetcher Permalink: https://github.com/plugin-author/asdf-yamlfmt/blob/740c457679756d679ba115d2dda0265a824d63af/bin/list-all#L42
-      // DataSource URL: https://github.com/owner/yamlfmt/tags
-      "depNameTemplate": "owner/yamlfmt",
+      // Plugin Fetcher Permalink: https://github.com/kachick/asdf-yamlfmt/blob/1f5ae4412dd879fcd4d9eeaae9ccd59c0f22721e/lib/utils.bash#L60
+      // DataSource URL: https://github.com/google/yamlfmt/releases
+      "depNameTemplate": "google/yamlfmt",
       "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^yamlfmt-v(?<version>\\S+?)-release"
+      "extractVersionTemplate": "^v(?<version>\\S+)"
     }
   ]
 }
