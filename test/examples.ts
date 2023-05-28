@@ -131,4 +131,9 @@ export const examples = [
     source: 'v0.31.3',
     extracted: '0.31.3',
   },
+  {
+    plugin: 'yamlfmt',
+    source: 'v0.9.0',
+    extracted: '0.9.0',
+  },
 ] as const satisfies Readonly<Readonly<Example>[]>;

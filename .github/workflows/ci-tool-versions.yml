@@ -6,6 +6,7 @@ on:
 
 jobs:
   installable:
+    if: ${{ github.actor == 'renovate[bot]' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
