@@ -96,6 +96,7 @@ NOTE
 - [shfmt](https://github.com/kachick/renovate-config-asdf/pull/30)
 - [terraform](https://github.com/kachick/renovate-config-asdf/pull/137)
 - [trivy](https://github.com/kachick/renovate-config-asdf/pull/96)
+- [yamlfmt](https://github.com/kachick/renovate-config-asdf/pull/931)
 
 ## Note
 
