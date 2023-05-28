@@ -27,7 +27,7 @@
       "matchPackagePrefixes": ["dprint"]
     }
   ],
-  "labels": ["renovate", "dependencies", "ignore-this-label-just-for-trigger-renovate-34d839"],
+  "labels": ["renovate", "dependencies", "ignore-this-label-just-for-trigger-renovate-b5d5af"],
   "ignorePaths": [
     "**/node_modules/**",
     "**/bower_components/**",
