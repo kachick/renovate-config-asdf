@@ -6,7 +6,7 @@
     "eslint": "^8.41.0",
     "json5": "^2.2.3",
     "re2": "^1.19.0",
-    "renovate": "^35.98.0",
+    "renovate": "^35.103.0",
     "ts-node-test": "^0.4.1",
     "typescript": "^5.0.4"
   },
