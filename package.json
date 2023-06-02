@@ -8,7 +8,7 @@
     "re2": "^1.19.0",
     "renovate": "^35.103.0",
     "ts-node-test": "^0.4.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.3"
   },
   "overrides": {
     "json5": "^2.2.3"
