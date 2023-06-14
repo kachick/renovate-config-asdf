@@ -1,4 +1,4 @@
-awscli 2.11.27
+awscli 2.12.0
 bun 0.6.9
 cargo-make 0.36.10
 clojure 1.11.1.1347
