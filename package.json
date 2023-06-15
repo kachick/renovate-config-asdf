@@ -5,7 +5,7 @@
     "@typescript-eslint/parser": "^5.59.8",
     "eslint": "^8.42.0",
     "json5": "^2.2.3",
-    "re2": "^1.19.0",
+    "re2": "^1.19.1",
     "renovate": "^35.110.1",
     "ts-node-test": "^0.4.1",
     "typescript": "^5.1.3"
