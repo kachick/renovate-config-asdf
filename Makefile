@@ -79,3 +79,12 @@ dprint-fix:
 .PHONY: touch
 touch:
 	./bin/cli touch
+
+.PHONY: versions
+versions:
+	node --version
+	crystal --version
+	# It returns error even if correctly show the version
+	# nixpkgs-fmt --version
+	dprint --version
+	shards --version
