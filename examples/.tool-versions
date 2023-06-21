@@ -22,7 +22,7 @@ kotlin 1.8.22
 kustomize 5.1.0
 lua 5.4.6
 nim 1.6.12
-nodejs 18.16.0
+nodejs 18.16.1
 ocaml 5.0.0
 perl 5.37.11
 php 8.2.7
