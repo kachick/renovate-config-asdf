@@ -19,7 +19,7 @@ jobs:
         # Do not use `echo json=$(script)` syntax here. The script generates multilines.
         run: |
           git diff origin/${{ github.base_ref }} HEAD --word-diff --relative ./examples/.tool-versions | \
-          grep -F ']{+' | ruby -e 'puts STDIN.each_line.map { |l| /\A(\S+\s+).*?\{\+([^\+]+)/.match(l).captures.join }.join("\n")' | \
+          grep -F ']{+' | grep -vP 'haskell|php' | ruby -e 'puts STDIN.each_line.map { |l| /\A(\S+\s+).*?\{\+([^\+]+)/.match(l).captures.join }.join("\n")' | \
           gh-action-multiline -name=json >> "$GITHUB_OUTPUT"
       - uses: asdf-vm/actions/install@v2
         with:
