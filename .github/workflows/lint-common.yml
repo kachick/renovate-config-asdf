@@ -1,4 +1,4 @@
-name: Lint - dprint
+name: Lint - Common
 on:
   push:
     branches: [main]
@@ -16,3 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: dprint/check@v2.2
+
+  typos:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: crate-ci/typos@v1.14.10
+        with:
+          files: |
+            .
+            .github
+            .vscode

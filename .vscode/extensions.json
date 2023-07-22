@@ -2,7 +2,7 @@
   "recommendations": [
     "dprint.dprint",
     "editorconfig.editorconfig",
-    "streetsidesoftware.code-spell-checker",
+    "tekumara.typos-vscode",
     "katjanakosic.vscode-json5",
     "crystal-lang-tools.crystal-lang",
     "veelenga.crystal-ameba",

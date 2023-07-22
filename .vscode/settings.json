@@ -11,23 +11,5 @@
     "nil": {
       "formatting": { "command": ["nixpkgs-fmt"] }
     }
-  },
-  "cSpell.words": [
-    "adoptium",
-    "awscli",
-    "cpython",
-    "deno",
-    "denoland",
-    "direnv",
-    "dprint",
-    "gohugo",
-    "idris",
-    "kustomize",
-    "lampepfl",
-    "renovaterc",
-    "sagiegurari",
-    "shfmt",
-    "trivy",
-    "veelenga"
-  ]
+  }
 }

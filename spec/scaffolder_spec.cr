@@ -12,24 +12,24 @@ describe RenovateConfigAsdf::Scaffolder do
 
   describe ".merge_entries" do
     it "returns new array that inserts given entry into correct position" do
-      entires = %w(bun crystal ruby)
-      RenovateConfigAsdf::Scaffolder.merge_entries(entires, "deno").should eq(%w(bun crystal deno ruby))
+      entries = %w(bun crystal ruby)
+      RenovateConfigAsdf::Scaffolder.merge_entries(entries, "deno").should eq(%w(bun crystal deno ruby))
     end
 
     it "does not touch base entries" do
-      entires = %w(bun crystal ruby)
-      RenovateConfigAsdf::Scaffolder.merge_entries(entires, "deno")
-      entires.should eq(%w(bun crystal ruby))
+      entries = %w(bun crystal ruby)
+      RenovateConfigAsdf::Scaffolder.merge_entries(entries, "deno")
+      entries.should eq(%w(bun crystal ruby))
     end
 
     it "works even if given entry will be first position" do
-      entires = %w(crystal ruby)
-      RenovateConfigAsdf::Scaffolder.merge_entries(entires, "bun").should eq(%w(bun crystal ruby))
+      entries = %w(crystal ruby)
+      RenovateConfigAsdf::Scaffolder.merge_entries(entries, "bun").should eq(%w(bun crystal ruby))
     end
 
     it "works even if given entry will be last position" do
-      entires = %w(bun crystal)
-      RenovateConfigAsdf::Scaffolder.merge_entries(entires, "ruby").should eq(%w(bun crystal ruby))
+      entries = %w(bun crystal)
+      RenovateConfigAsdf::Scaffolder.merge_entries(entries, "ruby").should eq(%w(bun crystal ruby))
     end
   end
 

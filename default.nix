@@ -9,5 +9,6 @@ pkgs.mkShell {
     pkgs.nil
     pkgs.nixpkgs-fmt
     pkgs.pcre
+    pkgs.typos
   ];
 }
