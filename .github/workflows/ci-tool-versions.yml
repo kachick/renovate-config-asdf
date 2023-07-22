@@ -18,10 +18,16 @@ jobs:
         id: format-only-new-versions
         # Do not use `echo json=$(script)` syntax here. The script generates multilines.
         run: |
+          targets="$(mktemp)"
           git diff origin/${{ github.base_ref }} HEAD --word-diff --relative ./examples/.tool-versions | \
-          grep -F ']{+' | grep -vP 'haskell|php' | ruby -e 'puts STDIN.each_line.map { |l| /\A(\S+\s+).*?\{\+([^\+]+)/.match(l).captures.join }.join("\n")' | \
-          gh-action-multiline -name=json | tee -a "$GITHUB_OUTPUT"
+            grep -F ']{+' | grep -vP 'haskell|php' | ruby -e 'puts STDIN.each_line.map { |l| /\A(\S+\s+).*?\{\+([^\+]+)/.match(l).captures.join }.join("\n")' | \
+            gh-action-multiline -name=lines > "$targets"
+
+          cat "$targets" | tee -a "$GITHUB_OUTPUT"
+          grep -P '\S' "$targets" || echo 'skip_install=true' | tee -a "$GITHUB_OUTPUT"
+
       - uses: asdf-vm/actions/install@v2
         with:
           tool_versions: |
-            ${{ steps.format-only-new-versions.outputs.json }}
+            ${{ steps.format-only-new-versions.outputs.lines }}
+          skip_install: ${{ steps.format-only-new-versions.outputs.skip_install == 'true' }}
