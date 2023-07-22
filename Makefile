@@ -74,7 +74,7 @@ eslint-fix:
 
 .PHONY: typos-check
 typos-check:
-	typos . .github .vscode .o
+	typos . .github .vscode
 
 .PHONY: dprint-fix
 dprint-fix:
