@@ -10,7 +10,7 @@ elixir 1.15.4
 elm 0.19.1
 erlang 26.0.1
 gauche 0.9.12
-golang 1.20.5
+golang 1.20.6
 haskell 9.6.2
 helm 3.12.1
 helmfile 0.154.0
