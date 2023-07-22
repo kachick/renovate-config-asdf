@@ -20,7 +20,7 @@ module RenovateConfigAsdf
       version = ""
       help = false
 
-      globs : Array(String) = ["plugins/*.json*", RENOVATE_JSON_PATH, DEAFULT_JSON_PATH]
+      globs : Array(String) = ["plugins/*.json*", RENOVATE_JSON_PATH, DEFAULT_JSON_PATH]
 
       generate_matrix = false
       matrix_chunk_size : UInt16 = 2
@@ -33,7 +33,7 @@ module RenovateConfigAsdf
 
         psr.on("validate", "Validate definitions with renovate provided tool") do
           validate = true
-          psr.on("--globs='globs'", "File globs seprated by a whitespace") { |_globs| globs = _globs.split }
+          psr.on("--globs='globs'", "File globs separated by a whitespace") { |_globs| globs = _globs.split }
         end
         psr.on("lint", "Lint definitions") do
           lint = true
@@ -68,7 +68,7 @@ module RenovateConfigAsdf
         raise(message) unless success
       when lint
         defined_plugins = RenovateConfigAsdf.defined_plugins
-        success, message = Linter.lint_default_json(DEAFULT_JSON_PATH, defined_plugins)
+        success, message = Linter.lint_default_json(DEFAULT_JSON_PATH, defined_plugins)
         raise(message) unless success
         success, message = Linter.lint_example(EXAMPLE_TOOL_VERSIONS_PATH, defined_plugins)
         raise(message) unless success
@@ -82,7 +82,7 @@ module RenovateConfigAsdf
         Scaffolder.touch
       when merge
         Merger.write
-        `dprint fmt #{DEAFULT_JSON_PATH}`
+        `dprint fmt #{DEFAULT_JSON_PATH}`
       when generate_matrix
         print GitHhubActionsHelper.generate_matrix(STDIN.gets_to_end, matrix_chunk_size)
       else

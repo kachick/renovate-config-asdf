@@ -30,7 +30,7 @@ private def gauche_json5
         // https://github.com/shirok/Gauche/releases
         // https://github.com/sakuro/asdf-gauche/blob/71f574d7c934bc4977eec4fb8005e2ecd0d7ed0c/bin/list-all#L5
         // https://regex101.com/r/L2micV
-        // Working but _ delimter snapshot is commentouted
+        // Working but _ delimiter snapshot is commentouted
         // "datasourceTemplate": "github-tags",
         // "extractVersionTemplate": "^release(?<version>\\S+)",
         // "versioningTemplate": "regex:^(?<major>\\d+?)[_.](?<minor>\\d+?)[_.](?<patch>\\d+)$"

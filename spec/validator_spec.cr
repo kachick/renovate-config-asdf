@@ -19,7 +19,7 @@ describe RenovateConfigAsdf::Validator do
       success.should eq(true)
     end
 
-    it "returns false for invalid definiton" do
+    it "returns false for invalid definition" do
       success, message = RenovateConfigAsdf::Validator.validate(%w[spec/fixtures/ruby-invalid.json5])
       success.should eq(false)
       message.should contain("spec/fixtures/ruby-invalid.json5 has incorrect definitions")

@@ -20,8 +20,8 @@ module RenovateConfigAsdf
     end
 
     def self.updated_example(origin : String, plugin : String) : String
-      entires = origin.lines(chomp: false)
-      merge_entries(entires, "#{plugin} <UPDATEME!>\n").join
+      entries = origin.lines(chomp: false)
+      merge_entries(entries, "#{plugin} <UPDATEME!>\n").join
     end
 
     def self.touched_renovate_json(origin : String) : String
