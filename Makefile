@@ -44,7 +44,7 @@ scaffold:
 lint-definitions:
 	./bin/cli lint
 
-lint-all: crystal-lint-check dprint-check lint-definitions eslint-check
+lint-all: crystal-lint-check dprint-check lint-definitions eslint-check typos-check
 
 crystal-lint-check: crystal-format-check
 	./bin/ameba --except Metrics
@@ -72,6 +72,10 @@ eslint-check:
 eslint-fix:
 	npx eslint --fix 'test/**/*.*{js,ts}'
 
+.PHONY: typos-check
+typos-check:
+	typos . .github .vscode .o
+
 .PHONY: dprint-fix
 dprint-fix:
 	dprint fmt
@@ -82,9 +86,11 @@ touch:
 
 .PHONY: versions
 versions:
+	nix --version
 	node --version
 	crystal --version
 	# It returns error even if correctly show the version
 	# nixpkgs-fmt --version
 	dprint --version
+	typos --version
 	shards --version
