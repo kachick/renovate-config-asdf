@@ -1,8 +1,8 @@
 {
   "devDependencies": {
     "@types/node": "^18.17.0",
-    "@typescript-eslint/eslint-plugin": "^5.59.11",
-    "@typescript-eslint/parser": "^5.59.11",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.45.0",
     "json5": "^2.2.3",
     "re2": "^1.19.1",
