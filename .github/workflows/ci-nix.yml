@@ -1,0 +1,35 @@
+name: CI - Nix
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ci-nix.yml'
+      - '*.nix'
+      - 'flake.*'
+      - 'Makefile'
+  pull_request:
+    paths:
+      - '.github/workflows/ci-nix.yml'
+      - '*.nix'
+      - 'flake.*'
+      - 'Makefile'
+  schedule:
+    # Every 10:42 JST
+    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    - cron: '42 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  tasks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v3
+      - uses: DeterminateSystems/nix-installer-action@v4
+      - uses: DeterminateSystems/magic-nix-cache-action@v2
+      - run: nix-shell --run 'echo This step should be done before any other "nix-shell" steps because of measuring Nix build time'
+      - name: Log current versions
+        run: nix-shell --run 'make versions'
+      - run: nix-shell --run 'make setup'
+      - name: Run linters
+        run: nix-shell --run 'make check'

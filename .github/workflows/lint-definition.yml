@@ -6,11 +6,13 @@ on:
       - 'LICENSE'
       - '.vscode'
       - '**/*.md'
+      - '.github/workflows/ci-nix.yml'
   pull_request:
     paths-ignore:
       - 'LICENSE'
       - '.vscode'
       - '**/*.md'
+      - '.github/workflows/ci-nix.yml'
 jobs:
   definitions:
     timeout-minutes: 5
