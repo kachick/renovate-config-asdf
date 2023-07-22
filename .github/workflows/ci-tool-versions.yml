@@ -12,14 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: git fetch origin ${{ github.base_ref }} --depth=1
+      - name: Install gh-action-multiline
+        run: curl -fsSL https://raw.githubusercontent.com/kachick/gh-action-multiline/main/scripts/install-in-github-action.sh | sh -s v0.1.1
       - name: Re-format only changed .tool-versions
         id: format-only-new-versions
         # Do not use `echo json=$(script)` syntax here. The script generates multilines.
         run: |
-          tempfile="$(mktemp)"
-          echo -n 'json=' | tee --append "$tempfile"
-          git diff origin/${{ github.base_ref }} HEAD --word-diff --relative ./examples/.tool-versions | grep -F ']{+' | ruby -r json -e 'puts STDIN.each_line.map { |l| /\A(\S+\s+).*?\{\+([^\+]+)/.match(l).captures.join }.join("\n").to_json' | tee --append "$tempfile"
-          cat "$tempfile" | tee --append $GITHUB_OUTPUT
+          git diff origin/${{ github.base_ref }} HEAD --word-diff --relative ./examples/.tool-versions | \
+          grep -F ']{+' | grep -vP 'haskell|php' | ruby -e 'puts STDIN.each_line.map { |l| /\A(\S+\s+).*?\{\+([^\+]+)/.match(l).captures.join }.join("\n")' | \
+          gh-action-multiline -name=json >> "$GITHUB_OUTPUT"
       - uses: asdf-vm/actions/install@v2
         with:
-          tool_versions: '${{ fromJson(steps.format-only-new-versions.outputs.json) }}'
+          tool_versions: |
+            ${{ steps.format-only-new-versions.outputs.json }}
