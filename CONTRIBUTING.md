@@ -41,7 +41,7 @@ $ make check
 dprint check
 ./bin/cli lint
 npx tsc
-npx ts-node-test test/*.ts
+npm test
 crystal spec
 ./bin/cli validate
 ```

@@ -6,7 +6,7 @@ check: lint-all test validate
 .PHONY: test
 test:
 	npx tsc
-	npx ts-node-test test/*.ts
+	npm test
 	crystal spec
 
 .PHONY: setup
