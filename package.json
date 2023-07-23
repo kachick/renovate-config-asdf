@@ -1,11 +1,12 @@
 {
+  "type": "module",
   "scripts": {
     "test": "glob -c \"node --loader tsx --no-warnings --test\" \"./test/**/*_test.ts\""
   },
   "devDependencies": {
-    "@tsconfig/node18": "^18.2.0",
+    "@tsconfig/node20": "^20.1.0",
     "@tsconfig/strictest": "^2.0.1",
-    "@types/node": "^18.17.0",
+    "@types/node": "^20.4.4",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
     "eslint": "^8.45.0",

@@ -8,7 +8,7 @@ import path from 'path';
 import RE2 from 're2';
 import JSON5 from 'json5';
 
-import { examples } from './examples';
+import { examples } from './examples.ts';
 
 // Copied from https://github.com/renovatebot/renovate/blob/0296e58e19844b6eb3583ee3197bcae42e25d9f7/lib/config/types.ts#L169-L185
 // Because they does not expose these types via npm, AFAIK
