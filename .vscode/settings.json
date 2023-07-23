@@ -5,11 +5,15 @@
   "[nix]": {
     "editor.defaultFormatter": "jnoortheen.nix-ide"
   },
+  "[crystal]": {
+    "editor.defaultFormatter": "crystal-lang-tools.crystal-lang"
+  },
   "nix.serverPath": "nil",
   "nix.enableLanguageServer": true,
   "nix.serverSettings": {
     "nil": {
       "formatting": { "command": ["nixpkgs-fmt"] }
     }
-  }
+  },
+  "crystal-lang.server": "/nix/store/pj2wfyhfgac9lb2c9lwp85294hx4lkpg-crystalline-0.10.0/bin/crystalline"
 }
