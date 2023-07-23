@@ -85,7 +85,7 @@ touch:
 	./bin/cli touch
 
 .PHONY: versions
-versions:
+deps:
 	nix --version
 	node --version
 	crystal --version
