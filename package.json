@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "scripts": {
     "test": "glob -c \"node --loader tsx --no-warnings --test\" \"./test/**/*_test.ts\""
   },
