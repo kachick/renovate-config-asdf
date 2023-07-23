@@ -66,11 +66,11 @@ crystal-lint-fix:
 
 .PHONY: eslint-check
 eslint-check:
-	npx eslint 'test/**/*.*{js,ts}'
+	npx eslint .
 
 .PHONY: eslint-fix
 eslint-fix:
-	npx eslint --fix 'test/**/*.*{js,ts}'
+	npx eslint --fix .
 
 .PHONY: typos-check
 typos-check:
