@@ -27,7 +27,7 @@ jobs:
       - uses: crystal-lang/install-crystal@v1
         with:
           # Keep same version as used in *.nix
-          crystal: '1.8.2'
+          crystal: '1.9.0'
           shards: '0.17.3'
       # Need node.js to install validator. Spec includes the validator runner
       - run: crystal spec --tag '~needs_npm'
@@ -45,7 +45,7 @@ jobs:
       - uses: crystal-lang/install-crystal@v1
         with:
           # Keep same version as used in *.nix
-          crystal: '1.8.2'
+          crystal: '1.9.0'
           shards: '0.17.3'
       - run: shards install
         if: steps.cache.outputs.cache-hit != 'true'

@@ -3,7 +3,7 @@
 pkgs.mkShell {
   buildInputs = [
     pkgs.nodejs-18_x
-    pkgs.crystal_1_8
+    pkgs.crystal
     pkgs.shards
     pkgs.dprint
     pkgs.nil
