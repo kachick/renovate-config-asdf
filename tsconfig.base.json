@@ -1,10 +1,12 @@
 {
-  // Import from https://github.com/tsconfig/bases/commit/0ae4791797d8ba3dd2bca9aca880eb2d3e30e6fb
+  // Import from
+  //   - https://github.com/tsconfig/bases/commit/0ae4791797d8ba3dd2bca9aca880eb2d3e30e6fb
+  //   - https://github.com/tsconfig/bases/blob/53d80ed4a9ece800ffca9774c4e63cef3ce6ab38/bases/node20.json
   // To avoid issues around tsconfig.extends array
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Node 18 + ESM + Strictest",
+  "display": "Node 20 + ESM + Strictest",
   "compilerOptions": {
-    "lib": ["es2022"],
+    "lib": ["es2023"],
     "module": "es2022",
     "target": "es2022",
     "strict": true,

@@ -13,7 +13,7 @@
     },
     {
       "matchPackageNames": ["nodejs/node"],
-      "allowedVersions": "/^v?18\\./"
+      "allowedVersions": "/^v?20\\./"
     },
     {
       "extends": ["schedule:weekly"],
