@@ -41,7 +41,7 @@ $ make check
 dprint check
 ./bin/cli lint
 npx tsc
-npx ts-node-test test/*.ts
+npm test
 crystal spec
 ./bin/cli validate
 ```
@@ -83,12 +83,12 @@ Actual behavior checking requires <https://github.com/uhop/node-re2> that includ
 
 ```console
 $ npm install
-$ node
-Welcome to Node.js v18.15.0.
+$ npx tsx
+Welcome to Node.js v18.16.1.
 Type ".help" for more information.
 ```
 
-```js
+```typescript
 > const RE2 = require("re2");
 undefined
 > let pattern = new RE2("^v(?<version>\\S+)");
