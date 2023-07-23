@@ -4,9 +4,9 @@ env:
 plugins:
   - '@typescript-eslint'
 extends:
-  - plugin:@typescript-eslint/recommended
-  - plugin:@typescript-eslint/recommended-requiring-type-checking
-  - plugin:@typescript-eslint/strict
+  - eslint:recommended
+  - plugin:@typescript-eslint/strict-type-checked
+  - plugin:@typescript-eslint/stylistic-type-checked
 rules:
   i18n-text/no-en: 'off'
   no-restricted-syntax:
@@ -27,6 +27,4 @@ rules:
   '@typescript-eslint/no-import-type-side-effects': 'error'
 parser: '@typescript-eslint/parser'
 parserOptions:
-  ecmaVersion: 12
-  sourceType: module
-  project: ./tsconfig.json
+  project: true
