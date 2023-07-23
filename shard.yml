@@ -12,10 +12,10 @@ authors:
 #     github: will/crystal-pg
 #     version: "~> 0.5"
 
-development_dependencies:
-  ameba:
-    github: crystal-ameba/ameba
-    version: ~> 1.4.3
+# development_dependencies:
+#   ameba:
+#     github: crystal-ameba/ameba
+#     version: ~> 1.4.3
 
 license: MIT
 

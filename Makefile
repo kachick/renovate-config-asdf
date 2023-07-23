@@ -47,7 +47,7 @@ lint-definitions:
 lint-all: crystal-lint-check dprint-check lint-definitions eslint-check typos-check
 
 crystal-lint-check: crystal-format-check
-	./bin/ameba --except Metrics
+	ameba --except Metrics
 
 .PHONY: crystal-format-check
 crystal-format-check:
@@ -62,7 +62,7 @@ lint-fix-all: crystal-lint-fix dprint-fix eslint-fix
 .PHONY: crystal-lint-fix
 crystal-lint-fix:
 	crystal tool format
-	./bin/ameba --except Metrics --fix
+	ameba --except Metrics --fix
 
 .PHONY: eslint-check
 eslint-check:

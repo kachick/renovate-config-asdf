@@ -14,5 +14,6 @@ pkgs.mkShell {
     # Used in crystal
     pkgs.pcre
     pkgs.crystalline
+    pkgs.ameba
   ];
 }
