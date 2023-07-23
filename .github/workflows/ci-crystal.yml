@@ -26,7 +26,9 @@ jobs:
       - uses: actions/checkout@v3
       - uses: crystal-lang/install-crystal@v1
         with:
-          crystal: '1.8.1'
+          # Keep same version as used in *.nix
+          crystal: '1.9.0'
+          shards: '0.17.3'
       # Need node.js to install validator. Spec includes the validator runner
       - run: crystal spec --tag '~needs_npm'
   lint:
@@ -34,15 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Cache ameba
-        id: cache
-        uses: actions/cache@v3
-        with:
-          path: ./bin/ameba
-          key: ameba-${{ runner.os }}-crystal_1.8.1-${{ hashFiles('shard.lock') }}
-      - uses: crystal-lang/install-crystal@v1
-        with:
-          crystal: '1.8.1'
-      - run: shards install
-        if: steps.cache.outputs.cache-hit != 'true'
-      - run: make crystal-lint-check
+      - name: Crystal Ameba Linter
+        uses: crystal-ameba/github-action@v0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
