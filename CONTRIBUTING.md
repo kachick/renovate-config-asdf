@@ -84,7 +84,7 @@ Actual behavior checking requires <https://github.com/uhop/node-re2> that includ
 ```console
 $ npm install
 $ npx tsx
-Welcome to Node.js v18.16.1.
+Welcome to Node.js v20.4.0.
 Type ".help" for more information.
 ```
 
