@@ -4,6 +4,7 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.nodejs_20
     pkgs.dprint
+    pkgs.deno
     pkgs.nil
     pkgs.nixpkgs-fmt
     pkgs.typos

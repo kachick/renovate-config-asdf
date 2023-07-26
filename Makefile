@@ -92,5 +92,6 @@ deps:
 	# It returns error even if correctly show the version
 	# nixpkgs-fmt --version
 	dprint --version
+	deno --version
 	typos --version
 	shards --version

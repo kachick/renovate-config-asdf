@@ -15,5 +15,6 @@
       "formatting": { "command": ["nixpkgs-fmt"] }
     }
   },
-  "crystal-lang.server": "/nix/store/pj2wfyhfgac9lb2c9lwp85294hx4lkpg-crystalline-0.10.0/bin/crystalline"
+  "crystal-lang.server": "/nix/store/pj2wfyhfgac9lb2c9lwp85294hx4lkpg-crystalline-0.10.0/bin/crystalline",
+  "deno.enable": false
 }
