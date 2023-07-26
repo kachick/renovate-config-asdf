@@ -44,7 +44,7 @@ scaffold:
 lint-definitions:
 	./bin/cli lint
 
-lint-all: crystal-lint-check dprint-check lint-definitions eslint-check typos-check
+lint-all: crystal-lint-check dprint-check lint-definitions deno_lint typos-check
 
 crystal-lint-check: crystal-format-check
 	ameba --except Metrics
@@ -57,20 +57,16 @@ crystal-format-check:
 dprint-check:
 	dprint check
 
-lint-fix-all: crystal-lint-fix dprint-fix eslint-fix
+lint-fix-all: crystal-lint-fix dprint-fix
 
 .PHONY: crystal-lint-fix
 crystal-lint-fix:
 	crystal tool format
 	ameba --except Metrics --fix
 
-.PHONY: eslint-check
-eslint-check:
-	npx eslint .
-
-.PHONY: eslint-fix
-eslint-fix:
-	npx eslint --fix .
+.PHONY: deno_lint
+deno_lint:
+	deno lint
 
 .PHONY: typos-check
 typos-check:
@@ -92,5 +88,6 @@ deps:
 	# It returns error even if correctly show the version
 	# nixpkgs-fmt --version
 	dprint --version
+	deno --version
 	typos --version
 	shards --version
