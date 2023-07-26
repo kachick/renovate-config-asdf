@@ -132,6 +132,11 @@ export const examples = [
     extracted: '0.31.3',
   },
   {
+    plugin: 'typos',
+    source: 'v1.16.1',
+    extracted: '1.16.1',
+  },
+  {
     plugin: 'yamlfmt',
     source: 'v0.9.0',
     extracted: '0.9.0',

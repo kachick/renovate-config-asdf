@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Bump typos in .tool-versions",
+  "regexManagers": [
+    {
+      "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["(^|\\n)typos (?<currentValue>\\S+)"],
+      // Official Plugin: https://github.com/asdf-vm/asdf-plugins/pull/858
+      // Plugin Fetcher Permalink: https://github.com/aschiavon91/asdf-typos/blob/1fbc7317c91e16bc7b04ecc9fabd028ad51218d5/lib/utils.bash#L5
+      // DataSource URL: https://github.com/crate-ci/typos/releases
+      "depNameTemplate": "crate-ci/typos",
+      "datasourceTemplate": "github-releases",
+      // https://github.com/crate-ci/typos/releases/tag/v1.16.1
+      "extractVersionTemplate": "^v(?<version>\\S+)"
+    }
+  ]
+}

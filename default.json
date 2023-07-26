@@ -252,6 +252,13 @@
     },
     {
       "fileMatch": ["\\.tool-versions$"],
+      "matchStrings": ["(^|\\n)typos (?<currentValue>\\S+)"],
+      "depNameTemplate": "crate-ci/typos",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v(?<version>\\S+)"
+    },
+    {
+      "fileMatch": ["\\.tool-versions$"],
       "matchStrings": ["(^|\\n)yamlfmt (?<currentValue>\\S+)"],
       "depNameTemplate": "google/yamlfmt",
       "datasourceTemplate": "github-releases",
