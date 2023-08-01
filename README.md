@@ -12,7 +12,11 @@ Since renovate version [34.25.0](https://github.com/renovatebot/renovate/pull/18
 And it merged [extended hugo releases](https://github.com/gohugoio/hugo/blob/af23cdca9c9c230ffbffbab96f9600a78c76b75f/docs/content/en/troubleshooting/faq.md?plain=1#L50-L60) in following [34.28.0](https://github.com/renovatebot/renovate/pull/18987#issuecomment-1320388809).
 So you don't need to depend this config now!
 
-(Below sections are historical. You can leave here.)
+The following sections are historical. You can leave here.\
+However, I'm using this repository to check the correctness of the regex before sending it upstream.
+
+- <https://github.com/renovatebot/renovate/pull/22472>
+- <https://github.com/renovatebot/renovate/pull/23566>
 
 ## Usage
 
