@@ -142,8 +142,8 @@ void test('self versioning updater', async (t) => {
       true,
       matchStrings.some((patternString) => {
         const pattern = new RE2(patternString);
-        const matched = pattern.exec('"github>kachick/renovate-config-asdf//plugins/hugo.json5#1.11.1"');
-        return matched?.groups?.['currentValue'] === '1.11.1';
+        const matched = pattern.exec('"github>kachick/renovate-config-asdf//plugins/hugo.json5#1.12.0"');
+        return matched?.groups?.['currentValue'] === '1.12.0';
       }),
     );
   });

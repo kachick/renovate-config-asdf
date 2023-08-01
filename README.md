@@ -22,7 +22,7 @@ In someday, I might add some definitions for my personal use again. Then they sh
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>kachick/renovate-config-asdf//plugins/hugo.json5#1.11.1",
+    "github>kachick/renovate-config-asdf//plugins/hugo.json5#1.12.0",
     "github>kachick/renovate-config-asdf:self"
   ],
   "enabledManagers": ["asdf", "regex"]
