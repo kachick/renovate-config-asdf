@@ -4,7 +4,7 @@
     "test": "glob -c \"node --loader tsx --no-warnings --test\" \"./test/**/*_test.ts\""
   },
   "devDependencies": {
-    "@tsconfig/node20": "^20.1.0",
+    "@tsconfig/node20": "^20.1.1",
     "@tsconfig/strictest": "^2.0.1",
     "@types/node": "^20.4.8",
     "glob": "^10.3.3",
