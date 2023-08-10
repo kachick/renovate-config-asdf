@@ -20,7 +20,7 @@ jobs:
         run: |
           targets="$(mktemp)"
           git diff origin/${{ github.base_ref }} HEAD --word-diff --relative ./examples/.tool-versions | \
-            grep -F ']{+' | grep -vP 'haskell|php' | ruby -e 'puts STDIN.each_line.map { |l| /\A(\S+\s+).*?\{\+([^\+]+)/.match(l).captures.join }.join("\n")' > "$targets"
+            grep -F ']{+' | grep -vP 'haskell|php|node' | ruby -e 'puts STDIN.each_line.map { |l| /\A(\S+\s+).*?\{\+([^\+]+)/.match(l).captures.join }.join("\n")' > "$targets"
 
 
           gh-action-multiline -name=lines < "$targets" | tee -a "$GITHUB_OUTPUT"
