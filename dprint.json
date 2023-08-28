@@ -19,7 +19,7 @@
   "excludes": [".git", "lib", "bin", ".ameba.yml"],
   "plugins": [
     "https://plugins.dprint.dev/json-0.17.4.wasm",
-    "https://plugins.dprint.dev/markdown-0.15.3.wasm",
+    "https://plugins.dprint.dev/markdown-0.16.0.wasm",
     "https://plugins.dprint.dev/typescript-0.86.2.wasm",
     "https://plugins.dprint.dev/prettier-0.26.6.json@0118376786f37496e41bb19dbcfd1e7214e2dc859a55035c5e54d1107b4c9c57"
   ]
