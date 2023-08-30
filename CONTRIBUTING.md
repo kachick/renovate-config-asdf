@@ -10,7 +10,7 @@ Author is using [Nix](https://nixos.org/) to maintain this repository.
 Because of installing crystal via asdf-crystal often make missing lib* packages with depending the PKG_CONFIG.
 
 ```console
-$ nix-shell
+$ nix develop
 (First execution might take long time. Then execute prepared bash with nodejs, crystal and other tools.)
 $ make setup
 npm install
