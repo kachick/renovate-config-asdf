@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: git fetch origin ${{ github.base_ref }} --depth=1
       - name: Install gh-action-multiline
         run: curl -fsSL https://raw.githubusercontent.com/kachick/gh-action-multiline/main/scripts/install-in-github-action.sh | sh -s v0.1.1

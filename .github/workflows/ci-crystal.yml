@@ -25,7 +25,7 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: crystal-lang/install-crystal@v1
         with:
           # Keep same version as used in *.nix
@@ -37,7 +37,7 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Crystal Ameba Linter
         uses: crystal-ameba/github-action@v0.8.0
         env:
