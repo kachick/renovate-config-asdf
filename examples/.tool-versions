@@ -3,7 +3,7 @@ bun 1.0.2
 cargo-make 0.37.1
 clojure 1.11.1.1413
 crystal 1.9.2
-deno 1.36.4
+deno 1.37.0
 direnv 2.32.3
 dprint 0.41.0
 elixir 1.15.5
