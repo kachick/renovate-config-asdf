@@ -11,7 +11,7 @@ on:
 
 jobs:
   update-nixpkgs:
-    uses: kachick/anylang-template/.github/workflows/reusable-update-nixpkgs-and-versions-in-ci.yml@41eb152dc3184c65cebdbd64cc903d39901109dd
+    uses: kachick/anylang-template/.github/workflows/reusable-update-nixpkgs-and-versions-in-ci.yml@3331ba67174450e37d38cc46bf0c1c89ca106825
     if: (github.event.sender.login == 'kachick') || (github.event_name != 'pull_request')
     with:
       dry-run: ${{ github.event_name == 'pull_request' }}
