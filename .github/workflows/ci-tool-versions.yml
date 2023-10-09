@@ -26,7 +26,7 @@ jobs:
           gh-action-multiline -name=lines < "$targets" | tee -a "$GITHUB_OUTPUT"
           grep -P '\S' "$targets" || echo 'skip_install=true' | tee -a "$GITHUB_OUTPUT"
 
-      - uses: asdf-vm/actions/install@v2
+      - uses: asdf-vm/actions/install@v3
         if: steps.format-only-new-versions.outputs.skip_install != 'true'
         with:
           tool_versions: |
