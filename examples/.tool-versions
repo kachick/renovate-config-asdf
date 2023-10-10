@@ -2,7 +2,7 @@ awscli 2.13.25
 bun 1.0.4
 cargo-make 0.37.2
 clojure 1.11.1.1413
-crystal 1.9.2
+crystal 1.10.0
 deno 1.37.1
 direnv 2.32.3
 dprint 0.41.0
