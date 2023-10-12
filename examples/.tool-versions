@@ -9,7 +9,7 @@ dprint 0.41.0
 elixir 1.15.6
 elm 0.19.1
 erlang 26.1.2
-gauche 0.9.12
+gauche 0.9.13
 golang 1.21.3
 haskell 9.8.1
 helm 3.13.1
