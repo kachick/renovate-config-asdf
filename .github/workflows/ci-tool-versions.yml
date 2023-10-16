@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: git fetch origin ${{ github.base_ref }} --depth=1
-      - name: Install gh-action-multiline
-        run: curl -fsSL https://raw.githubusercontent.com/kachick/gh-action-multiline/main/scripts/install-in-github-action.sh | sh -s v0.1.1
+      - name: Install gh-action-escape
+        run: curl -fsSL https://raw.githubusercontent.com/kachick/gh-action-escape/v0.2.0/scripts/install-in-github-action.sh | sh -s v0.2.0
       - name: Re-format only changed .tool-versions
         id: format-only-new-versions
         # Do not use `echo json=$(script)` syntax here. The script generates multilines.
@@ -23,7 +23,7 @@ jobs:
             grep -F ']{+' | grep -vP 'haskell|php|node' | ruby -e 'puts STDIN.each_line.map { |l| /\A(\S+\s+).*?\{\+([^\+]+)/.match(l).captures.join }.join("\n")' > "$targets"
 
 
-          gh-action-multiline -name=lines < "$targets" | tee -a "$GITHUB_OUTPUT"
+          gh-action-escape -name=lines < "$targets" | tee -a "$GITHUB_OUTPUT"
           grep -P '\S' "$targets" || echo 'skip_install=true' | tee -a "$GITHUB_OUTPUT"
 
       - uses: asdf-vm/actions/install@v3
