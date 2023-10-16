@@ -51,8 +51,7 @@ See [#191](https://github.com/kachick/renovate-config-asdf/issues/191) and [#206
 
 NOTE
 
-- Should pass `GITHUB_COM_TOKEN` for ENV with your **classic PAT**.
-  \
+- Should pass `GITHUB_COM_TOKEN` for ENV with your **classic PAT**.\
   At 2022-10-22, [beta version of fine-grained PAT](https://github.blog/2022-10-18-introducing-fine-grained-personal-access-tokens-for-github/) does not support GraphQL API yet.\
   However [github-tags module of renovatebot is using GraphQL](https://github.com/renovatebot/renovate/blob/cc50beb0934874095fd2164b33dcb5fed7dbf421/lib/modules/datasource/github-tags/index.ts#L2).
 
