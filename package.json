@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "test": "glob -c \"node --loader tsx --no-warnings --test\" \"./test/**/*_test.ts\""
+    "test": "glob -c \"node --import tsx --no-warnings --test\" \"./test/**/*_test.ts\""
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.2",
