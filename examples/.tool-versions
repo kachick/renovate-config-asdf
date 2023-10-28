@@ -33,7 +33,7 @@ scala 3.3.1
 shellcheck 0.9.0
 shfmt 3.7.0
 terraform 1.6.2
-trivy 0.46.0
+trivy 0.46.1
 typos 1.16.21
 yamlfmt 0.10.0
 zig 0.11.0
