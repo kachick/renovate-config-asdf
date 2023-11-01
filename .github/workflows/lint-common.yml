@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # Accepts to be different with nixpkgs, use latest by renovatebot
-      - uses: crate-ci/typos@v1.16.21
+      - uses: crate-ci/typos@v1.16.22
         with:
           files: |
             .
