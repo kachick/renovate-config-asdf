@@ -5,7 +5,7 @@ clojure 1.11.1.1413
 crystal 1.10.1
 deno 1.38.4
 direnv 2.33.0
-dprint 0.43.1
+dprint 0.43.2
 elixir 1.15.7
 elm 0.19.1
 erlang 26.1.2
