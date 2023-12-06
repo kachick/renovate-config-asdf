@@ -12,7 +12,7 @@
     "re2": "^1.20.9",
     "renovate": "^37.81.4",
     "tsx": "^4.6.2",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.3"
   },
   "overrides": {
     "json5": "^2.2.3"
