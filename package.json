@@ -6,7 +6,7 @@
   "devDependencies": {
     "@tsconfig/node20": "^20.1.2",
     "@tsconfig/strictest": "^2.0.2",
-    "@types/node": "^20.10.3",
+    "@types/node": "^20.10.4",
     "glob": "^10.3.10",
     "json5": "^2.2.3",
     "re2": "^1.20.9",
