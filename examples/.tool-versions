@@ -1,6 +1,6 @@
 awscli 2.15.10
 bun 1.0.22
-cargo-make 0.37.5
+cargo-make 0.37.6
 clojure 1.11.1.1435
 crystal 1.11.1
 deno 1.39.3
