@@ -6,7 +6,7 @@ crystal 1.11.2
 deno 1.40.2
 direnv 2.33.0
 dprint 0.45.0
-elixir 1.16.0
+elixir 1.16.1
 elm 0.19.1
 erlang 26.2.1
 gauche 0.9.14
