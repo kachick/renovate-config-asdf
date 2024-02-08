@@ -22,6 +22,6 @@ jobs:
       - uses: crystal-lang/install-crystal@v1
         with:
           crystal: '1.9.2' # selfup { "regex": "\\d[^']+", "script": "crystal --version | head -n 1 | cut -d ' ' -f 2" }
-          shards: '0.17.3' # selfup { "regex": "\\d[^']+", "script": "shards --version | cut -d ' ' -f 2" }
+          shards: '0.17.4' # selfup { "regex": "\\d[^']+", "script": "shards --version | cut -d ' ' -f 2" }
       - run: shards install --production
       - run: crystal run src/cli.cr -- lint
